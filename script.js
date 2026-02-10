@@ -1,5 +1,5 @@
 function consultar(nombrePerfume) {
-    const telefono = "5491112345678"; // TU NÚMERO
+    const telefono = "5492613392404"; // TU NÚMERO
     const mensaje = `Hola! Quisiera consultar por el perfume ${nombrePerfume}`;
     const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
@@ -40,5 +40,6 @@ catalogo.innerHTML += `
         </button>
     </div>
 `;
+
 
 
