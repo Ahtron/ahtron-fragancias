@@ -282,6 +282,11 @@ button:hover {
     padding: 18px 26px;
     border-radius: 12px;
 }
+.producto h2,
+.producto p {
+    color: #fff !important;
+}
+
 
 
 
