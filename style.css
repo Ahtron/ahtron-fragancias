@@ -241,6 +241,25 @@ button:hover {
     background: var(--plateado);
     color: #000;
 }
+/* TEXTO EN NEGRO */
+
+/* Botones de categorías */
+.filtros button {
+    color: #000;
+    background-color: #e5e5e5;
+    border: 1px solid #999;
+}
+
+/* Nombre del perfume */
+.producto h2 {
+    color: #000;
+}
+
+/* Descripción del perfume */
+.producto p {
+    color: #222;
+}
+
 
 
 
