@@ -36,24 +36,32 @@ function mostrarPerfumes(filtro = "todas") {
 
     perfumes.forEach(perfume => {
         if (filtro === "todas" || perfume.marca === filtro) {
-            catalogo.innerHTML += `
-                <div class="producto">
-                    ${perfume.etiqueta ? `<span class="badge">${perfume.etiqueta}</span>` : ""}
-                    <img src="${perfume.imagen}" alt="${perfume.nombre}">
-                    <h2>${perfume.nombre}</h2>
-                    <p>${perfume.descripcion}</p>
-                    <button onclick="consultar('${perfume.nombre}')">
-                        Consultar
-                    </button>
-                </div>
+            const card = document.createElement("div");
+            card.className = "producto";
+
+            card.innerHTML = `
+                ${perfume.etiqueta ? `<span class="badge">${perfume.etiqueta}</span>` : ""}
+                <img src="${perfume.imagen}" alt="${perfume.nombre}">
+                <h2>${perfume.nombre}</h2>
+                <p>${perfume.descripcion}</p>
+                <button>Consultar</button>
             `;
+
+            card.querySelector("button").addEventListener("click", () => {
+                consultar(perfume.nombre);
+            });
+
+            catalogo.appendChild(card);
         }
     });
 }
 
-// Esperar a que cargue todo el HTML
-document.addEventListener("DOMContentLoaded", () => {
-    mostrarPerfumes();
+// 🔹 listeners de botones
+document.querySelectorAll(".filtros button").forEach(btn => {
+    btn.addEventListener("click", () => {
+        mostrarPerfumes(btn.dataset.marca);
+    });
+});
 
-    document.querySelectorAll(".fil
-
+// 🔹 mostrar al cargar
+mostrarPerfumes();
