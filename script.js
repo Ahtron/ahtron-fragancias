@@ -34,29 +34,37 @@ const perfumes = [
 function mostrarPerfumes(filtro = "todos") {
     catalogo.innerHTML = "";
 
-    perfumes.forEach(perfume => {
-        if (filtro === "todos" || perfume.tipo === filtro) {
-            catalogo.innerHTML += `
-                <div class="producto">
-                    ${perfume.etiqueta ? `<span class="badge">${perfume.etiqueta}</span>` : ""}
-                    <img src="${perfume.imagen}" alt="${perfume.nombre}">
-                    <h2>${perfume.nombre}</h2>
-                    <p>${perfume.descripcion}</p>
-                    <button onclick="consultar('${perfume.nombre}')">
-                        Consultar
-                    </button>
-                </div>
-            `;
-        }
-    });
-}
+const perfumes = [
+    {
+        nombre: "9PM",
+        descripcion: "Fragancia intensa, ideal para salir.",
+        imagen: "img/perfumes/perfume1.jpg",
+        marca: "Afnan",
+        etiqueta: "Más vendido"
+    },
+    {
+        nombre: "Amber Rose",
+        descripcion: "Dulce y sofisticado, ideal para la noche.",
+        imagen: "img/perfumes/perfume2.jpg",
+        marca: "Lattafa",
+        etiqueta: "Nuevo"
+    },
+    {
+        nombre: "Desert Musk",
+        descripcion: "Aroma limpio y elegante con almizcle.",
+        imagen: "img/perfumes/perfume3.jpg",
+        marca: "Armaf",
+        etiqueta: ""
+    }
+];
 
 // Botones de filtro
 document.querySelectorAll(".filtros button").forEach(btn => {
     btn.addEventListener("click", () => {
-        mostrarPerfumes(btn.dataset.tipo);
+        mostrarPerfumes(btn.dataset.marca);
     });
 });
 
 // Mostrar todos al cargar
 mostrarPerfumes();
+
