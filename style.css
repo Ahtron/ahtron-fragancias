@@ -136,7 +136,7 @@ footer {
 }
 
 .logo {
-    max-width: 150px;
+    max-width: 190px;
     margin-bottom: 20px;
     filter: drop-shadow(0 6px 15px rgba(0,0,0,0.6));
     opacity: 0.95;
@@ -206,7 +206,7 @@ button:hover {
 }
 
 .logo {
-    max-width: 200px;              /* más grande */
+    max-width: 250px;              /* más grande */
     margin-bottom: 26px;
     filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35));
     opacity: 0.95;
@@ -301,6 +301,7 @@ button:hover {
 .btn-ver-mas:hover {
     background: #555;
 }
+
 
 
 
