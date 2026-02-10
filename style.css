@@ -277,10 +277,12 @@ button:hover {
 .producto p {
     color: #dcdcdc;
 }
+
 .logo {
-    background: rgba(255,255,255,0.05);
-    padding: 18px 26px;
-    border-radius: 12px;
+    background-image: url('logo.png');
+    background-size: contain;  
+    width: 200px;               
+    height: 100px;              
 }
 
 .producto h2,
@@ -301,6 +303,7 @@ button:hover {
 .btn-ver-mas:hover {
     background: #555;
 }
+
 
 
 
