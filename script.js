@@ -57,6 +57,26 @@ const perfumes = [
         etiqueta: ""
     }
 ];
+   
+    function mostrarPerfumes(filtro = "todas") {
+    catalogo.innerHTML = "";
+
+    perfumes.forEach(perfume => {
+        if (filtro === "todas" || perfume.marca === filtro) {
+            catalogo.innerHTML += `
+                <div class="producto">
+                    ${perfume.etiqueta ? `<span class="badge">${perfume.etiqueta}</span>` : ""}
+                    <img src="${perfume.imagen}" alt="${perfume.nombre}">
+                    <h2>${perfume.nombre}</h2>
+                    <p>${perfume.descripcion}</p>
+                    <button onclick="consultar('${perfume.nombre}')">
+                        Consultar
+                    </button>
+                </div>
+            `;
+        }
+    });
+}
 
 // Botones de filtro
 document.querySelectorAll(".filtros button").forEach(btn => {
@@ -67,4 +87,5 @@ document.querySelectorAll(".filtros button").forEach(btn => {
 
 // Mostrar todos al cargar
 mostrarPerfumes();
+
 
