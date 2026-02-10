@@ -2,8 +2,8 @@ const catalogo = document.getElementById("catalogo");
 
 function consultar(nombrePerfume) {
     const telefono = "5492613392404";
-    const mensaje = `Hola! Quisiera consultar por el perfume ${nombrePerfume}`;
-    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+    const mensaje = "Hola! Quisiera consultar por el perfume " + nombrePerfume;
+    const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
     window.open(url, "_blank");
 }
 
@@ -31,37 +31,57 @@ const perfumes = [
     }
 ];
 
-function mostrarPerfumes(filtro = "todas") {
+function mostrarPerfumes(filtro) {
+    if (!filtro) filtro = "todas";
     catalogo.innerHTML = "";
 
-    perfumes.forEach(perfume => {
+    for (let i = 0; i < perfumes.length; i++) {
+        const perfume = perfumes[i];
+
         if (filtro === "todas" || perfume.marca === filtro) {
-            const card = document.createElement("div");
-            card.className = "producto";
+            const div = document.createElement("div");
+            div.className = "producto";
 
-            card.innerHTML = `
-                ${perfume.etiqueta ? `<span class="badge">${perfume.etiqueta}</span>` : ""}
-                <img src="${perfume.imagen}" alt="${perfume.nombre}">
-                <h2>${perfume.nombre}</h2>
-                <p>${perfume.descripcion}</p>
-                <button>Consultar</button>
-            `;
+            if (perfume.etiqueta !== "") {
+                const badge = document.createElement("span");
+                badge.className = "badge";
+                badge.innerText = perfume.etiqueta;
+                div.appendChild(badge);
+            }
 
-            card.querySelector("button").addEventListener("click", () => {
+            const img = document.createElement("img");
+            img.src = perfume.imagen;
+            img.alt = perfume.nombre;
+
+            const h2 = document.createElement("h2");
+            h2.innerText = perfume.nombre;
+
+            const p = document.createElement("p");
+            p.innerText = perfume.descripcion;
+
+            const btn = document.createElement("button");
+            btn.innerText = "Consultar";
+            btn.onclick = function () {
                 consultar(perfume.nombre);
-            });
+            };
 
-            catalogo.appendChild(card);
+            div.appendChild(img);
+            div.appendChild(h2);
+            div.appendChild(p);
+            div.appendChild(btn);
+
+            catalogo.appendChild(div);
         }
+    }
+}
+
+// Filtros
+const botones = document.querySelectorAll(".filtros button");
+for (let i = 0; i < botones.length; i++) {
+    botones[i].addEventListener("click", function () {
+        mostrarPerfumes(this.dataset.marca);
     });
 }
 
-// 🔹 listeners de botones
-document.querySelectorAll(".filtros button").forEach(btn => {
-    btn.addEventListener("click", () => {
-        mostrarPerfumes(btn.dataset.marca);
-    });
-});
-
-// 🔹 mostrar al cargar
+// Mostrar al cargar
 mostrarPerfumes();
