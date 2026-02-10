@@ -22,22 +22,27 @@ const perfumes = [
         imagen: "img/perfumes/afnan_9pm.jpg"
     },
 
-    // ARMAF
-    {
-        nombre: "Club de Nuit Intense Man EDT 105ml",
-        marca: "Armaf",
-        imagen: "img/perfumes/armaf_cdn_intense.jpg"
-    },
-    {
-        nombre: "Club de Nuit Precieux 1 EDP 55ml",
-        marca: "Armaf",
-        imagen: "img/perfumes/armaf_precieux.jpg"
-    },
-    {
-        nombre: "Club de Nuit Maleka EDP 105ml",
-        marca: "Armaf",
-        imagen: "img/perfumes/armaf_maleka.jpg"
-    },
+// ARMAF
+{
+    nombre: "Club de Nuit Intense Man EDT 105ml",
+    marca: "Armaf",
+    imagen: "img/perfumes/armaf_cdn_intense.jpg"
+},
+{
+    nombre: "Club de Nuit Precieux 1 EDP 55ml",
+    marca: "Armaf",
+    imagen: "img/perfumes/armaf_precieux.jpg"
+},
+{
+    nombre: "Club de Nuit Maleka EDP 105ml",
+    marca: "Armaf",
+    imagen: "img/perfumes/armaf_maleka.jpg"
+},
+{
+    nombre: "Odyssey Mandarin Sky EDP 100ml",
+    marca: "Armaf",
+    imagen: "img/perfumes/armaf_odyssey_mandarin_sky.jpg"
+},
 
     // LATTAFA
     {
@@ -126,3 +131,4 @@ for (let i = 0; i < botones.length; i++) {
 
 // Mostrar todo al cargar
 mostrarPerfumes();
+
