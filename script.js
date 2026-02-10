@@ -15,7 +15,7 @@ const perfumes = [
     },
     {
         nombre: "Amber Rose",
-        descripcion: "Dulce y sofisticado, ideal para la noche.",
+        descripcion: "Dulce y sofisticado.",
         imagen: "img/perfumes/perfume2.jpg",
         tipo: "dulce",
         etiqueta: "Nuevo"
@@ -40,5 +40,6 @@ catalogo.innerHTML += `
         </button>
     </div>
 `;
+
 
 
