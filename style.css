@@ -281,8 +281,8 @@ button:hover {
 .logo {
     background-image: url('logo.png');
     background-size: contain;  
-    width: 200px;               
-    height: 100px;              
+    width: 400px;               
+    height: 200px;              
 }
 
 .producto h2,
@@ -303,6 +303,7 @@ button:hover {
 .btn-ver-mas:hover {
     background: #555;
 }
+
 
 
 
