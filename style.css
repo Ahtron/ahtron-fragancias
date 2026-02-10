@@ -205,6 +205,44 @@ button:hover {
     }
 }
 
+.logo {
+    max-width: 190px;              /* más grande */
+    margin-bottom: 26px;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35));
+    opacity: 0.95;
+}
+
+@media (max-width: 600px) {
+    .logo {
+        max-width: 150px;
+    }
+}
+/* CARDS DE PERFUMES - MODO OSCURO */
+.producto {
+    background-color: #141414;
+    color: #f2f2f2;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.producto h2 {
+    color: var(--plateado);
+}
+
+.producto p {
+    color: #cfcfcf;
+}
+.producto button {
+    background: transparent;
+    border: 1px solid var(--plateado);
+    color: var(--plateado);
+}
+
+.producto button:hover {
+    background: var(--plateado);
+    color: #000;
+}
+
+
 
 
 
