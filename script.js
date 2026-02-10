@@ -106,11 +106,13 @@ function mostrarPerfumes(filtro) {
             const card = document.createElement("div");
             card.className = "producto";
 
-            card.innerHTML =
-                '<img src="' + p.imagen + '" alt="' + p.nombre + '">' +
-                '<h2>' + p.nombre + '</h2>' +
-                '<p>' + p.marca + '</p>' +
-                '<button>Consultar</button>';
+card.innerHTML =
+    '<img src="' + p.imagen + '" alt="' + p.nombre + '">' +
+    '<h2>' + p.nombre + '</h2>' +
+    '<p>' + p.marca + '</p>' +
+    '<button class="btn-consultar">Consultar</button>' +
+    (p.link ? '<a href="' + p.link + '" class="btn-ver-mas">Ver más</a>' : '');
+
 
             card.querySelector("button").onclick = function () {
                 consultar(p.nombre);
@@ -131,6 +133,7 @@ for (let i = 0; i < botones.length; i++) {
 
 // Mostrar todo al cargar
 mostrarPerfumes();
+
 
 
 
