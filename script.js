@@ -8,7 +8,7 @@ function consultar(nombrePerfume) {
 const perfumes = [
     {
         nombre: "9PM",
-        descripcion: "Fragancia intensa, ideal para imprecionat.",
+        descripcion: "Fragancia intensa, ideal para salir.",
         imagen: "img/perfumes/perfume1.jpg",
         tipo: "avainillado",
         etiqueta: "Más vendido"
@@ -40,6 +40,5 @@ catalogo.innerHTML += `
         </button>
     </div>
 `;
-
 
 
