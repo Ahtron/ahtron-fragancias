@@ -7,10 +7,10 @@ function consultar(nombrePerfume) {
 
 const perfumes = [
     {
-        nombre: "Oud Al Sultan",
-        descripcion: "Fragancia intensa con notas de oud y ámbar.",
+        nombre: "9PM",
+        descripcion: "Fragancia intensa, ideal para imprecionat.",
         imagen: "img/perfumes/perfume1.jpg",
-        tipo: "amaderado",
+        tipo: "avainillado",
         etiqueta: "Más vendido"
     },
     {
@@ -40,5 +40,6 @@ catalogo.innerHTML += `
         </button>
     </div>
 `;
+
 
 
