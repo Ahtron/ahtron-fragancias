@@ -13,7 +13,6 @@ const perfumes = [
     // AFNAN
     {
         nombre: "9PM Elixir EDP 100ml",
-        descripcion: "https://www.fragrantica.es/perfume/Afnan/9pm-65414.html"
         marca: "Afnan",
         imagen: "img/perfumes/afnan_9pm_elixir.jpg"
     },
@@ -132,5 +131,6 @@ for (let i = 0; i < botones.length; i++) {
 
 // Mostrar todo al cargar
 mostrarPerfumes();
+
 
 
