@@ -260,6 +260,13 @@ button:hover {
     color: #222;
 }
 
+.producto h2,
+.producto p,
+.filtros button {
+    color: #000 !important;
+}
+
+
 
 
 
