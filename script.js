@@ -1,5 +1,6 @@
 const catalogo = document.getElementById("catalogo");
 
+// WhatsApp
 function consultar(nombrePerfume) {
     const telefono = "5492613392404";
     const mensaje = "Hola! Quisiera consultar por el perfume " + nombrePerfume;
@@ -7,70 +8,110 @@ function consultar(nombrePerfume) {
     window.open(url, "_blank");
 }
 
+// PERFUMES (placeholders de imágenes)
 const perfumes = [
+    // AFNAN
     {
-        nombre: "9PM",
-        descripcion: "Fragancia intensa, ideal para salir.",
-        imagen: "img/perfumes/perfume1.jpg",
+        nombre: "9PM Elixir EDP 100ml",
         marca: "Afnan",
-        etiqueta: "Más vendido"
+        imagen: "img/perfumes/afnan_9pm_elixir.jpg"
     },
     {
-        nombre: "Amber Rose",
-        descripcion: "Dulce y sofisticado, ideal para la noche.",
-        imagen: "img/perfumes/perfume2.jpg",
-        marca: "Lattafa",
-        etiqueta: "Nuevo"
+        nombre: "9PM EDP Masculino 100ml",
+        marca: "Afnan",
+        imagen: "img/perfumes/afnan_9pm.jpg"
     },
+
+    // ARMAF
     {
-        nombre: "Desert Musk",
-        descripcion: "Aroma limpio y elegante con almizcle.",
-        imagen: "img/perfumes/perfume3.jpg",
+        nombre: "Club de Nuit Intense Man EDT 105ml",
         marca: "Armaf",
-        etiqueta: ""
+        imagen: "img/perfumes/armaf_cdn_intense.jpg"
+    },
+    {
+        nombre: "Club de Nuit Precieux 1 EDP 55ml",
+        marca: "Armaf",
+        imagen: "img/perfumes/armaf_precieux.jpg"
+    },
+    {
+        nombre: "Club de Nuit Maleka EDP 105ml",
+        marca: "Armaf",
+        imagen: "img/perfumes/armaf_maleka.jpg"
+    },
+
+    // LATTAFA
+    {
+        nombre: "Art of Universe EDP 100ml",
+        marca: "Lattafa",
+        imagen: "img/perfumes/lattafa_art_of_universe.jpg"
+    },
+    {
+        nombre: "Vintage Radio EDP 100ml",
+        marca: "Lattafa",
+        imagen: "img/perfumes/lattafa_vintage_radio.jpg"
+    },
+    {
+        nombre: "Khamrah Qahwa EDP 100ml",
+        marca: "Lattafa",
+        imagen: "img/perfumes/lattafa_khamrah_qahwa.jpg"
+    },
+    {
+        nombre: "Asad EDP 100ml",
+        marca: "Lattafa",
+        imagen: "img/perfumes/lattafa_asad.jpg"
+    },
+    {
+        nombre: "Asad Bourbon EDP 100ml",
+        marca: "Lattafa",
+        imagen: "img/perfumes/lattafa_asad_bourbon.jpg"
+    },
+    {
+        nombre: "Badee Al Oud Honor & Glory EDP 100ml",
+        marca: "Lattafa",
+        imagen: "img/perfumes/lattafa_honor_glory.jpg"
+    },
+    {
+        nombre: "Badee Al Oud For Glory EDP 100ml",
+        marca: "Lattafa",
+        imagen: "img/perfumes/lattafa_for_glory.jpg"
+    },
+
+    // MAISON ALHAMBRA
+    {
+        nombre: "Jean Lowe Inmortel EDP 100ml",
+        marca: "Maison Alhambra",
+        imagen: "img/perfumes/maison_jean_lowe_inmortel.jpg"
+    },
+    {
+        nombre: "Salvo Intense EDP 100ml",
+        marca: "Maison Alhambra",
+        imagen: "img/perfumes/maison_salvo_intense.jpg"
     }
 ];
 
+// Render
 function mostrarPerfumes(filtro) {
     if (!filtro) filtro = "todas";
     catalogo.innerHTML = "";
 
     for (let i = 0; i < perfumes.length; i++) {
-        const perfume = perfumes[i];
+        const p = perfumes[i];
 
-        if (filtro === "todas" || perfume.marca === filtro) {
-            const div = document.createElement("div");
-            div.className = "producto";
+        if (filtro === "todas" || p.marca === filtro) {
+            const card = document.createElement("div");
+            card.className = "producto";
 
-            if (perfume.etiqueta !== "") {
-                const badge = document.createElement("span");
-                badge.className = "badge";
-                badge.innerText = perfume.etiqueta;
-                div.appendChild(badge);
-            }
+            card.innerHTML =
+                '<img src="' + p.imagen + '" alt="' + p.nombre + '">' +
+                '<h2>' + p.nombre + '</h2>' +
+                '<p>' + p.marca + '</p>' +
+                '<button>Consultar</button>';
 
-            const img = document.createElement("img");
-            img.src = perfume.imagen;
-            img.alt = perfume.nombre;
-
-            const h2 = document.createElement("h2");
-            h2.innerText = perfume.nombre;
-
-            const p = document.createElement("p");
-            p.innerText = perfume.descripcion;
-
-            const btn = document.createElement("button");
-            btn.innerText = "Consultar";
-            btn.onclick = function () {
-                consultar(perfume.nombre);
+            card.querySelector("button").onclick = function () {
+                consultar(p.nombre);
             };
 
-            div.appendChild(img);
-            div.appendChild(h2);
-            div.appendChild(p);
-            div.appendChild(btn);
-
-            catalogo.appendChild(div);
+            catalogo.appendChild(card);
         }
     }
 }
@@ -83,5 +124,5 @@ for (let i = 0; i < botones.length; i++) {
     });
 }
 
-// Mostrar al cargar
+// Mostrar todo al cargar
 mostrarPerfumes();
