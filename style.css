@@ -282,10 +282,27 @@ button:hover {
     padding: 18px 26px;
     border-radius: 12px;
 }
+
 .producto h2,
 .producto p {
     color: #fff !important;
 }
+.btn-ver-mas {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn-ver-mas:hover {
+    background: #555;
+}
+
+
 
 
 
