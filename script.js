@@ -14,7 +14,7 @@ const perfumes = [
     {
         nombre: "9PM Elixir EDP 100ml",
         marca: "Afnan",
-        imagen: "img/perfumes/afnan_9pm_elixir.jpg"
+        imagen: "img/perfumes/afnan_9pm_elixir.jpg", 
     },
     {
         nombre: "9PM EDP Masculino 100ml",
@@ -131,6 +131,7 @@ for (let i = 0; i < botones.length; i++) {
 
 // Mostrar todo al cargar
 mostrarPerfumes();
+
 
 
 
