@@ -39,11 +39,11 @@ h1, h2 {
 /* LOGO */
 .logo {
     width: 720px;
-    height: 247px;               /* alto original para que se vea */
+    height: 247px;               
     max-width: 90%;
     display: block;
     margin: 0 auto 20px;
-    background-image: url('logo.png'); /* ruta de tu logo */
+    background-image: url('logo.jpg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -73,6 +73,46 @@ h1, h2 {
 
 .header-imagenes img:hover {
     transform: scale(1.05);
+}
+
+/* ==========================
+   FILTROS / BOTONES
+========================== */
+.filtros {
+    text-align: center;
+    padding: 20px;
+}
+
+.filtros button {
+    color: #000;
+    background-color: #e5e5e5;
+    border: 1px solid #999;
+    border-radius: 20px;
+    padding: 8px 18px;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filtros button:hover {
+    background-color: var(--dorado);
+    color: #000;
+}
+
+/* BOTONES GENERALES */
+button {
+    border-color: var(--plateado);
+    color: var(--plateado);
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    background: transparent;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: var(--plateado);
+    color: #000;
 }
 
 /* ==========================
@@ -133,41 +173,6 @@ h1, h2 {
 }
 
 /* ==========================
-   BOTONES GENERALES Y FILTROS
-========================== */
-button {
-    border-color: var(--plateado);
-    color: var(--plateado);
-    padding: 8px 18px;
-    border-radius: 20px;
-    cursor: pointer;
-    background: transparent;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: var(--plateado);
-    color: #000;
-}
-
-.filtros {
-    text-align: center;
-    padding: 20px;
-}
-
-.filtros button {
-    color: #000;
-    background-color: #e5e5e5;
-    border: 1px solid #999;
-    margin: 5px;
-}
-
-.filtros button:hover {
-    background-color: var(--dorado);
-    color: #000;
-}
-
-/* ==========================
    BADGES
 ========================== */
 .badge {
@@ -217,7 +222,7 @@ footer {
 @media (max-width: 600px) {
     .logo {
         width: 300px;
-        height: auto;           /* proporcional en móviles */
+        height: auto;
         margin-bottom: 15px;
     }
 
@@ -235,3 +240,4 @@ footer {
         padding: 8px 12px;
     }
 }
+
