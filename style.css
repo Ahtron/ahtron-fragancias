@@ -39,11 +39,11 @@ h1, h2 {
 /* LOGO */
 .logo {
     width: 720px;
-    height: 247px;               
+    height: 247px;
     max-width: 90%;
     display: block;
     margin: 0 auto 20px;
-    background-image: url('logo.jpg');
+    background-image: url('img/logo.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -240,4 +240,3 @@ footer {
         padding: 8px 12px;
     }
 }
-
