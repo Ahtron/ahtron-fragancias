@@ -71,8 +71,8 @@ h1, h2 {
 /* IMAGEN EN ESQUINA INFERIOR IZQUIERDA */
 .imagen-esquina {
     position: relative;
-    bottom: 0;
-    right: 5;      
+    bottom: 20px;
+    right: 0;      
     width: 220px;  
     height: auto;
     margin: 10px;
@@ -253,6 +253,7 @@ footer {
         padding: 8px 12px;
     }
 }
+
 
 
 
