@@ -31,7 +31,7 @@ h1, h2 {
 ========================== */
 .header {
     text-align: center;
-    padding: 90px 20px 80px;
+    padding: 90px 20px 40px;
     background: radial-gradient(circle, #1a1a1a, var(--fondo));
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
@@ -39,16 +39,16 @@ h1, h2 {
 /* LOGO */
 .logo {
     width: 720px;
-    height: auto;
+    height: 247px;               /* alto original para que se vea */
     max-width: 90%;
     display: block;
-    margin: 0 auto;
-    filter: drop-shadow(0 6px 15px rgba(0,0,0,0.6));
-    opacity: 0.95;
-    background-image: url('logo.png');
+    margin: 0 auto 20px;
+    background-image: url('logo.png'); /* ruta de tu logo */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    filter: drop-shadow(0 6px 15px rgba(0,0,0,0.6));
+    opacity: 0.95;
     animation: fadeInLogo 1.2s ease-out;
 }
 
@@ -217,6 +217,7 @@ footer {
 @media (max-width: 600px) {
     .logo {
         width: 300px;
+        height: auto;           /* proporcional en móviles */
         margin-bottom: 15px;
     }
 
