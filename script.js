@@ -74,6 +74,54 @@ const perfumes = [
 ];
 
 // ==========================
-// FORMATEAR PRECIO (ARG)
+// FORMATEAR PRECIO
 // ==========================
-function formatearPrec
+function formatearPrecio(valor) {
+    return "$" + Number(valor).toLocaleString("es-AR");
+}
+
+// ==========================
+// MOSTRAR PERFUMES
+// ==========================
+function mostrarPerfumes(filtro = "todas") {
+
+    catalogo.innerHTML = "";
+
+    perfumes.forEach(p => {
+
+        if (filtro === "todas" || p.marca === filtro) {
+
+            const card = document.createElement("div");
+            card.className = "producto";
+
+            card.innerHTML =
+                `<img src="${p.imagen}" alt="${p.nombre}">
+                 <h2>${p.nombre}</h2>
+                 <p>${p.marca}</p>
+                 <p class="precio">${formatearPrecio(p.price)}</p>
+                 <button class="btn-consultar">Consultar</button>
+                 <a href="${p.link}" target="_blank" class="btn-ver-mas">Ver más</a>`;
+
+            card.querySelector(".btn-consultar").onclick = function () {
+                consultar(p.nombre);
+            };
+
+            catalogo.appendChild(card);
+        }
+
+    });
+}
+
+// ==========================
+// FILTROS
+// ==========================
+document.querySelectorAll(".filtros button").forEach(btn => {
+    btn.addEventListener("click", function () {
+        mostrarPerfumes(this.dataset.marca);
+    });
+});
+
+// ==========================
+// INICIO
+// ==========================
+mostrarPerfumes();
