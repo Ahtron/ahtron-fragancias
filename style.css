@@ -30,36 +30,23 @@ h1, h2 {
    HEADER
 ========================== */
 .header {
+    position: relative; /* necesario para la imagen en esquina */
     text-align: center;
-    padding: 90px 20px 40px;
+    padding: 60px 20px 40px; /* menos padding superior para subir el logo */
     background: radial-gradient(circle, #1a1a1a, var(--fondo));
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 /* LOGO */
-/* Logo */
 .logo {
-    width: 720px;       /* ancho máximo en PC */
-    max-width: 90%;     /* responsivo */
-    height: auto;       /* mantiene proporción original */
+    width: 720px;
+    max-width: 90%;
+    height: auto;
     display: block;
-    margin: 0 auto 20px;
+    margin: 0 auto 10px; /* menos margen inferior para que el logo suba */
     filter: drop-shadow(0 6px 15px rgba(0,0,0,0.6));
     opacity: 0.95;
     animation: fadeInLogo 1.2s ease-out;
-}
-
-.header-imagenes img {
-    max-width: 150px;   /* ancho máximo */
-    height: auto;       /* mantiene proporción */
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.header-imagenes img:hover {
-    transform: scale(1.05);
-}
-
 }
 
 @keyframes fadeInLogo {
@@ -67,21 +54,32 @@ h1, h2 {
     to { opacity: 0.95; transform: translateY(0); }
 }
 
-/* IMÁGENES DEBAJO DEL LOGO */
-.header-imagenes {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 15px;
-}
-
-.header-imagenes img {
-    width: 100px;
+/* IMAGEN PRINCIPAL (debajo del logo) */
+.imagen-principal {
+    width: 220px;   /* agrandada un poco */
+    max-width: 90%;
     height: auto;
+    margin: 15px auto 0;
+    display: block;
     transition: transform 0.3s ease;
 }
 
-.header-imagenes img:hover {
+.imagen-principal:hover {
+    transform: scale(1.05);
+}
+
+/* IMAGEN EN ESQUINA INFERIOR IZQUIERDA */
+.imagen-esquina {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 120px;  /* tamaño más pequeño */
+    height: auto;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.imagen-esquina:hover {
     transform: scale(1.05);
 }
 
@@ -233,11 +231,16 @@ footer {
     .logo {
         width: 300px;
         height: auto;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 
-    .header-imagenes img {
-        width: 100px;
+    .imagen-principal {
+        width: 180px;
+    }
+
+    .imagen-esquina {
+        width: 80px;
+        margin: 5px;
     }
 
     .catalogo {
@@ -250,6 +253,3 @@ footer {
         padding: 8px 12px;
     }
 }
-
-
-
