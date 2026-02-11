@@ -73,14 +73,14 @@ h1, h2 {
     position: absolute;
     bottom: 0;
     right: 0;      
-    width: 320px;  
+    width: 220px;  
     height: auto;
     margin: 10px;
     transition: transform 0.3s ease;
 }
 
 .imagen-esquina:hover {
-    transform: scale(1.05);
+    transform: scale(1.0);
 }
 
 /* ==========================
@@ -253,6 +253,7 @@ footer {
         padding: 8px 12px;
     }
 }
+
 
 
 
