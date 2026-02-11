@@ -43,7 +43,7 @@ h1, h2 {
     max-width: 90%;
     display: block;
     margin: 0 auto 20px;
-    background-image: url('img/logo.png');
+    background-image: url('img/logo.jpg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -66,7 +66,7 @@ h1, h2 {
 }
 
 .header-imagenes img {
-    width: 150px;
+    width: 100px;
     height: auto;
     transition: transform 0.3s ease;
 }
@@ -240,3 +240,4 @@ footer {
         padding: 8px 12px;
     }
 }
+
