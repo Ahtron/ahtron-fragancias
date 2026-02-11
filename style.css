@@ -38,14 +38,14 @@ h1, h2 {
 
 /* LOGO */
 .logo {
-    width: 720px;               /* tamaño grande en PC */
-    height: auto;               /* mantiene proporción */
-    max-width: 90%;             /* adaptable a pantallas pequeñas */
+    width: 720px;               
+    height: auto;               
+    max-width: 90%;             
     display: block;
     margin: 0 auto 20px;
     filter: drop-shadow(0 6px 15px rgba(0,0,0,0.6));
     opacity: 0.95;
-    background-image: url('logo.png');
+    background-image: url('logo.jpg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -236,3 +236,4 @@ footer {
         padding: 8px 12px;
     }
 }
+
