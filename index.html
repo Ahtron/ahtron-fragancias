@@ -2,25 +2,30 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahtron Fragancias</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- HEADER CON LOGO Y DOS IMÁGENES DEBAJO -->
+<!-- =========================
+     HEADER: LOGO + DOS IMÁGENES
+     ========================= -->
 <div class="header">
     <!-- Logo -->
     <div class="logo"></div>
 
     <!-- Imágenes debajo del logo -->
     <div class="header-imagenes">
-        <img src="NO ES PERFUME.jpg" alt="Imagen 1">
-        <img src="no 5g.jpg" alt="Imagen 2">
+        <img src="img/NO ES PERFUME.jpg" alt="Imagen 1">
+        <img src="img/no 5g.jpg" alt="Imagen 2">
     </div>
 </div>
 
-<!-- FILTROS / CATEGORÍAS -->
+<!-- =========================
+     FILTROS / CATEGORÍAS
+     ========================= -->
 <div class="filtros">
     <button data-marca="todas">Todas</button>
     <button data-marca="Afnan">Afnan</button>
@@ -29,12 +34,46 @@
     <button data-marca="Maison Alhambra">Maison Alhambra</button>
 </div>
 
-<!-- CATÁLOGO DE PERFUMES -->
+<!-- =========================
+     CATÁLOGO DE PERFUMES
+     ========================= -->
 <main class="catalogo" id="catalogo">
-    <!-- Aquí se cargan los productos mediante script.js -->
+    <!-- Producto 1 -->
+    <div class="producto">
+        <img src="img/perfume1.jpg" alt="Perfume 1">
+        <h2>Perfume Elegante</h2>
+        <p>Fragancia fresca y sofisticada</p>
+        <button>Comprar</button>
+    </div>
+
+    <!-- Producto 2 -->
+    <div class="producto">
+        <img src="img/perfume2.jpg" alt="Perfume 2">
+        <h2>Perfume Floral</h2>
+        <p>Notas suaves y románticas</p>
+        <button>Comprar</button>
+    </div>
+
+    <!-- Producto 3 -->
+    <div class="producto">
+        <img src="img/perfume3.jpg" alt="Perfume 3">
+        <h2>Perfume Cítrico</h2>
+        <p>Energizante y refrescante</p>
+        <button>Comprar</button>
+    </div>
+
+    <!-- Producto 4 -->
+    <div class="producto">
+        <img src="img/perfume4.jpg" alt="Perfume 4">
+        <h2>Perfume Amaderado</h2>
+        <p>Intenso y duradero</p>
+        <button>Comprar</button>
+    </div>
 </main>
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+     ========================= -->
 <footer>
     <p>© 2026 Ahtron Fragancias</p>
 </footer>
@@ -42,9 +81,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
