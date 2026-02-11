@@ -37,19 +37,28 @@ h1, h2 {
 }
 
 /* LOGO */
+/* Logo */
 .logo {
-    width: 720px;
-    height: 247px;
-    max-width: 90%;
+    width: 720px;       /* ancho máximo en PC */
+    max-width: 90%;     /* responsivo */
+    height: auto;       /* mantiene proporción original */
     display: block;
     margin: 0 auto 20px;
-    background-image: url('img/logo.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
     filter: drop-shadow(0 6px 15px rgba(0,0,0,0.6));
     opacity: 0.95;
     animation: fadeInLogo 1.2s ease-out;
+}
+
+/* Imagenes debajo del logo */
+.header-imagenes img {
+    width: auto;        /* ancho automático */
+    max-width: 150px;   /* tamaño máximo */
+    height: auto;       /* mantiene proporción */
+    transition: transform 0.3s ease;
+}
+
+.header-imagenes img:hover {
+    transform: scale(1.05);
 }
 
 @keyframes fadeInLogo {
@@ -240,4 +249,5 @@ footer {
         padding: 8px 12px;
     }
 }
+
 
