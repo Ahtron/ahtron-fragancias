@@ -48,13 +48,6 @@ const perfumes = [
         imagen: "img/perfumes/armaf_maleka.jpg",
         link: "https://www.fragrantica.es/perfume/Armaf/Club-De-Nuit-Maleka-106168.html"
     },
-    {
-        nombre: "Odyssey Mandarin Sky EDP 100ml",
-        marca: "Armaf",
-        price: 71000,
-        imagen: "img/perfumes/armaf_odyssey_mandarin_sky.jpg",
-        link: "https://www.fragrantica.es/perfume/Armaf/Odyssey-Mandarin-Sky-83132.html"
-    },
 
     // LATTAFA
     {
@@ -164,5 +157,6 @@ document.querySelectorAll(".filtros button").forEach(btn => {
 });
 
 mostrarPerfumes();
+
 
 
