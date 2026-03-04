@@ -44,6 +44,28 @@ link: "https://www.fragrantica.es/perfume/Afnan/9pm-65414.html"
 },
 
 {
+nombre: "9PM Rebel EDP",
+marca: "Afnan",
+botellaNombre: "100ml",
+price: "SIN STOCK",
+decant5: 9500,
+decant10: 18000,
+imagen: "img/perfumes/afnan_9pm_rebel.jpg",
+link: "https://www.fragrantica.es/perfume/Afnan/9PM-Elixir-111894.html"
+},
+
+{
+nombre: "Mandarine Sky EDP",
+marca: "Armaf",
+botellaNombre: "100ml",
+price: "SIN STOCK",
+decant5: 8500,
+decant10: 16000,
+imagen: "img/perfumes/armaf_mandarine_sky.jpg",
+link: "https://www.fragrantica.es/perfume/Afnan/9PM-Elixir-111894.html"
+},
+  
+{
 nombre: "Club de Nuit Intense Man EDT",
 marca: "Armaf",
 botellaNombre: "105ml",
@@ -173,28 +195,6 @@ decant5: 6500,
 decant10: 12000,
 imagen: "img/perfumes/maison_salvo_intense.jpg",
 link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Salvo-Intense-96001.html"
-},
-
-{
-nombre: "9PM Rebel EDP",
-marca: "Afnan",
-botellaNombre: "100ml",
-price: "SIN STOCK",
-decant5: 9500,
-decant10: 18000,
-imagen: "img/perfumes/afnan_9pm_elixir.jpg",
-link: "https://www.fragrantica.es/perfume/Afnan/9PM-Elixir-111894.html"
-},
-
-{
-nombre: "Mandarine Sky EDP",
-marca: "Armaf",
-botellaNombre: "100ml",
-price: "SIN STOCK",
-decant5: 8500,
-decant10: 16000,
-imagen: "img/perfumes/afnan_9pm_elixir.jpg",
-link: "https://www.fragrantica.es/perfume/Afnan/9PM-Elixir-111894.html"
 }
   
 ];
@@ -297,6 +297,7 @@ mostrarPerfumes(this.dataset.marca);
 });
 
 mostrarPerfumes();
+
 
 
 
