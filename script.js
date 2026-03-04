@@ -30,7 +30,7 @@ const perfumes = [
     {
         nombre: "Club de Nuit Intense Man EDT 105ml",
         marca: "Armaf",
-        price: "Sin Stock",
+        price: "Sin Stock" " Decant de 5ml y 10ml",
         imagen: "img/perfumes/armaf_cdn_intense.jpg",
         link: "https://www.fragrantica.es/perfume/Armaf/Club-de-Nuit-Intense-Man-34696.html"
     },
@@ -157,6 +157,7 @@ document.querySelectorAll(".filtros button").forEach(btn => {
 });
 
 mostrarPerfumes();
+
 
 
 
