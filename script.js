@@ -242,7 +242,16 @@ precio.textContent = formatearPrecio(nuevoPrecio);
 });
 
 card.querySelector(".btn-consultar").onclick = function () {
-consultar(p.nombre);
+
+const activo = card.querySelector(".decant-btn.activo");
+let tipo = "botella";
+
+if(activo){
+tipo = activo.dataset.tipo;
+}
+
+consultar(p.nombre, tipo);
+
 };
 
 catalogo.appendChild(card);
@@ -264,5 +273,6 @@ mostrarPerfumes(this.dataset.marca);
 });
 
 mostrarPerfumes();
+
 
 
