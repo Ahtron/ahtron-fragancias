@@ -1,5 +1,7 @@
 const catalogo = document.getElementById("catalogo");
 
+let tipoSeleccionado = "botella";
+
 function consultar(nombrePerfume, tipo = "botella") {
 
 const telefono = "5492613392404";
@@ -15,7 +17,6 @@ mensaje = "Hola! Quisiera consultar por el decant de 10ml del perfume " + nombre
 }
 
 const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
-
 window.open(url, "_blank");
 
 }
@@ -25,6 +26,7 @@ const perfumes = [
 {
 nombre: "9PM Elixir EDP 100ml",
 marca: "Afnan",
+botellaNombre: "100ml",
 price: 90000,
 decant5: 7000,
 decant10: 12000,
@@ -35,6 +37,7 @@ link: "https://www.fragrantica.es/perfume/Afnan/9PM-Elixir-111894.html"
 {
 nombre: "9PM EDP Masculino 100ml",
 marca: "Afnan",
+botellaNombre: "100ml",
 price: 70000,
 decant5: 6000,
 decant10: 10000,
@@ -45,9 +48,8 @@ link: "https://www.fragrantica.es/perfume/Afnan/9pm-65414.html"
 {
 nombre: "Club de Nuit Intense Man EDT 105ml",
 marca: "Armaf",
+botellaNombre: "105ml",
 price: "Sin Stock",
-decant5: 7000,
-decant10: 12000,
 imagen: "img/perfumes/armaf_cdn_intense.jpg",
 link: "https://www.fragrantica.es/perfume/Armaf/Club-de-Nuit-Intense-Man-34696.html"
 },
@@ -55,6 +57,7 @@ link: "https://www.fragrantica.es/perfume/Armaf/Club-de-Nuit-Intense-Man-34696.h
 {
 nombre: "Club de Nuit Precieux 1 EDP 55ml",
 marca: "Armaf",
+botellaNombre: "55ml",
 price: 105000,
 decant5: 9000,
 decant10: 15000,
@@ -65,6 +68,7 @@ link: "https://www.fragrantica.es/perfume/Armaf/Club-de-Nuit-Precieux-I-93272.ht
 {
 nombre: "Club de Nuit Maleka EDP 105ml",
 marca: "Armaf",
+botellaNombre: "105ml",
 price: 85000,
 decant5: 7000,
 decant10: 12000,
@@ -75,6 +79,7 @@ link: "https://www.fragrantica.es/perfume/Armaf/Club-De-Nuit-Maleka-106168.html"
 {
 nombre: "Art of Universe EDP 100ml",
 marca: "Lattafa",
+botellaNombre: "100ml",
 price: 78000,
 decant5: 6500,
 decant10: 11000,
@@ -85,6 +90,7 @@ link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Art-Of-Universe-10131
 {
 nombre: "Vintage Radio EDP 100ml",
 marca: "Lattafa",
+botellaNombre: "100ml",
 price: 68000,
 decant5: 6000,
 decant10: 10000,
@@ -95,6 +101,7 @@ link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Vintage-Radio-89454.h
 {
 nombre: "Khamrah Qahwa EDP 100ml",
 marca: "Lattafa",
+botellaNombre: "100ml",
 price: 63000,
 decant5: 5500,
 decant10: 9500,
@@ -105,6 +112,7 @@ link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Khamrah-Qahwa-88175.h
 {
 nombre: "Asad EDP 100ml",
 marca: "Lattafa",
+botellaNombre: "100ml",
 price: 67000,
 decant5: 6000,
 decant10: 10000,
@@ -115,6 +123,7 @@ link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Asad-72821.html"
 {
 nombre: "Asad Bourbon EDP 100ml",
 marca: "Lattafa",
+botellaNombre: "100ml",
 price: 74000,
 decant5: 6500,
 decant10: 11000,
@@ -125,6 +134,7 @@ link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Asad-Bourbon-101124.h
 {
 nombre: "Badee Al Oud Honor & Glory EDP 100ml",
 marca: "Lattafa",
+botellaNombre: "100ml",
 price: 62000,
 decant5: 5500,
 decant10: 9500,
@@ -135,6 +145,7 @@ link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Bade-e-Al-Oud-Honor-G
 {
 nombre: "Badee Al Oud For Glory EDP 100ml",
 marca: "Lattafa",
+botellaNombre: "100ml",
 price: 62000,
 decant5: 5500,
 decant10: 9500,
@@ -145,6 +156,7 @@ link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Bade-e-Al-Oud-Oud-for
 {
 nombre: "Jean Lowe Inmortel EDP 100ml",
 marca: "Maison Alhambra",
+botellaNombre: "100ml",
 price: 70000,
 decant5: 6000,
 decant10: 10000,
@@ -155,6 +167,7 @@ link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Jean-Lowe-Immortal-836
 {
 nombre: "Salvo Intense EDP 100ml",
 marca: "Maison Alhambra",
+botellaNombre: "100ml",
 price: 60000,
 decant5: 5000,
 decant10: 9000,
@@ -174,42 +187,55 @@ return valor;
 
 }
 
-function mostrarPerfumes(filtro="todas"){
+function mostrarPerfumes(filtro = "todas"){
 
-catalogo.innerHTML="";
+catalogo.innerHTML = "";
 
-perfumes.forEach(p=>{
+perfumes.forEach(p => {
 
-if(filtro==="todas" || p.marca===filtro){
+if(filtro === "todas" || p.marca === filtro){
 
-const card=document.createElement("div");
-card.className="producto";
+const card = document.createElement("div");
+card.className = "producto";
 
-card.innerHTML=`
+let precioMostrar = p.price;
 
-<img src="${p.imagen}" alt="${p.nombre}">
+if(tipoSeleccionado === "5" && p.decant5){
+precioMostrar = p.decant5;
+}
+
+if(tipoSeleccionado === "10" && p.decant10){
+precioMostrar = p.decant10;
+}
+
+const nombreBotella = p.botellaNombre || "Botella";
+
+card.innerHTML =
+
+`<img src="${p.imagen}" alt="${p.nombre}">
 
 <h2>${p.nombre}</h2>
-
 <p>${p.marca}</p>
 
-<div class="opciones">
+<div class="selector-tamano">
 
-<button onclick="cambiarTipo(this,'botella',${p.price},'${p.nombre}')">Botella</button>
+<button class="decant-btn" data-ml="botella">${nombreBotella}</button>
 
-${p.decant5 ? `<button onclick="cambiarTipo(this,'5',${p.decant5},'${p.nombre}')">5ml</button>` : ""}
+${p.decant5 ? `<button class="decant-btn" data-ml="5">5ml</button>` : ""}
 
-${p.decant10 ? `<button onclick="cambiarTipo(this,'10',${p.decant10},'${p.nombre}')">10ml</button>` : ""}
+${p.decant10 ? `<button class="decant-btn" data-ml="10">10ml</button>` : ""}
 
 </div>
 
-<p class="precio">${formatearPrecio(p.price)}</p>
+<p class="precio">${formatearPrecio(precioMostrar)}</p>
 
-<button class="btn-consultar" onclick="consultar('${p.nombre}','botella')">Consultar</button>
+<button class="btn-consultar">Consultar</button>
 
-<a href="${p.link}" target="_blank" class="btn-ver-mas">Ver más</a>
+<a href="${p.link}" target="_blank" class="btn-ver-mas">Ver más</a>`;
 
-`;
+card.querySelector(".btn-consultar").onclick = function(){
+consultar(p.nombre, tipoSeleccionado);
+};
 
 catalogo.appendChild(card);
 
@@ -219,21 +245,9 @@ catalogo.appendChild(card);
 
 }
 
-function cambiarTipo(btn,tipo,precio,nombre){
+document.querySelectorAll(".filtros button").forEach(btn => {
 
-const card = btn.closest(".producto");
-
-card.querySelector(".precio").innerText = formatearPrecio(precio);
-
-card.querySelector(".btn-consultar").onclick=function(){
-consultar(nombre,tipo);
-}
-
-}
-
-document.querySelectorAll(".filtros button").forEach(btn=>{
-
-btn.addEventListener("click",function(){
+btn.addEventListener("click", function(){
 
 mostrarPerfumes(this.dataset.marca);
 
@@ -241,8 +255,17 @@ mostrarPerfumes(this.dataset.marca);
 
 });
 
-mostrarPerfumes();
+document.addEventListener("click", function(e){
+
+if(e.target.classList.contains("decant-btn")){
+
+tipoSeleccionado = e.target.dataset.ml;
 
 mostrarPerfumes();
 
+}
+
+});
+
+mostrarPerfumes();
 
