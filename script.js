@@ -177,9 +177,9 @@ link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Salvo-Intense-96001.ht
 
 ];
 
-function formatearPrecio(valor){
+function formatearPrecio(valor) {
 
-if(typeof valor === "number"){
+if (typeof valor === "number") {
 return "$" + valor.toLocaleString("es-AR");
 }
 
@@ -187,44 +187,39 @@ return valor;
 
 }
 
-function mostrarPerfumes(filtro = "todas"){
+function mostrarPerfumes(filtro = "todas") {
 
 catalogo.innerHTML = "";
 
 perfumes.forEach(p => {
 
-if(filtro === "todas" || p.marca === filtro){
+if (filtro === "todas" || p.marca === filtro) {
 
 const card = document.createElement("div");
 card.className = "producto";
 
 let precioMostrar = p.price;
 
-if(tipoSeleccionado === "5" && p.decant5){
+if (tipoSeleccionado === "5" && p.decant5) {
 precioMostrar = p.decant5;
 }
 
-if(tipoSeleccionado === "10" && p.decant10){
+if (tipoSeleccionado === "10" && p.decant10) {
 precioMostrar = p.decant10;
 }
 
 const nombreBotella = p.botellaNombre || "Botella";
 
 card.innerHTML =
-
 `<img src="${p.imagen}" alt="${p.nombre}">
 
 <h2>${p.nombre}</h2>
 <p>${p.marca}</p>
 
-<div class="selector-tamano">
-
+<div class="decants">
 <button class="decant-btn" data-ml="botella">${nombreBotella}</button>
-
-${p.decant5 ? `<button class="decant-btn" data-ml="5">5ml</button>` : ""}
-
-${p.decant10 ? `<button class="decant-btn" data-ml="10">10ml</button>` : ""}
-
+<button class="decant-btn" data-ml="5">5ml</button>
+<button class="decant-btn" data-ml="10">10ml</button>
 </div>
 
 <p class="precio">${formatearPrecio(precioMostrar)}</p>
@@ -233,7 +228,7 @@ ${p.decant10 ? `<button class="decant-btn" data-ml="10">10ml</button>` : ""}
 
 <a href="${p.link}" target="_blank" class="btn-ver-mas">Ver más</a>`;
 
-card.querySelector(".btn-consultar").onclick = function(){
+card.querySelector(".btn-consultar").onclick = function () {
 consultar(p.nombre, tipoSeleccionado);
 };
 
@@ -247,7 +242,7 @@ catalogo.appendChild(card);
 
 document.querySelectorAll(".filtros button").forEach(btn => {
 
-btn.addEventListener("click", function(){
+btn.addEventListener("click", function () {
 
 mostrarPerfumes(this.dataset.marca);
 
@@ -260,7 +255,6 @@ document.addEventListener("click", function(e){
 if(e.target.classList.contains("decant-btn")){
 
 tipoSeleccionado = e.target.dataset.ml;
-
 mostrarPerfumes();
 
 }
@@ -268,4 +262,3 @@ mostrarPerfumes();
 });
 
 mostrarPerfumes();
-
