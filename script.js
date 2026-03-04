@@ -47,7 +47,7 @@ link: "https://www.fragrantica.es/perfume/Afnan/9pm-65414.html"
 nombre: "Club de Nuit Intense Man EDT",
 marca: "Armaf",
 botellaNombre: "105ml",
-price: "Sin Stock",
+price: 00,
 decant5: 8500,
 decant10: 16000,
 imagen: "img/perfumes/armaf_cdn_intense.jpg",
@@ -70,7 +70,7 @@ nombre: "Club de Nuit Maleka EDP",
 marca: "Armaf",
 botellaNombre: "105ml",
 price: 85000,
-decant5: 9000",
+decant5: 9000,
 decant10: 17000,
 imagen: "img/perfumes/armaf_maleka.jpg",
 link: "https://www.fragrantica.es/perfume/Armaf/Club-De-Nuit-Maleka-106168.html"
@@ -275,6 +275,7 @@ mostrarPerfumes(this.dataset.marca);
 });
 
 mostrarPerfumes();
+
 
 
 
