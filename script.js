@@ -1,25 +1,22 @@
 const catalogo = document.getElementById("catalogo");
 
-let tipoSeleccionado = "botella";
-
 function consultar(nombrePerfume, tipo = "botella") {
 
-```
 const telefono = "5492613392404";
 
 let mensaje = "Hola! Quisiera consultar por el perfume " + nombrePerfume;
 
 if (tipo === "5") {
-    mensaje = "Hola! Quisiera consultar por el decant de 5ml del perfume " + nombrePerfume;
+mensaje = "Hola! Quisiera consultar por el decant de 5ml del perfume " + nombrePerfume;
 }
 
 if (tipo === "10") {
-    mensaje = "Hola! Quisiera consultar por el decant de 10ml del perfume " + nombrePerfume;
+mensaje = "Hola! Quisiera consultar por el decant de 10ml del perfume " + nombrePerfume;
 }
 
 const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
+
 window.open(url, "_blank");
-```
 
 }
 
@@ -165,9 +162,9 @@ link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Salvo-Intense-96001.ht
 
 ];
 
-function formatearPrecio(valor) {
+function formatearPrecio(valor){
 
-if (typeof valor === "number") {
+if(typeof valor === "number"){
 return "$" + valor.toLocaleString("es-AR");
 }
 
@@ -175,39 +172,42 @@ return valor;
 
 }
 
-function mostrarPerfumes(filtro = "todas") {
+function mostrarPerfumes(filtro="todas"){
 
-catalogo.innerHTML = "";
+catalogo.innerHTML="";
 
-perfumes.forEach(p => {
+perfumes.forEach(p=>{
 
-if (filtro === "todas" || p.marca === filtro) {
+if(filtro==="todas" || p.marca===filtro){
 
-const card = document.createElement("div");
-card.className = "producto";
+const card=document.createElement("div");
+card.className="producto";
 
-let precioMostrar = p.price;
+card.innerHTML=`
 
-if (tipoSeleccionado === "5" && p.decant5) {
-precioMostrar = p.decant5;
-}
-
-if (tipoSeleccionado === "10" && p.decant10) {
-precioMostrar = p.decant10;
-}
-
-card.innerHTML =
-`<img src="${p.imagen}" alt="${p.nombre}">
+<img src="${p.imagen}" alt="${p.nombre}">
 
 <h2>${p.nombre}</h2>
+
 <p>${p.marca}</p>
-<p class="precio">${formatearPrecio(precioMostrar)}</p>
 
-<button class="btn-consultar">Consultar</button> <a href="${p.link}" target="_blank" class="btn-ver-mas">Ver más</a>`;
+<div class="opciones">
 
-card.querySelector(".btn-consultar").onclick = function () {
-consultar(p.nombre, tipoSeleccionado);
-};
+<button onclick="cambiarTipo(this,'botella',${p.price},'${p.nombre}')">Botella</button>
+
+${p.decant5 ? `<button onclick="cambiarTipo(this,'5',${p.decant5},'${p.nombre}')">5ml</button>` : ""}
+
+${p.decant10 ? `<button onclick="cambiarTipo(this,'10',${p.decant10},'${p.nombre}')">10ml</button>` : ""}
+
+</div>
+
+<p class="precio">${formatearPrecio(p.price)}</p>
+
+<button class="btn-consultar" onclick="consultar('${p.nombre}','botella')">Consultar</button>
+
+<a href="${p.link}" target="_blank" class="btn-ver-mas">Ver más</a>
+
+`;
 
 catalogo.appendChild(card);
 
@@ -217,9 +217,21 @@ catalogo.appendChild(card);
 
 }
 
-document.querySelectorAll(".filtros button").forEach(btn => {
+function cambiarTipo(btn,tipo,precio,nombre){
 
-btn.addEventListener("click", function () {
+const card = btn.closest(".producto");
+
+card.querySelector(".precio").innerText = formatearPrecio(precio);
+
+card.querySelector(".btn-consultar").onclick=function(){
+consultar(nombre,tipo);
+}
+
+}
+
+document.querySelectorAll(".filtros button").forEach(btn=>{
+
+btn.addEventListener("click",function(){
 
 mostrarPerfumes(this.dataset.marca);
 
@@ -227,15 +239,7 @@ mostrarPerfumes(this.dataset.marca);
 
 });
 
-document.querySelectorAll(".decant-btn").forEach(btn => {
-
-btn.addEventListener("click", function () {
-
-tipoSeleccionado = this.dataset.ml;
 mostrarPerfumes();
 
-});
-
-});
-
 mostrarPerfumes();
+
