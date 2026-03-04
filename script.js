@@ -262,3 +262,5 @@ mostrarPerfumes();
 });
 
 mostrarPerfumes();
+mostrarPerfumes();
+
