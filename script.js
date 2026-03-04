@@ -205,7 +205,7 @@ card.innerHTML =
 <p>${p.marca}</p>
 
 <div class="decants">
-<button class="decant-btn" data-tipo="botella">${nombreBotella}</button>
+<button class="decant-btn activo" data-tipo="botella">${nombreBotella}</button>
 <button class="decant-btn" data-tipo="5">5ml</button>
 <button class="decant-btn" data-tipo="10">10ml</button>
 </div>
@@ -239,6 +239,8 @@ precio.textContent = formatearPrecio(nuevoPrecio);
 
 });
 
+});
+
 card.querySelector(".btn-consultar").onclick = function () {
 consultar(p.nombre);
 };
@@ -262,4 +264,5 @@ mostrarPerfumes(this.dataset.marca);
 });
 
 mostrarPerfumes();
+
 
