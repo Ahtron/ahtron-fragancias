@@ -51,7 +51,7 @@ price: "SIN STOCK",
 decant5: 9500,
 decant10: 18000,
 imagen: "img/perfumes/afnan_9pm_rebel.jpg",
-link: "https://www.fragrantica.es/perfume/Afnan/9PM-Elixir-111894.html"
+link: "https://www.fragrantica.es/perfume/Afnan/9-PM-Rebel-99238.html"
 },
 
 {
@@ -61,8 +61,8 @@ botellaNombre: "100ml",
 price: "SIN STOCK",
 decant5: 8500,
 decant10: 16000,
-imagen: "img/perfumes/armaf_mandarine_sky.jpg",
-link: "https://www.fragrantica.es/perfume/Afnan/9PM-Elixir-111894.html"
+imagen: "img/perfumes/armaf_odyssey_mandarin_sky.jpg",
+link: "https://www.fragrantica.es/perfume/Armaf/Odyssey-Mandarin-Sky-83132.html"
 },
   
 {
@@ -297,6 +297,7 @@ mostrarPerfumes(this.dataset.marca);
 });
 
 mostrarPerfumes();
+
 
 
 
