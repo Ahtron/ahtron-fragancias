@@ -1,45 +1,196 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ahtron Fragancias</title>
+<title>Catálogo de Perfumes</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+body{
+font-family: Arial;
+background:#111;
+color:white;
+margin:0;
+padding:20px;
+}
+
+h1{
+text-align:center;
+}
+
+.filtros{
+text-align:center;
+margin-bottom:20px;
+}
+
+.filtros button{
+padding:10px 15px;
+margin:5px;
+border:none;
+border-radius:6px;
+background:#222;
+color:white;
+cursor:pointer;
+}
+
+.catalogo{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.producto{
+background:#1b1b1b;
+padding:15px;
+border-radius:10px;
+text-align:center;
+}
+
+.producto img{
+width:100%;
+height:200px;
+object-fit:contain;
+}
+
+.precio{
+font-size:20px;
+margin:10px 0;
+color:#00ff9d;
+}
+
+.opciones{
+display:flex;
+justify-content:center;
+gap:5px;
+margin-bottom:10px;
+}
+
+.opciones button{
+padding:6px 10px;
+border:none;
+border-radius:5px;
+background:#333;
+color:white;
+cursor:pointer;
+font-size:13px;
+}
+
+.btn-consultar{
+background:#25D366;
+border:none;
+padding:10px;
+width:100%;
+border-radius:6px;
+margin-top:5px;
+cursor:pointer;
+}
+
+.btn-ver-mas{
+display:block;
+margin-top:8px;
+text-decoration:none;
+color:#00c3ff;
+font-size:14px;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-<img class="logo" src="img/logo.jpg" alt="Logo Ahtron">
-<img class="imagen-principal" src="img/NO ES PERFUME.jpg" alt="Imagen principal">
-<img class="imagen-esquina" src="img/no 5g.jpg" alt="Imagen 5G">
-</div>
+<h1>Catálogo de Perfumes</h1>
 
-<!-- FILTROS -->
 <div class="filtros">
-<button data-marca="todas">Todas</button>
+<button data-marca="todas">Todos</button>
 <button data-marca="Afnan">Afnan</button>
 <button data-marca="Armaf">Armaf</button>
 <button data-marca="Lattafa">Lattafa</button>
 <button data-marca="Maison Alhambra">Maison Alhambra</button>
 </div>
 
-<!-- CATÁLOGO -->
-<main class="catalogo" id="catalogo">
-</main>
-
-<!-- FOOTER -->
-<footer>
-<p>© 2026 Ahtron Fragancias</p>
-</footer>
+<div id="catalogo" class="catalogo"></div>
 
 <script src="script.js"></script>
 
+<script>
+
+function crearOpciones(p){
+
+let html = `<div class="opciones">`;
+
+html += `<button onclick="cambiarTipo(this,'botella',${p.price},'${p.nombre}')">Botella</button>`;
+
+if(p.decant5){
+html += `<button onclick="cambiarTipo(this,'5',${p.decant5},'${p.nombre}')">5ml</button>`;
+}
+
+if(p.decant10){
+html += `<button onclick="cambiarTipo(this,'10',${p.decant10},'${p.nombre}')">10ml</button>`;
+}
+
+html += `</div>`;
+
+return html;
+
+}
+
+function cambiarTipo(btn,tipo,precio,nombre){
+
+const card = btn.closest(".producto");
+
+card.querySelector(".precio").innerText = "$" + precio.toLocaleString("es-AR");
+
+card.querySelector(".btn-consultar").onclick = function(){
+consultar(nombre,tipo);
+}
+
+}
+
+const originalMostrar = mostrarPerfumes;
+
+mostrarPerfumes = function(filtro="todas"){
+
+catalogo.innerHTML="";
+
+perfumes.forEach(p=>{
+
+if(filtro==="todas" || p.marca===filtro){
+
+const card=document.createElement("div");
+card.className="producto";
+
+card.innerHTML=`
+
+<img src="${p.imagen}" alt="${p.nombre}">
+
+<h2>${p.nombre}</h2>
+
+<p>${p.marca}</p>
+
+${crearOpciones(p)}
+
+<p class="precio">${formatearPrecio(p.price)}</p>
+
+<button class="btn-consultar" onclick="consultar('${p.nombre}','botella')">Consultar</button>
+
+<a href="${p.link}" target="_blank" class="btn-ver-mas">Ver más</a>
+
+`;
+
+catalogo.appendChild(card);
+
+}
+
+});
+
+}
+
+mostrarPerfumes();
+
+</script>
+
 </body>
 </html>
-
-
