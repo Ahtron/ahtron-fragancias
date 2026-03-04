@@ -176,10 +176,10 @@ link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Salvo-Intense-96001.ht
 },
 
 {
-nombre: "9PM Elixir EDP",
+nombre: "9PM Rebel EDP",
 marca: "Afnan",
 botellaNombre: "100ml",
-price: 90000,
+price: "SIN STOCK",
 decant5: 9500,
 decant10: 18000,
 imagen: "img/perfumes/afnan_9pm_elixir.jpg",
@@ -187,12 +187,12 @@ link: "https://www.fragrantica.es/perfume/Afnan/9PM-Elixir-111894.html"
 },
 
 {
-nombre: "9PM Elixir EDP",
-marca: "Afnan",
+nombre: "Mandarine Sky EDP",
+marca: "Armaf",
 botellaNombre: "100ml",
-price: 90000,
-decant5: 9500,
-decant10: 18000,
+price: "SIN STOCK",
+decant5: 8500,
+decant10: 16000,
 imagen: "img/perfumes/afnan_9pm_elixir.jpg",
 link: "https://www.fragrantica.es/perfume/Afnan/9PM-Elixir-111894.html"
 }
@@ -297,6 +297,7 @@ mostrarPerfumes(this.dataset.marca);
 });
 
 mostrarPerfumes();
+
 
 
 
