@@ -222,6 +222,12 @@ card.querySelectorAll(".decant-btn").forEach(btn => {
 
 btn.addEventListener("click", () => {
 
+card.querySelectorAll(".decant-btn").forEach(b=>{
+b.classList.remove("activo");
+});
+
+btn.classList.add("activo");
+
 const tipo = btn.dataset.tipo;
 
 let nuevoPrecio = p.price;
@@ -230,8 +236,6 @@ if (tipo === "5" && p.decant5) nuevoPrecio = p.decant5;
 if (tipo === "10" && p.decant10) nuevoPrecio = p.decant10;
 
 precio.textContent = formatearPrecio(nuevoPrecio);
-
-});
 
 });
 
@@ -258,3 +262,4 @@ mostrarPerfumes(this.dataset.marca);
 });
 
 mostrarPerfumes();
+
