@@ -22,7 +22,7 @@ window.open(url, "_blank");
 const perfumes = [
 
 {
-nombre: "9PM Elixir EDP 100ml",
+nombre: "9PM Elixir EDP",
 marca: "Afnan",
 botellaNombre: "100ml",
 price: 90000,
@@ -33,7 +33,7 @@ link: "https://www.fragrantica.es/perfume/Afnan/9PM-Elixir-111894.html"
 },
 
 {
-nombre: "9PM EDP Masculino 100ml",
+nombre: "9PM EDP Masculino",
 marca: "Afnan",
 botellaNombre: "100ml",
 price: 70000,
@@ -44,7 +44,7 @@ link: "https://www.fragrantica.es/perfume/Afnan/9pm-65414.html"
 },
 
 {
-nombre: "Club de Nuit Intense Man EDT 105ml",
+nombre: "Club de Nuit Intense Man EDT",
 marca: "Armaf",
 botellaNombre: "105ml",
 price: "Sin Stock",
@@ -53,7 +53,7 @@ link: "https://www.fragrantica.es/perfume/Armaf/Club-de-Nuit-Intense-Man-34696.h
 },
 
 {
-nombre: "Club de Nuit Precieux 1 EDP 55ml",
+nombre: "Club de Nuit Precieux 1 EDP",
 marca: "Armaf",
 botellaNombre: "55ml",
 price: 105000,
@@ -64,7 +64,7 @@ link: "https://www.fragrantica.es/perfume/Armaf/Club-de-Nuit-Precieux-I-93272.ht
 },
 
 {
-nombre: "Club de Nuit Maleka EDP 105ml",
+nombre: "Club de Nuit Maleka EDP",
 marca: "Armaf",
 botellaNombre: "105ml",
 price: 85000,
@@ -75,7 +75,7 @@ link: "https://www.fragrantica.es/perfume/Armaf/Club-De-Nuit-Maleka-106168.html"
 },
 
 {
-nombre: "Art of Universe EDP 100ml",
+nombre: "Art of Universe EDP",
 marca: "Lattafa",
 botellaNombre: "100ml",
 price: 78000,
@@ -86,7 +86,7 @@ link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Art-Of-Universe-10131
 },
 
 {
-nombre: "Vintage Radio EDP 100ml",
+nombre: "Vintage Radio EDP",
 marca: "Lattafa",
 botellaNombre: "100ml",
 price: 68000,
@@ -97,7 +97,7 @@ link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Vintage-Radio-89454.h
 },
 
 {
-nombre: "Khamrah Qahwa EDP 100ml",
+nombre: "Khamrah Qahwa EDP",
 marca: "Lattafa",
 botellaNombre: "100ml",
 price: 63000,
@@ -108,7 +108,7 @@ link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Khamrah-Qahwa-88175.h
 },
 
 {
-nombre: "Asad EDP 100ml",
+nombre: "Asad EDP",
 marca: "Lattafa",
 botellaNombre: "100ml",
 price: 67000,
@@ -119,7 +119,7 @@ link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Asad-72821.html"
 },
 
 {
-nombre: "Asad Bourbon EDP 100ml",
+nombre: "Asad Bourbon EDP",
 marca: "Lattafa",
 botellaNombre: "100ml",
 price: 74000,
@@ -130,7 +130,7 @@ link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Asad-Bourbon-101124.h
 },
 
 {
-nombre: "Badee Al Oud Honor & Glory EDP 100ml",
+nombre: "Badee Al Oud Honor & Glory EDP",
 marca: "Lattafa",
 botellaNombre: "100ml",
 price: 62000,
@@ -141,7 +141,7 @@ link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Bade-e-Al-Oud-Honor-G
 },
 
 {
-nombre: "Badee Al Oud For Glory EDP 100ml",
+nombre: "Badee Al Oud For Glory EDP",
 marca: "Lattafa",
 botellaNombre: "100ml",
 price: 62000,
@@ -152,7 +152,7 @@ link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Bade-e-Al-Oud-Oud-for
 },
 
 {
-nombre: "Jean Lowe Inmortel EDP 100ml",
+nombre: "Jean Lowe Inmortel EDP",
 marca: "Maison Alhambra",
 botellaNombre: "100ml",
 price: 70000,
@@ -163,7 +163,7 @@ link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Jean-Lowe-Immortal-836
 },
 
 {
-nombre: "Salvo Intense EDP 100ml",
+nombre: "Salvo Intense EDP",
 marca: "Maison Alhambra",
 botellaNombre: "100ml",
 price: 60000,
@@ -273,6 +273,7 @@ mostrarPerfumes(this.dataset.marca);
 });
 
 mostrarPerfumes();
+
 
 
 
