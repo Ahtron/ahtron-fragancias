@@ -55,7 +55,7 @@ link: "https://www.fragrantica.es/perfume/Afnan/9-PM-Rebel-99238.html"
 },
 
 {
-nombre: "Mandarine Sky EDP",
+nombre: "Mandarin Sky EDP",
 marca: "Armaf",
 botellaNombre: "100ml",
 price: "SIN STOCK",
@@ -296,6 +296,7 @@ mostrarPerfumes(this.dataset.marca);
 });
 
 mostrarPerfumes();
+
 
 
 
