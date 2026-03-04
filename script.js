@@ -1,7 +1,5 @@
 const catalogo = document.getElementById("catalogo");
 
-let tipoSeleccionado = "botella";
-
 function consultar(nombrePerfume, tipo = "botella") {
 
 const telefono = "5492613392404";
@@ -198,16 +196,6 @@ if (filtro === "todas" || p.marca === filtro) {
 const card = document.createElement("div");
 card.className = "producto";
 
-let precioMostrar = p.price;
-
-if (tipoSeleccionado === "5" && p.decant5) {
-precioMostrar = p.decant5;
-}
-
-if (tipoSeleccionado === "10" && p.decant10) {
-precioMostrar = p.decant10;
-}
-
 const nombreBotella = p.botellaNombre || "Botella";
 
 card.innerHTML =
@@ -217,19 +205,38 @@ card.innerHTML =
 <p>${p.marca}</p>
 
 <div class="decants">
-<button class="decant-btn" data-ml="botella">${nombreBotella}</button>
-<button class="decant-btn" data-ml="5">5ml</button>
-<button class="decant-btn" data-ml="10">10ml</button>
+<button class="decant-btn" data-tipo="botella">${nombreBotella}</button>
+<button class="decant-btn" data-tipo="5">5ml</button>
+<button class="decant-btn" data-tipo="10">10ml</button>
 </div>
 
-<p class="precio">${formatearPrecio(precioMostrar)}</p>
+<p class="precio">${formatearPrecio(p.price)}</p>
 
 <button class="btn-consultar">Consultar</button>
 
 <a href="${p.link}" target="_blank" class="btn-ver-mas">Ver más</a>`;
 
+const precio = card.querySelector(".precio");
+
+card.querySelectorAll(".decant-btn").forEach(btn => {
+
+btn.addEventListener("click", () => {
+
+const tipo = btn.dataset.tipo;
+
+let nuevoPrecio = p.price;
+
+if (tipo === "5" && p.decant5) nuevoPrecio = p.decant5;
+if (tipo === "10" && p.decant10) nuevoPrecio = p.decant10;
+
+precio.textContent = formatearPrecio(nuevoPrecio);
+
+});
+
+});
+
 card.querySelector(".btn-consultar").onclick = function () {
-consultar(p.nombre, tipoSeleccionado);
+consultar(p.nombre);
 };
 
 catalogo.appendChild(card);
@@ -250,17 +257,4 @@ mostrarPerfumes(this.dataset.marca);
 
 });
 
-document.addEventListener("click", function(e){
-
-if(e.target.classList.contains("decant-btn")){
-
-tipoSeleccionado = e.target.dataset.ml;
 mostrarPerfumes();
-
-}
-
-});
-
-mostrarPerfumes();
-mostrarPerfumes();
-
