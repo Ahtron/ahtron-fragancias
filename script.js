@@ -173,8 +173,30 @@ decant5: 6500,
 decant10: 12000,
 imagen: "img/perfumes/maison_salvo_intense.jpg",
 link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Salvo-Intense-96001.html"
-}
+},
 
+{
+nombre: "9PM Elixir EDP",
+marca: "Afnan",
+botellaNombre: "100ml",
+price: 90000,
+decant5: 9500,
+decant10: 18000,
+imagen: "img/perfumes/afnan_9pm_elixir.jpg",
+link: "https://www.fragrantica.es/perfume/Afnan/9PM-Elixir-111894.html"
+},
+
+{
+nombre: "9PM Elixir EDP",
+marca: "Afnan",
+botellaNombre: "100ml",
+price: 90000,
+decant5: 9500,
+decant10: 18000,
+imagen: "img/perfumes/afnan_9pm_elixir.jpg",
+link: "https://www.fragrantica.es/perfume/Afnan/9PM-Elixir-111894.html"
+}
+  
 ];
 
 function formatearPrecio(valor) {
@@ -275,6 +297,7 @@ mostrarPerfumes(this.dataset.marca);
 });
 
 mostrarPerfumes();
+
 
 
 
