@@ -119,7 +119,6 @@ h1, h2 {
     text-align: center;
     border: 1px solid rgba(255,255,255,0.06);
     transition: all 0.4s ease;
-    position: relative;
 }
 
 .producto:hover {
@@ -195,6 +194,39 @@ h1, h2 {
     color: #000;
 }
 
+/* DECANTS */
+
+.decants{
+    display:flex;
+    justify-content:center;
+    gap:6px;
+    flex-wrap:wrap;
+    margin:10px 0;
+}
+
+.decant-btn{
+    padding:4px 10px;
+    font-size:12px;
+    border-radius:6px;
+    border:1px solid #444;
+    background:#111;
+    color:#eee;
+    cursor:pointer;
+    transition:all 0.2s ease;
+}
+
+.decant-btn:hover{
+    background:#222;
+}
+
+.decant-btn.activo{
+    background:#222;
+    color:white;
+    border:1px solid #666;
+}
+
+/* FOOTER */
+
 footer {
     text-align: center;
     padding: 40px 20px;
@@ -203,6 +235,8 @@ footer {
     font-size: 14px;
     border-top: 1px solid rgba(255,255,255,0.05);
 }
+
+/* RESPONSIVE */
 
 @media (max-width: 768px) {
     .catalogo {
@@ -224,79 +258,3 @@ footer {
         bottom: 10px;
     }
 }
-.decant-opciones{
-    text-align:center;
-    margin:40px 0;
-}
-
-.decant-btn{
-    padding:10px 20px;
-    margin:10px;
-    border:none;
-    background:black;
-    color:white;
-    font-family:Poppins;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-.decant-btn:hover{
-    background:#444;
-}
-.decants{
-display:flex;
-gap:4px;
-margin:6px 0;
-}
-
-.decant-btn{
-padding:4px 8px;
-font-size:12px;
-border-radius:6px;
-border:1px solid #ccc;
-background:white;
-cursor:pointer;
-}
-
-.decant-btn.activo{
-background:#1f7a3a;
-color:white;
-border:1px solid #1f7a3a;
-}
-.decants{
-display:flex;
-justify-content:center;
-gap:5px;
-flex-wrap:wrap;
-margin:8px 0;
-}
-
-.decant-btn{
-padding:4px 8px;
-font-size:12px;
-border-radius:6px;
-border:1px solid #ccc;
-background:white;
-cursor:pointer;
-}
-
-.decant-btn.activo{
-background:#111;
-color:white;
-border-color:#111;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
