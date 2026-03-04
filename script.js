@@ -7,6 +7,14 @@ function consultar(nombrePerfume) {
     window.open(url, "_blank");
 }
 
+// NUEVAS FUNCIONES PARA DECANTS
+function consultarDecant(nombrePerfume, ml) {
+    const telefono = "5492613392404";
+    const mensaje = "Hola! Quisiera consultar por el decant de " + ml + "ml del perfume " + nombrePerfume;
+    const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
+    window.open(url, "_blank");
+}
+
 const perfumes = [
 
     // AFNAN
@@ -119,7 +127,11 @@ const perfumes = [
 ];
 
 function formatearPrecio(valor) {
-    return "$" + valor.toLocaleString("es-AR");
+    if (typeof valor === "number") {
+        return "$" + valor.toLocaleString("es-AR");
+    } else {
+        return valor;
+    }
 }
 
 function mostrarPerfumes(filtro = "todas") {
@@ -138,11 +150,25 @@ function mostrarPerfumes(filtro = "todas") {
                  <h2>${p.nombre}</h2>
                  <p>${p.marca}</p>
                  <p class="precio">${formatearPrecio(p.price)}</p>
+
+                 <div class="decants">
+                    <button class="btn-decant5">Decant 5ml</button>
+                    <button class="btn-decant10">Decant 10ml</button>
+                 </div>
+
                  <button class="btn-consultar">Consultar</button>
                  <a href="${p.link}" target="_blank" class="btn-ver-mas">Ver más</a>`;
 
             card.querySelector(".btn-consultar").onclick = function () {
                 consultar(p.nombre);
+            };
+
+            card.querySelector(".btn-decant5").onclick = function () {
+                consultarDecant(p.nombre, 5);
+            };
+
+            card.querySelector(".btn-decant10").onclick = function () {
+                consultarDecant(p.nombre, 10);
             };
 
             catalogo.appendChild(card);
@@ -158,12 +184,3 @@ document.querySelectorAll(".filtros button").forEach(btn => {
 });
 
 mostrarPerfumes();
-
-
-
-
-
-
-
-
-
