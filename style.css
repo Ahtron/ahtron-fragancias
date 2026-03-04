@@ -224,6 +224,26 @@ footer {
         bottom: 10px;
     }
 }
+.decant-opciones{
+    text-align:center;
+    margin:40px 0;
+}
+
+.decant-btn{
+    padding:10px 20px;
+    margin:10px;
+    border:none;
+    background:black;
+    color:white;
+    font-family:Poppins;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.decant-btn:hover{
+    background:#444;
+}
+
 
 
 
