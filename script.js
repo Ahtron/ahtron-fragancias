@@ -46,6 +46,8 @@ link: "https://www.fragrantica.es/perfume/Afnan/9pm-65414.html"
 nombre: "Club de Nuit Intense Man EDT 105ml",
 marca: "Armaf",
 price: "Sin Stock",
+decant5: 7000,
+decant10: 12000,
 imagen: "img/perfumes/armaf_cdn_intense.jpg",
 link: "https://www.fragrantica.es/perfume/Armaf/Club-de-Nuit-Intense-Man-34696.html"
 },
@@ -242,4 +244,5 @@ mostrarPerfumes(this.dataset.marca);
 mostrarPerfumes();
 
 mostrarPerfumes();
+
 
