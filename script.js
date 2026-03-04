@@ -146,9 +146,9 @@ link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Bade-e-Al-Oud-Honor-G
 nombre: "Badee Al Oud For Glory EDP",
 marca: "Lattafa",
 botellaNombre: "100ml",
-price: 55000,
-decant5: 6500,
-decant10: 12000,
+price: 55000 "OFERTA",
+decant5: 5500,
+decant10: 10000,
 imagen: "img/perfumes/lattafa_for_glory.jpg",
 link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Bade-e-Al-Oud-Oud-for-Glory-64948.html"
 },
@@ -275,6 +275,7 @@ mostrarPerfumes(this.dataset.marca);
 });
 
 mostrarPerfumes();
+
 
 
 
