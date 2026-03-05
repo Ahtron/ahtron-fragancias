@@ -1,8 +1,8 @@
 const catalogo = document.getElementById("catalogo");
 
 function consultar(nombrePerfume, tipo = "botella") {
-    const telefono = "5492613392404";
-    let mensaje = "Hola! Quisiera consultar por el perfume " + nombrePerfume;
+    var telefono = "5492613392404";
+    var mensaje = "Hola! Quisiera consultar por el perfume " + nombrePerfume;
 
     if (tipo === "5") {
         mensaje = "Hola! Quisiera consultar por el decant de 5ml del perfume " + nombrePerfume;
@@ -10,8 +10,8 @@ function consultar(nombrePerfume, tipo = "botella") {
         mensaje = "Hola! Quisiera consultar por el decant de 10ml del perfume " + nombrePerfume;
     }
 
-    // URL CORREGIDA: Se usa el formato universal de WhatsApp
-    const url = `https://wa.me{telefono}?text=${encodeURIComponent(mensaje)}`;
+    // Formato ultra-compatible:
+    var url = "https://wa.me" + telefono + "?text=" + encodeURIComponent(mensaje);
     window.open(url, "_blank");
 }
 
@@ -42,40 +42,40 @@ function formatearPrecio(valor) {
 function mostrarPerfumes(filtro = "todas") {
     catalogo.innerHTML = "";
 
-    perfumes.forEach(p => {
+    perfumes.forEach(function(p) {
         if (filtro === "todas" || p.marca === filtro) {
-            const card = document.createElement("div");
+            var card = document.createElement("div");
             card.className = "producto";
-            const nombreBotella = p.botellaNombre || "Botella";
+            var nombreBotella = p.botellaNombre || "Botella";
 
-            card.innerHTML = `
-                <div class="contenedor-img" style="height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                    <img src="${p.imagen}" alt="${p.nombre}" class="img-perfume" style="max-height: 100%; transition: transform 0.4s ease;">
-                </div>
-                <h2>${p.nombre}</h2>
-                <p>${p.marca}</p>
-                <div class="decants">
-                    <button class="decant-btn activo" data-tipo="botella">${nombreBotella}</button>
-                    <button class="decant-btn" data-tipo="5">5ml</button>
-                    <button class="decant-btn" data-tipo="10">10ml</button>
-                </div>
-                <p class="info-puffs" style="font-size: 0.85rem; color: #888; margin: 10px 0;">Botella Original</p>
-                <p class="precio">${formatearPrecio(p.price)}</p>
-                <button class="btn-consultar-ws">Consultar</button>
-                <a href="${p.link}" target="_blank" class="btn-ver-mas">Ver más</a>`;
+            card.innerHTML = 
+                '<div class="contenedor-img" style="height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden;">' +
+                    '<img src="' + p.imagen + '" alt="' + p.nombre + '" class="img-perfume" style="max-height: 100%; transition: transform 0.4s ease;">' +
+                '</div>' +
+                '<h2>' + p.nombre + '</h2>' +
+                '<p>' + p.marca + '</p>' +
+                '<div class="decants">' +
+                    '<button class="decant-btn activo" data-tipo="botella">' + nombreBotella + '</button>' +
+                    '<button class="decant-btn" data-tipo="5">5ml</button>' +
+                    '<button class="decant-btn" data-tipo="10">10ml</button>' +
+                '</div>' +
+                '<p class="info-puffs" style="font-size: 0.85rem; color: #888; margin: 10px 0;">Botella Original</p>' +
+                '<p class="precio">' + formatearPrecio(p.price) + '</p>' +
+                '<button class="btn-consultar-ws">Consultar</button>' +
+                '<a href="' + p.link + '" target="_blank" class="btn-ver-mas">Ver más</a>';
 
-            const img = card.querySelector(".img-perfume");
-            const precioLabel = card.querySelector(".precio");
-            const infoPuffs = card.querySelector(".info-puffs");
-            const btnWS = card.querySelector(".btn-consultar-ws");
+            var img = card.querySelector(".img-perfume");
+            var precioLabel = card.querySelector(".precio");
+            var infoPuffs = card.querySelector(".info-puffs");
+            var btnWS = card.querySelector(".btn-consultar-ws");
 
-            card.querySelectorAll(".decant-btn").forEach(btn => {
-                btn.onclick = () => {
-                    card.querySelectorAll(".decant-btn").forEach(b => b.classList.remove("activo"));
+            card.querySelectorAll(".decant-btn").forEach(function(btn) {
+                btn.onclick = function() {
+                    card.querySelectorAll(".decant-btn").forEach(function(b) { b.classList.remove("activo"); });
                     btn.classList.add("activo");
 
-                    const tipo = btn.dataset.tipo;
-                    let nuevoPrecio = p.price;
+                    var tipo = btn.getAttribute("data-tipo");
+                    var nuevoPrecio = p.price;
 
                     if (tipo === "botella") {
                         img.style.transform = "scale(1)";
@@ -94,9 +94,9 @@ function mostrarPerfumes(filtro = "todas") {
                 };
             });
 
-            btnWS.onclick = () => {
-                const activo = card.querySelector(".decant-btn.activo");
-                const tipoEnvio = activo ? activo.dataset.tipo : "botella";
+            btnWS.onclick = function() {
+                var activo = card.querySelector(".decant-btn.activo");
+                var tipoEnvio = activo ? activo.getAttribute("data-tipo") : "botella";
                 consultar(p.nombre, tipoEnvio);
             };
 
@@ -105,9 +105,9 @@ function mostrarPerfumes(filtro = "todas") {
     });
 }
 
-document.querySelectorAll(".filtros button").forEach(btn => {
+document.querySelectorAll(".filtros button").forEach(function(btn) {
     btn.onclick = function () {
-        mostrarPerfumes(this.dataset.marca);
+        mostrarPerfumes(this.getAttribute("data-marca"));
     };
 });
 
