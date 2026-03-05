@@ -1,21 +1,15 @@
-const catalogo = document.getElementById("catalogo");
+var catalogo = document.getElementById("catalogo");
 
-function consultar(nombrePerfume, tipo = "botella") {
-    var telefono = "5492613392404";
-    var mensaje = "Hola! Quisiera consultar por el perfume " + nombrePerfume;
-
-    if (tipo === "5") {
-        mensaje = "Hola! Quisiera consultar por el decant de 5ml del perfume " + nombrePerfume;
-    } else if (tipo === "10") {
-        mensaje = "Hola! Quisiera consultar por el decant de 10ml del perfume " + nombrePerfume;
-    }
-
-    // Formato ultra-compatible:
-    var url = "https://wa.me" + telefono + "?text=" + encodeURIComponent(mensaje);
-    window.open(url, "_blank");
+function consultar(nombre, ml) {
+    var num = "5492613392404";
+    var txt = "Hola! Quisiera consultar por el perfume " + nombre;
+    if (ml === "5") { txt = "Hola! Quisiera consultar por el decant de 5ml de " + nombre; }
+    if (ml === "10") { txt = "Hola! Quisiera consultar por el decant de 10ml de " + nombre; }
+    
+    window.open("https://wa.me" + num + "?text=" + encodeURIComponent(txt), "_blank");
 }
 
-const perfumes = [
+var perfumes = [
     { nombre: "9PM Elixir EDP", marca: "Afnan", botellaNombre: "100ml", price: 90000, decant5: 9500, decant10: 18000, imagen: "img/perfumes/afnan_9pm_elixir.jpg", link: "https://www.fragrantica.es" },
     { nombre: "9PM EDP Masculino", marca: "Afnan", botellaNombre: "100ml", price: 70000, decant5: 7500, decant10: 15000, imagen: "img/perfumes/afnan_9pm.jpg", link: "https://www.fragrantica.es" },
     { nombre: "9PM Rebel EDP", marca: "Afnan", botellaNombre: "100ml", price: "SIN STOCK", decant5: 9500, decant10: 18000, imagen: "img/perfumes/afnan_9pm_rebel.jpg", link: "https://www.fragrantica.es" },
@@ -34,82 +28,76 @@ const perfumes = [
     { nombre: "Salvo Intense EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: 60000, decant5: 6500, decant10: 12000, imagen: "img/perfumes/maison_salvo_intense.jpg", link: "https://www.fragrantica.es" }
 ];
 
-function formatearPrecio(valor) {
-    if (typeof valor === "number") return "$" + valor.toLocaleString("es-AR");
-    return valor;
+function formatearPrecio(v) {
+    if (typeof v === "number") { return "$" + v.toLocaleString("es-AR"); }
+    return v;
 }
 
-function mostrarPerfumes(filtro = "todas") {
+function mostrarPerfumes(f) {
+    if (!f) { f = "todas"; }
     catalogo.innerHTML = "";
 
     perfumes.forEach(function(p) {
-        if (filtro === "todas" || p.marca === filtro) {
-            var card = document.createElement("div");
-            card.className = "producto";
-            var nombreBotella = p.botellaNombre || "Botella";
+        if (f === "todas" || p.marca === f) {
+            var c = document.createElement("div");
+            c.className = "producto";
+            var btnLabel = p.botellaNombre || "Botella";
 
-            card.innerHTML = 
-                '<div class="contenedor-img" style="height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden;">' +
-                    '<img src="' + p.imagen + '" alt="' + p.nombre + '" class="img-perfume" style="max-height: 100%; transition: transform 0.4s ease;">' +
+            c.innerHTML = 
+                '<div style="height:200px;display:flex;align-items:center;justify-content:center;overflow:hidden;">' +
+                    '<img src="' + p.imagen + '" alt="' + p.nombre + '" class="img-perfume" style="max-height:100%;transition:transform 0.4s ease;">' +
                 '</div>' +
                 '<h2>' + p.nombre + '</h2>' +
                 '<p>' + p.marca + '</p>' +
                 '<div class="decants">' +
-                    '<button class="decant-btn activo" data-tipo="botella">' + nombreBotella + '</button>' +
+                    '<button class="decant-btn activo" data-tipo="botella">' + btnLabel + '</button>' +
                     '<button class="decant-btn" data-tipo="5">5ml</button>' +
                     '<button class="decant-btn" data-tipo="10">10ml</button>' +
                 '</div>' +
-                '<p class="info-puffs" style="font-size: 0.85rem; color: #888; margin: 10px 0;">Botella Original</p>' +
+                '<p class="puffs" style="font-size:0.85rem;color:#888;margin:10px 0;">Botella Original</p>' +
                 '<p class="precio">' + formatearPrecio(p.price) + '</p>' +
-                '<button class="btn-consultar-ws">Consultar</button>' +
+                '<button class="btn-ws">Consultar</button>' +
                 '<a href="' + p.link + '" target="_blank" class="btn-ver-mas">Ver más</a>';
 
-            var img = card.querySelector(".img-perfume");
-            var precioLabel = card.querySelector(".precio");
-            var infoPuffs = card.querySelector(".info-puffs");
-            var btnWS = card.querySelector(".btn-consultar-ws");
+            var img = c.querySelector(".img-perfume");
+            var pTxt = c.querySelector(".precio");
+            var iTxt = c.querySelector(".puffs");
+            var bWS = c.querySelector(".btn-ws");
 
-            card.querySelectorAll(".decant-btn").forEach(function(btn) {
+            c.querySelectorAll(".decant-btn").forEach(function(btn) {
                 btn.onclick = function() {
-                    card.querySelectorAll(".decant-btn").forEach(function(b) { b.classList.remove("activo"); });
+                    c.querySelectorAll(".decant-btn").forEach(function(b) { b.classList.remove("activo"); });
                     btn.classList.add("activo");
-
-                    var tipo = btn.getAttribute("data-tipo");
-                    var nuevoPrecio = p.price;
-
-                    if (tipo === "botella") {
+                    var t = btn.getAttribute("data-tipo");
+                    if (t === "botella") {
                         img.style.transform = "scale(1)";
-                        infoPuffs.textContent = "Botella Original";
-                        nuevoPrecio = p.price;
-                    } else if (tipo === "5") {
+                        iTxt.innerHTML = "Botella Original";
+                        pTxt.innerHTML = formatearPrecio(p.price);
+                    } else if (t === "5") {
                         img.style.transform = "scale(0.55)";
-                        infoPuffs.textContent = "~75 atomizaciones";
-                        nuevoPrecio = p.decant5;
-                    } else if (tipo === "10") {
+                        iTxt.innerHTML = "~75 atomizaciones";
+                        pTxt.innerHTML = formatearPrecio(p.decant5);
+                    } else if (t === "10") {
                         img.style.transform = "scale(0.75)";
-                        infoPuffs.textContent = "~150 atomizaciones";
-                        nuevoPrecio = p.decant10;
+                        iTxt.innerHTML = "~150 atomizaciones";
+                        pTxt.innerHTML = formatearPrecio(p.decant10);
                     }
-                    precioLabel.textContent = formatearPrecio(nuevoPrecio);
                 };
             });
 
-            btnWS.onclick = function() {
-                var activo = card.querySelector(".decant-btn.activo");
-                var tipoEnvio = activo ? activo.getAttribute("data-tipo") : "botella";
-                consultar(p.nombre, tipoEnvio);
+            bWS.onclick = function() {
+                var act = c.querySelector(".decant-btn.activo");
+                consultar(p.nombre, act.getAttribute("data-tipo"));
             };
 
-            catalogo.appendChild(card);
+            catalogo.appendChild(c);
         }
     });
 }
 
-document.querySelectorAll(".filtros button").forEach(function(btn) {
-    btn.onclick = function () {
-        mostrarPerfumes(this.getAttribute("data-marca"));
-    };
+document.querySelectorAll(".filtros button").forEach(function(b) {
+    b.onclick = function() { mostrarPerfumes(this.getAttribute("data-marca")); };
 });
 
-mostrarPerfumes();
+mostrarPerfumes("todas");
 
