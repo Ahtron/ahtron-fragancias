@@ -1,22 +1,18 @@
 const catalogo = document.getElementById("catalogo");
 
 function consultar(nombrePerfume, tipo = "botella") {
+    const telefono = "5492613392404";
+    let mensaje = "Hola! Quisiera consultar por el perfume " + nombrePerfume;
 
-const telefono = "5492613392404";
+    if (tipo === "5") {
+        mensaje = "Hola! Quisiera consultar por el decant de 5ml del perfume " + nombrePerfume;
+    }
+    if (tipo === "10") {
+        mensaje = "Hola! Quisiera consultar por el decant de 10ml del perfume " + nombrePerfume;
+    }
 
-let mensaje = "Hola! Quisiera consultar por el perfume " + nombrePerfume;
-
-if (tipo === "5") {
-mensaje = "Hola! Quisiera consultar por el decant de 5ml del perfume " + nombrePerfume;
-}
-
-if (tipo === "10") {
-mensaje = "Hola! Quisiera consultar por el decant de 10ml del perfume " + nombrePerfume;
-}
-
-const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
-window.open(url, "_blank");
-
+    const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
+    window.open(url, "_blank");
 }
 
 const perfumes = [
@@ -52,6 +48,9 @@ function mostrarPerfumes(filtro = "todas") {
             card.className = "producto";
             var nombreBotella = p.botellaNombre || "Botella";
 
+            // AGREGADO: Clase 'sin-stock' si el precio es SIN STOCK
+            var claseStock = (p.price === "SIN STOCK") ? "decant-btn activo sin-stock" : "decant-btn activo";
+
             card.innerHTML = 
                 '<div class="contenedor-img" style="height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden;">' +
                     '<img src="' + p.imagen + '" alt="' + p.nombre + '" class="img-perfume" style="max-height: 100%; transition: transform 0.4s ease;">' +
@@ -59,7 +58,7 @@ function mostrarPerfumes(filtro = "todas") {
                 '<h2>' + p.nombre + '</h2>' +
                 '<p>' + p.marca + '</p>' +
                 '<div class="decants">' +
-                    '<button class="decant-btn activo" data-tipo="botella">' + nombreBotella + '</button>' +
+                    '<button class="' + claseStock + '" data-tipo="botella">' + nombreBotella + '</button>' +
                     '<button class="decant-btn" data-tipo="5">5ml</button>' +
                     '<button class="decant-btn" data-tipo="10">10ml</button>' +
                 '</div>' +
@@ -116,6 +115,3 @@ document.querySelectorAll(".filtros button").forEach(function(btn) {
 });
 
 mostrarPerfumes();
-
-
-
