@@ -1,5 +1,6 @@
 const catalogo = document.getElementById("catalogo");
 
+// FUNCIÓN DE WHATSAPP CORREGIDA
 function consultar(nombrePerfume, tipo = "botella") {
     const telefono = "5492613392404";
     let mensaje = "Hola! Quisiera consultar por el perfume " + nombrePerfume;
@@ -10,8 +11,8 @@ function consultar(nombrePerfume, tipo = "botella") {
         mensaje = "Hola! Quisiera consultar por el decant de 10ml del perfume " + nombrePerfume;
     }
 
-    // CORRECCIÓN AQUÍ: Se agregó la "/" después de wa.me
-    const url = "https://wa.me" + telefono + "?text=" + encodeURIComponent(mensaje);
+    // Usamos api.whatsapp.com que es más compatible que wa.me en algunos casos
+    const url = "https://api.whatsapp.com" + telefono + "&text=" + encodeURIComponent(mensaje);
     window.open(url, "_blank");
 }
 
@@ -67,10 +68,8 @@ function mostrarPerfumes(filtro = "todas") {
             const img = card.querySelector(".img-perfume");
             const precioLabel = card.querySelector(".precio");
             const infoPuffs = card.querySelector(".info-puffs");
-            const btnConsultar = card.querySelector(".btn-consultar-ws");
-            const linkVerMas = card.querySelector(".btn-ver-mas");
 
-            // Selector de tamaños
+            // Lógica de botones de tamaño
             card.querySelectorAll(".decant-btn").forEach(btn => {
                 btn.onclick = () => {
                     card.querySelectorAll(".decant-btn").forEach(b => b.classList.remove("activo"));
@@ -96,13 +95,13 @@ function mostrarPerfumes(filtro = "todas") {
                 };
             });
 
-            // Acción Consultar WhatsApp
-            btnConsultar.onclick = (e) => {
-                e.preventDefault();
+            // Acción Consultar WhatsApp - USANDO EVENT LISTENER PARA MÁXIMA SEGURIDAD
+            const btnWS = card.querySelector(".btn-consultar-ws");
+            btnWS.addEventListener("click", function() {
                 const activo = card.querySelector(".decant-btn.activo");
                 const tipoEnvio = activo ? activo.dataset.tipo : "botella";
                 consultar(p.nombre, tipoEnvio);
-            };
+            });
 
             catalogo.appendChild(card);
         }
