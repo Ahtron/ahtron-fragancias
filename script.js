@@ -6,8 +6,7 @@ function consultar(nombrePerfume, tipo = "botella") {
 
     if (tipo === "5") {
         mensaje = "Hola! Quisiera consultar por el decant de 5ml del perfume " + nombrePerfume;
-    }
-    if (tipo === "10") {
+    } else if (tipo === "10") {
         mensaje = "Hola! Quisiera consultar por el decant de 10ml del perfume " + nombrePerfume;
     }
 
@@ -67,7 +66,7 @@ function mostrarPerfumes(filtro = "todas") {
                 <a href="${p.link}" target="_blank" class="btn-ver-mas">Ver más</a>`;
 
             const img = card.querySelector(".img-perfume");
-            const precio = card.querySelector(".precio");
+            const precioLabel = card.querySelector(".precio");
             const infoPuffs = card.querySelector(".info-puffs");
 
             card.querySelectorAll(".decant-btn").forEach(btn => {
@@ -91,14 +90,16 @@ function mostrarPerfumes(filtro = "todas") {
                         infoPuffs.textContent = "~150 atomizaciones";
                         nuevoPrecio = p.decant10;
                     }
-                    precio.textContent = formatearPrecio(nuevoPrecio);
+                    precioLabel.textContent = formatearPrecio(nuevoPrecio);
                 });
             });
 
-            card.querySelector(".btn-consultar").onclick = function () {
+            // CORRECCIÓN: Evento de click para consultar
+            card.querySelector(".btn-consultar").addEventListener("click", function() {
                 const activo = card.querySelector(".decant-btn.activo");
-                consultar(p.nombre, activo ? activo.dataset.tipo : "botella");
-            };
+                const tipoEnvio = activo ? activo.dataset.tipo : "botella";
+                consultar(p.nombre, tipoEnvio);
+            });
 
             catalogo.appendChild(card);
         }
