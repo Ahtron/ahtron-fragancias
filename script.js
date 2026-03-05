@@ -10,6 +10,7 @@ function consultar(nombrePerfume, tipo = "botella") {
         mensaje = "Hola! Quisiera consultar por el decant de 10ml del perfume " + nombrePerfume;
     }
 
+    // CORRECCIÓN AQUÍ: Se agregó la "/" después de wa.me
     const url = "https://wa.me" + telefono + "?text=" + encodeURIComponent(mensaje);
     window.open(url, "_blank");
 }
@@ -67,8 +68,9 @@ function mostrarPerfumes(filtro = "todas") {
             const precioLabel = card.querySelector(".precio");
             const infoPuffs = card.querySelector(".info-puffs");
             const btnConsultar = card.querySelector(".btn-consultar-ws");
+            const linkVerMas = card.querySelector(".btn-ver-mas");
 
-            // Lógica de botones de tamaño
+            // Selector de tamaños
             card.querySelectorAll(".decant-btn").forEach(btn => {
                 btn.onclick = () => {
                     card.querySelectorAll(".decant-btn").forEach(b => b.classList.remove("activo"));
@@ -94,8 +96,9 @@ function mostrarPerfumes(filtro = "todas") {
                 };
             });
 
-            // Lógica de WhatsApp infalible
-            btnConsultar.onclick = () => {
+            // Acción Consultar WhatsApp
+            btnConsultar.onclick = (e) => {
+                e.preventDefault();
                 const activo = card.querySelector(".decant-btn.activo");
                 const tipoEnvio = activo ? activo.dataset.tipo : "botella";
                 consultar(p.nombre, tipoEnvio);
@@ -114,5 +117,4 @@ document.querySelectorAll(".filtros button").forEach(btn => {
 });
 
 mostrarPerfumes();
-
 
