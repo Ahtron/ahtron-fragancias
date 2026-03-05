@@ -1,6 +1,5 @@
 const catalogo = document.getElementById("catalogo");
 
-// FUNCIÓN DE WHATSAPP CORREGIDA
 function consultar(nombrePerfume, tipo = "botella") {
     const telefono = "5492613392404";
     let mensaje = "Hola! Quisiera consultar por el perfume " + nombrePerfume;
@@ -11,8 +10,8 @@ function consultar(nombrePerfume, tipo = "botella") {
         mensaje = "Hola! Quisiera consultar por el decant de 10ml del perfume " + nombrePerfume;
     }
 
-    // Usamos api.whatsapp.com que es más compatible que wa.me en algunos casos
-    const url = "https://api.whatsapp.com" + telefono + "&text=" + encodeURIComponent(mensaje);
+    // URL CORREGIDA: Se usa el formato universal de WhatsApp
+    const url = `https://wa.me{telefono}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, "_blank");
 }
 
@@ -50,7 +49,7 @@ function mostrarPerfumes(filtro = "todas") {
             const nombreBotella = p.botellaNombre || "Botella";
 
             card.innerHTML = `
-                <div class="contenedor-img" style="height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative;">
+                <div class="contenedor-img" style="height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
                     <img src="${p.imagen}" alt="${p.nombre}" class="img-perfume" style="max-height: 100%; transition: transform 0.4s ease;">
                 </div>
                 <h2>${p.nombre}</h2>
@@ -68,8 +67,8 @@ function mostrarPerfumes(filtro = "todas") {
             const img = card.querySelector(".img-perfume");
             const precioLabel = card.querySelector(".precio");
             const infoPuffs = card.querySelector(".info-puffs");
+            const btnWS = card.querySelector(".btn-consultar-ws");
 
-            // Lógica de botones de tamaño
             card.querySelectorAll(".decant-btn").forEach(btn => {
                 btn.onclick = () => {
                     card.querySelectorAll(".decant-btn").forEach(b => b.classList.remove("activo"));
@@ -95,20 +94,17 @@ function mostrarPerfumes(filtro = "todas") {
                 };
             });
 
-            // Acción Consultar WhatsApp - USANDO EVENT LISTENER PARA MÁXIMA SEGURIDAD
-            const btnWS = card.querySelector(".btn-consultar-ws");
-            btnWS.addEventListener("click", function() {
+            btnWS.onclick = () => {
                 const activo = card.querySelector(".decant-btn.activo");
                 const tipoEnvio = activo ? activo.dataset.tipo : "botella";
                 consultar(p.nombre, tipoEnvio);
-            });
+            };
 
             catalogo.appendChild(card);
         }
     });
 }
 
-// Filtros
 document.querySelectorAll(".filtros button").forEach(btn => {
     btn.onclick = function () {
         mostrarPerfumes(this.dataset.marca);
