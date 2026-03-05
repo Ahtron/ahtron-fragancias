@@ -34,9 +34,7 @@ const perfumes = [
 ];
 
 function formatearPrecio(valor) {
-    if (typeof valor === "number") {
-        return "$" + valor.toLocaleString("es-AR");
-    }
+    if (typeof valor === "number") return "$" + valor.toLocaleString("es-AR");
     return valor;
 }
 
@@ -50,7 +48,7 @@ function mostrarPerfumes(filtro = "todas") {
             const nombreBotella = p.botellaNombre || "Botella";
 
             card.innerHTML = `
-                <div class="contenedor-img" style="height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <div class="contenedor-img" style="height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative;">
                     <img src="${p.imagen}" alt="${p.nombre}" class="img-perfume" style="max-height: 100%; transition: transform 0.4s ease;">
                 </div>
                 <h2>${p.nombre}</h2>
@@ -60,17 +58,19 @@ function mostrarPerfumes(filtro = "todas") {
                     <button class="decant-btn" data-tipo="5">5ml</button>
                     <button class="decant-btn" data-tipo="10">10ml</button>
                 </div>
-                <p class="info-puffs" style="font-size: 0.85rem; color: #888; margin: 5px 0;">Botella Original</p>
+                <p class="info-puffs" style="font-size: 0.85rem; color: #888; margin: 10px 0;">Botella Original</p>
                 <p class="precio">${formatearPrecio(p.price)}</p>
-                <button class="btn-consultar">Consultar</button>
+                <button class="btn-consultar-ws">Consultar</button>
                 <a href="${p.link}" target="_blank" class="btn-ver-mas">Ver más</a>`;
 
             const img = card.querySelector(".img-perfume");
             const precioLabel = card.querySelector(".precio");
             const infoPuffs = card.querySelector(".info-puffs");
+            const btnConsultar = card.querySelector(".btn-consultar-ws");
 
+            // Lógica de botones de tamaño
             card.querySelectorAll(".decant-btn").forEach(btn => {
-                btn.addEventListener("click", () => {
+                btn.onclick = () => {
                     card.querySelectorAll(".decant-btn").forEach(b => b.classList.remove("activo"));
                     btn.classList.add("activo");
 
@@ -91,26 +91,28 @@ function mostrarPerfumes(filtro = "todas") {
                         nuevoPrecio = p.decant10;
                     }
                     precioLabel.textContent = formatearPrecio(nuevoPrecio);
-                });
+                };
             });
 
-            // CORRECCIÓN: Evento de click para consultar
-            card.querySelector(".btn-consultar").addEventListener("click", function() {
+            // Lógica de WhatsApp infalible
+            btnConsultar.onclick = () => {
                 const activo = card.querySelector(".decant-btn.activo");
                 const tipoEnvio = activo ? activo.dataset.tipo : "botella";
                 consultar(p.nombre, tipoEnvio);
-            });
+            };
 
             catalogo.appendChild(card);
         }
     });
 }
 
+// Filtros
 document.querySelectorAll(".filtros button").forEach(btn => {
-    btn.addEventListener("click", function () {
+    btn.onclick = function () {
         mostrarPerfumes(this.dataset.marca);
-    });
+    };
 });
 
 mostrarPerfumes();
+
 
