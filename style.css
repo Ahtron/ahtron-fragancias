@@ -281,3 +281,8 @@ footer {
 
 }
 
+.decant-btn.sin-stock {
+    background-color: #ff4d4d !important;
+    color: white !important;
+    border-color: #cc0000 !important;
+}
