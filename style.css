@@ -286,3 +286,30 @@ footer {
     color: white !important;
     border-color: #cc0000 !important;
 }
+.banner-promo {
+    background: linear-gradient(90deg, #c5a059, #8e6d2e); /* Dorado lujoso */
+    color: #000;
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    width: 100%;
+    position: sticky; /* Se queda arriba al hacer scroll */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.banner-promo p {
+    margin: 0;
+    animation: brillo 3s infinite;
+}
+
+@keyframes brillo {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
