@@ -48,10 +48,9 @@ function mostrarPerfumes(filtro = "todas") {
             card.className = "producto";
             var nombreBotella = p.botellaNombre || "Botella";
 
-            // AGREGADO: Clase 'sin-stock' si el precio es SIN STOCK
             var claseStock = (p.price === "SIN STOCK") ? "decant-btn activo sin-stock" : "decant-btn activo";
 
-            card.innerHTML = 
+            card.innerHTML =
                 '<div class="contenedor-img" style="height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden;">' +
                     '<img src="' + p.imagen + '" alt="' + p.nombre + '" class="img-perfume" style="max-height: 100%; transition: transform 0.4s ease;">' +
                 '</div>' +
@@ -59,8 +58,8 @@ function mostrarPerfumes(filtro = "todas") {
                 '<p>' + p.marca + '</p>' +
                 '<div class="decants">' +
                     '<button class="' + claseStock + '" data-tipo="botella">' + nombreBotella + '</button>' +
-                    '<button class="decant-btn" data-tipo="5">5ml</button>' +
-                    '<button class="decant-btn" data-tipo="10">10ml</button>' +
+                    '<button class="decant-btn ' + (p.decant5 === "SIN STOCK" ? 'sin-stock' : '') + '" data-tipo="5">5ml</button>' +
+                    '<button class="decant-btn ' + (p.decant10 === "SIN STOCK" ? 'sin-stock' : '') + '" data-tipo="10">10ml</button>' +
                 '</div>' +
                 '<p class="info-puffs" style="font-size: 0.85rem; color: #888; margin: 10px 0;">Botella Original</p>' +
                 '<p class="precio">' + formatearPrecio(p.price) + '</p>' +
@@ -93,6 +92,7 @@ function mostrarPerfumes(filtro = "todas") {
                         infoPuffs.textContent = "~150 atomizaciones";
                         nuevoPrecio = p.decant10;
                     }
+
                     precioLabel.textContent = formatearPrecio(nuevoPrecio);
                 };
             });
@@ -115,4 +115,3 @@ document.querySelectorAll(".filtros button").forEach(function(btn) {
 });
 
 mostrarPerfumes();
-
