@@ -77,3 +77,16 @@ function mostrarPerfumes(filtro = "todas") {
 }
 
 mostrarPerfumes();
+document.addEventListener("click", function(e){
+
+    if(e.target.classList.contains("decant-btn")){
+
+        const card = e.target.closest(".producto");
+        const nombre = card.querySelector("h2").innerText;
+        const tipo = e.target.dataset.tipo;
+
+        consultar(nombre, tipo);
+
+    }
+
+});
