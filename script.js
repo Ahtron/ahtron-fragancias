@@ -34,13 +34,7 @@ const perfumes = [
     { nombre: "Vintage Radio EDP", marca: "Lattafa", botellaNombre: "100ml", price: 68000, decant5: 7500, decant10: 15000, imagen: "img/perfumes/lattafa_vintage_radio.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Vintage-Radio-89454.html" },
     { nombre: "Khamrah Qahwa EDP", marca: "Lattafa", botellaNombre: "100ml", price: 63000, decant5: 7500, decant10: 15000, imagen: "img/perfumes/lattafa_khamrah_qahwa.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Khamrah-Qahwa-88175.html" },
     { nombre: "Asad EDP", marca: "Lattafa", botellaNombre: "100ml", price: 67000, decant5: 7500, decant10: 15000, imagen: "img/perfumes/lattafa_asad.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Asad-72821.html" },
-    { nombre: "Asad Bourbon EDP", marca: "Lattafa", botellaNombre: "100ml", price: 74000, decant5: 8000, decant10: 15500, imagen: "img/perfumes/lattafa_asad_bourbon.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Asad-Bourbon-101124.html" },
-    { nombre: "Badee Al Oud Honor & Glory EDP", marca: "Lattafa", botellaNombre: "100ml", price: "62000", decant5: "7500", decant10: "15000", imagen: "img/perfumes/lattafa_honor_glory.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Bade-e-Al-Oud-Honor-Glory-84302.html" },
-    { nombre: "Badee Al Oud For Glory EDP", marca: "Lattafa", botellaNombre: "100ml", price: 55000, decant5: 5500, decant10: 10000, imagen: "img/perfumes/lattafa_for_glory.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Bade-e-Al-Oud-Oud-for-Glory-64948.html" },
-    { nombre: "L'Intrude EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: "55000", decant5: "6500", decant10: "13000", imagen: "img/perfumes/intrude.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/L-Intrude-93651.html" },
-    { nombre: "Delilah EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: "65000", decant5: "7500", decant10: "15000", imagen: "img/perfumes/delilah.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Delilah-90273.html" },
-    { nombre: "Jean Lowe Inmortel EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: "SIN STOCK", decant5: "SIN STOCK", decant10: "SIN STOCK", imagen: "img/perfumes/maison_jean_lowe_inmortel.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Jean-Lowe-Immortal-83666.html" },
-    { nombre: "Salvo Intense EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: 60000, decant5: 6500, decant10: 12000, imagen: "img/perfumes/maison_salvo_intense.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Salvo-Intense-96001.html" }
+    { nombre: "Asad Bourbon EDP", marca: "Lattafa", botellaNombre: "100ml", price: 74000, decant5: 8000, decant10: 15500, imagen: "img/perfumes/lattafa_asad_bourbon.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Asad-Bourbon-101124.html" }
 ];
 
 function formatearPrecio(valor) {
@@ -59,7 +53,6 @@ function mostrarPerfumes(filtro = "todas") {
             var nombreBotella = p.botellaNombre || "Botella";
 
             var claseStock = (p.price === "SIN STOCK") ? "decant-btn activo sin-stock" : "decant-btn activo";
-
             var textoInfo = (p.price === "SIN STOCK") ? "SOLO DECANTS" : "Botella Original";
 
             card.innerHTML =
@@ -74,7 +67,7 @@ function mostrarPerfumes(filtro = "todas") {
                 '<button class="decant-btn ' + (p.decant10 === "SIN STOCK" ? 'sin-stock' : '') + '" data-tipo="10">10ml</button>' +
                 '</div>' +
                 '<p class="info-puffs" style="font-size:0.85rem;color:#888;margin:10px 0;">' + textoInfo + '</p>' +
-                '<p class="precio">' + formatearPrecio(p.price) + '</p>' +
+                '<p class="precio">' + (p.price === "SIN STOCK" ? "" : formatearPrecio(p.price)) + '</p>' +
                 '<button class="btn-consultar-ws">Consultar</button>' +
                 '<a href="' + p.link + '" target="_blank" class="btn-ver-mas">Ver más</a>';
 
