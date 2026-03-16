@@ -34,7 +34,13 @@ const perfumes = [
     { nombre: "Vintage Radio EDP", marca: "Lattafa", botellaNombre: "100ml", price: 68000, decant5: 7500, decant10: 15000, imagen: "img/perfumes/lattafa_vintage_radio.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Vintage-Radio-89454.html" },
     { nombre: "Khamrah Qahwa EDP", marca: "Lattafa", botellaNombre: "100ml", price: 63000, decant5: 7500, decant10: 15000, imagen: "img/perfumes/lattafa_khamrah_qahwa.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Khamrah-Qahwa-88175.html" },
     { nombre: "Asad EDP", marca: "Lattafa", botellaNombre: "100ml", price: 67000, decant5: 7500, decant10: 15000, imagen: "img/perfumes/lattafa_asad.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Asad-72821.html" },
-    { nombre: "Asad Bourbon EDP", marca: "Lattafa", botellaNombre: "100ml", price: 74000, decant5: 8000, decant10: 15500, imagen: "img/perfumes/lattafa_asad_bourbon.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Asad-Bourbon-101124.html" }
+    { nombre: "Asad Bourbon EDP", marca: "Lattafa", botellaNombre: "100ml", price: 74000, decant5: 8000, decant10: 15500, imagen: "img/perfumes/lattafa_asad_bourbon.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Asad-Bourbon-101124.html" },
+    { nombre: "Badee Al Oud Honor & Glory EDP", marca: "Lattafa", botellaNombre: "100ml", price: "62000", decant5: "7500", decant10: "15000", imagen: "img/perfumes/lattafa_honor_glory.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Bade-e-Al-Oud-Honor-Glory-84302.html" },
+    { nombre: "Badee Al Oud For Glory EDP", marca: "Lattafa", botellaNombre: "100ml", price: 55000, decant5: 5500, decant10: 10000, imagen: "img/perfumes/lattafa_for_glory.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Bade-e-Al-Oud-Oud-for-Glory-64948.html" },
+    { nombre: "L'Intrude EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: "55000", decant5: "6500", decant10: "13000", imagen: "img/perfumes/intrude.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/L-Intrude-93651.html" },
+    { nombre: "Delilah EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: "65000", decant5: "7500", decant10: "15000", imagen: "img/perfumes/delilah.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Delilah-90273.html" },
+    { nombre: "Jean Lowe Inmortel EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: "SIN STOCK", decant5: "SIN STOCK", decant10: "SIN STOCK", imagen: "img/perfumes/maison_jean_lowe_inmortel.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Jean-Lowe-Immortal-83666.html" },
+    { nombre: "Salvo Intense EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: 60000, decant5: 6500, decant10: 12000, imagen: "img/perfumes/maison_salvo_intense.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Salvo-Intense-96001.html" }
 ];
 
 function formatearPrecio(valor) {
@@ -47,46 +53,74 @@ function mostrarPerfumes(filtro = "todas") {
 
     perfumes.forEach(function(p) {
         if (filtro === "todas" || p.marca === filtro) {
-
             var card = document.createElement("div");
             card.className = "producto";
             var nombreBotella = p.botellaNombre || "Botella";
 
             var claseStock = (p.price === "SIN STOCK") ? "decant-btn activo sin-stock" : "decant-btn activo";
-            var textoInfo = (p.price === "SIN STOCK") ? "SOLO DECANTS" : "Botella Original";
 
             card.innerHTML =
-                '<div class="contenedor-img" style="height:200px;display:flex;align-items:center;justify-content:center;overflow:hidden;">' +
-                '<img src="' + p.imagen + '" alt="' + p.nombre + '" class="img-perfume" style="max-height:100%;transition:transform 0.4s ease;">' +
+                '<div class="contenedor-img" style="height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden;">' +
+                    '<img src="' + p.imagen + '" alt="' + p.nombre + '" class="img-perfume" style="max-height: 100%; transition: transform 0.4s ease;">' +
                 '</div>' +
                 '<h2>' + p.nombre + '</h2>' +
                 '<p>' + p.marca + '</p>' +
                 '<div class="decants">' +
-                '<button class="' + claseStock + '" data-tipo="botella">' + nombreBotella + '</button>' +
-                '<button class="decant-btn ' + (p.decant5 === "SIN STOCK" ? 'sin-stock' : '') + '" data-tipo="5">5ml</button>' +
-                '<button class="decant-btn ' + (p.decant10 === "SIN STOCK" ? 'sin-stock' : '') + '" data-tipo="10">10ml</button>' +
+                    '<button class="' + claseStock + '" data-tipo="botella">' + nombreBotella + '</button>' +
+                    '<button class="decant-btn ' + (p.decant5 === "SIN STOCK" ? 'sin-stock' : '') + '" data-tipo="5">5ml</button>' +
+                    '<button class="decant-btn ' + (p.decant10 === "SIN STOCK" ? 'sin-stock' : '') + '" data-tipo="10">10ml</button>' +
                 '</div>' +
-                '<p class="info-puffs" style="font-size:0.85rem;color:#888;margin:10px 0;">' + textoInfo + '</p>' +
-                '<p class="precio">' + (p.price === "SIN STOCK" ? "" : formatearPrecio(p.price)) + '</p>' +
+                '<p class="info-puffs" style="font-size: 0.85rem; color: #888; margin: 10px 0;">Botella Original</p>' +
+                '<p class="precio">' + formatearPrecio(p.price) + '</p>' +
                 '<button class="btn-consultar-ws">Consultar</button>' +
                 '<a href="' + p.link + '" target="_blank" class="btn-ver-mas">Ver más</a>';
+
+            var img = card.querySelector(".img-perfume");
+            var precioLabel = card.querySelector(".precio");
+            var infoPuffs = card.querySelector(".info-puffs");
+            var btnWS = card.querySelector(".btn-consultar-ws");
+
+            card.querySelectorAll(".decant-btn").forEach(function(btn) {
+                btn.onclick = function() {
+                    card.querySelectorAll(".decant-btn").forEach(function(b) { b.classList.remove("activo"); });
+                    btn.classList.add("activo");
+
+                    var tipo = btn.getAttribute("data-tipo");
+                    var nuevoPrecio = p.price;
+
+                    if (tipo === "botella") {
+                        img.style.transform = "scale(1)";
+                        infoPuffs.textContent = "Botella Original";
+                        nuevoPrecio = p.price;
+                    } else if (tipo === "5") {
+                        img.style.transform = "scale(0.55)";
+                        infoPuffs.textContent = "~75 atomizaciones";
+                        nuevoPrecio = p.decant5;
+                    } else if (tipo === "10") {
+                        img.style.transform = "scale(0.75)";
+                        infoPuffs.textContent = "~150 atomizaciones";
+                        nuevoPrecio = p.decant10;
+                    }
+
+                    precioLabel.textContent = formatearPrecio(nuevoPrecio);
+                };
+            });
+
+            btnWS.onclick = function() {
+                var activo = card.querySelector(".decant-btn.activo");
+                var tipoEnvio = activo ? activo.getAttribute("data-tipo") : "botella";
+                consultar(p.nombre, tipoEnvio);
+            };
 
             catalogo.appendChild(card);
         }
     });
 }
 
-mostrarPerfumes();
-document.addEventListener("click", function(e){
-
-    if(e.target.classList.contains("decant-btn")){
-
-        const card = e.target.closest(".producto");
-        const nombre = card.querySelector("h2").innerText;
-        const tipo = e.target.dataset.tipo;
-
-        consultar(nombre, tipo);
-
-    }
-
+document.querySelectorAll(".filtros button").forEach(function(btn) {
+    btn.onclick = function () {
+        mostrarPerfumes(this.getAttribute("data-marca"));
+    };
 });
+
+mostrarPerfumes();
