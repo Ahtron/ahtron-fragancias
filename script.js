@@ -53,26 +53,29 @@ function mostrarPerfumes(filtro = "todas") {
 
     perfumes.forEach(function(p) {
         if (filtro === "todas" || p.marca === filtro) {
+
             var card = document.createElement("div");
             card.className = "producto";
             var nombreBotella = p.botellaNombre || "Botella";
 
             var claseStock = (p.price === "SIN STOCK") ? "decant-btn activo sin-stock" : "decant-btn activo";
 
+            var todoSinStock = (p.price === "SIN STOCK" && p.decant5 === "SIN STOCK" && p.decant10 === "SIN STOCK");
+
             card.innerHTML =
-                '<div class="contenedor-img" style="height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden;">' +
-                    '<img src="' + p.imagen + '" alt="' + p.nombre + '" class="img-perfume" style="max-height: 100%; transition: transform 0.4s ease;">' +
+                '<div class="contenedor-img" style="height: 200px; display:flex; align-items:center; justify-content:center; overflow:hidden;">' +
+                '<img src="' + p.imagen + '" alt="' + p.nombre + '" class="img-perfume" style="max-height:100%; transition:transform 0.4s ease;">' +
                 '</div>' +
                 '<h2>' + p.nombre + '</h2>' +
                 '<p>' + p.marca + '</p>' +
                 '<div class="decants">' +
-                    '<button class="' + claseStock + '" data-tipo="botella">' + nombreBotella + '</button>' +
-                    '<button class="decant-btn ' + (p.decant5 === "SIN STOCK" ? 'sin-stock' : '') + '" data-tipo="5">5ml</button>' +
-                    '<button class="decant-btn ' + (p.decant10 === "SIN STOCK" ? 'sin-stock' : '') + '" data-tipo="10">10ml</button>' +
+                '<button class="' + claseStock + '" data-tipo="botella">' + nombreBotella + '</button>' +
+                '<button class="decant-btn ' + (p.decant5 === "SIN STOCK" ? 'sin-stock' : '') + '" data-tipo="5">5ml</button>' +
+                '<button class="decant-btn ' + (p.decant10 === "SIN STOCK" ? 'sin-stock' : '') + '" data-tipo="10">10ml</button>' +
                 '</div>' +
                 '<p class="info-puffs" style="font-size:0.9rem;color:' + (p.price === "SIN STOCK" ? '#c9a24d' : '#888') + ';font-weight:' + (p.price === "SIN STOCK" ? '600' : '400') + ';margin:10px 0;">' + (p.price === "SIN STOCK" ? "SOLO DECANTS" : "Botella Original") + '</p>' +
                 '<p class="precio">' + (p.price === "SIN STOCK" ? "" : formatearPrecio(p.price)) + '</p>' +
-                '<button class="btn-consultar-ws">Consultar</button>' +
+                '<button class="btn-consultar-ws" ' + (todoSinStock ? 'disabled style="opacity:0.5;cursor:not-allowed;"' : '') + '>Consultar</button>' +
                 '<a href="' + p.link + '" target="_blank" class="btn-ver-mas">Ver más</a>';
 
             var img = card.querySelector(".img-perfume");
@@ -82,7 +85,11 @@ function mostrarPerfumes(filtro = "todas") {
 
             card.querySelectorAll(".decant-btn").forEach(function(btn) {
                 btn.onclick = function() {
-                    card.querySelectorAll(".decant-btn").forEach(function(b) { b.classList.remove("activo"); });
+
+                    card.querySelectorAll(".decant-btn").forEach(function(b) {
+                        b.classList.remove("activo");
+                    });
+
                     btn.classList.add("activo");
 
                     var tipo = btn.getAttribute("data-tipo");
@@ -92,11 +99,13 @@ function mostrarPerfumes(filtro = "todas") {
                         img.style.transform = "scale(1)";
                         infoPuffs.textContent = "Botella Original";
                         nuevoPrecio = p.price;
-                    } else if (tipo === "5") {
+                    }
+                    else if (tipo === "5") {
                         img.style.transform = "scale(0.55)";
                         infoPuffs.textContent = "~75 atomizaciones";
                         nuevoPrecio = p.decant5;
-                    } else if (tipo === "10") {
+                    }
+                    else if (tipo === "10") {
                         img.style.transform = "scale(0.75)";
                         infoPuffs.textContent = "~150 atomizaciones";
                         nuevoPrecio = p.decant10;
@@ -107,8 +116,12 @@ function mostrarPerfumes(filtro = "todas") {
             });
 
             btnWS.onclick = function() {
+
+                if (todoSinStock) return;
+
                 var activo = card.querySelector(".decant-btn.activo");
                 var tipoEnvio = activo ? activo.getAttribute("data-tipo") : "botella";
+
                 consultar(p.nombre, tipoEnvio);
             };
 
