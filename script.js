@@ -70,7 +70,7 @@ function mostrarPerfumes(filtro = "todas") {
                     '<button class="decant-btn ' + (p.decant5 === "SIN STOCK" ? 'sin-stock' : '') + '" data-tipo="5">5ml</button>' +
                     '<button class="decant-btn ' + (p.decant10 === "SIN STOCK" ? 'sin-stock' : '') + '" data-tipo="10">10ml</button>' +
                 '</div>' +
-                '<p class="info-puffs" style="font-size: 0.85rem; color: #888; margin: 10px 0;">' + (p.price === "SIN STOCK" ? "SOLO DECANTS" : "Botella Original") + '</p>' +
+                '<p class="info-puffs" style="font-size:0.9rem;color:' + (p.price === "SIN STOCK" ? '#c9a24d' : '#888') + ';font-weight:' + (p.price === "SIN STOCK" ? '600' : '400') + ';margin:10px 0;">' + (p.price === "SIN STOCK" ? "SOLO DECANTS" : "Botella Original") + '</p>' +
                 '<p class="precio">' + (p.price === "SIN STOCK" ? "" : formatearPrecio(p.price)) + '</p>' +
                 '<button class="btn-consultar-ws">Consultar</button>' +
                 '<a href="' + p.link + '" target="_blank" class="btn-ver-mas">Ver más</a>';
