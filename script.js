@@ -16,7 +16,7 @@ function consultar(nombrePerfume, tipo = "botella") {
 }
 
 const perfumes = [
-    { nombre: "9PM Elixir EDP", marca: "Afnan", botellaNombre: "100ml", price: 90000, decant5: 9500, decant10: 18000, imagen: "img/perfumes/afnan_9pm_elixir.jpg", link: "https://www.fragrantica.es/perfume/Afnan/9PM-Elixir-111894.html" },
+    { nombre: "9PM Elixir EDP", marca: "Afnan", botellaNombre: "100ml", price: 85000, decant5: 9000, decant10: 17000, imagen: "img/perfumes/afnan_9pm_elixir.jpg", link: "https://www.fragrantica.es/perfume/Afnan/9PM-Elixir-111894.html" },
     { nombre: "9PM EDP Masculino", marca: "Afnan", botellaNombre: "100ml", price: 70000, decant5: 7500, decant10: 15000, imagen: "img/perfumes/afnan_9pm.jpg", link: "https://www.fragrantica.es/perfume/Afnan/9pm-65414.html" },
     { nombre: "9PM Rebel EDP", marca: "Afnan", botellaNombre: "100ml", price: "SIN STOCK", decant5: 9500, decant10: 18000, imagen: "img/perfumes/afnan_9pm_rebel.jpg", link: "https://www.fragrantica.es/perfume/Afnan/9-PM-Rebel-99238.html" },
     { nombre: "Odyssey HOMME EDP", marca: "Armaf", botellaNombre: "100ml", price: "SIN STOCK", decant5: 7500, decant10: 15000, imagen: "img/perfumes/odyssey_homme.jpg", link: "https://www.fragrantica.es/perfume/Armaf/Odyssey-Homme-64464.html" },
@@ -24,7 +24,7 @@ const perfumes = [
     { nombre: "Mandarin Sky EDP", marca: "Armaf", botellaNombre: "100ml", price: 75000, decant5: 8500, decant10: 16000, imagen: "img/perfumes/armaf_mandarine_sky.jpg", link: "https://www.fragrantica.es/perfume/Armaf/Odyssey-Mandarin-Sky-83132.html" },
     { nombre: "Club de Nuit Urban Man Elixir EDP", marca: "Armaf", botellaNombre: "105ml", price: 80000, decant5: 8500, decant10: 16000, imagen: "img/perfumes/armaf_cdn_urbanelixir.jpg", link: "https://www.fragrantica.es/perfume/Armaf/Club-De-Nuit-Urban-Elixir-77860.html" },
     { nombre: "Club de Nuit Intense Man EDT", marca: "Armaf", botellaNombre: "105ml", price: 80000, decant5: 8500, decant10: 16000, imagen: "img/perfumes/armaf_cdn_intense.jpg", link: "https://www.fragrantica.es/perfume/Armaf/Club-de-Nuit-Intense-Man-34696.html" },
-    { nombre: "Club de Nuit Precieux 1 EDP", marca: "Armaf", botellaNombre: "55ml", price: 105000, decant5: 17000, decant10: 34000, imagen: "img/perfumes/armaf_precieux.jpg", link: "https://www.fragrantica.es/perfume/Armaf/Club-de-Nuit-Precieux-I-93272.html" },
+    { nombre: "Club de Nuit Precieux 1 EDP", marca: "Armaf", botellaNombre: "55ml", price: 93000, decant5: 13000, decant10: 25000, imagen: "img/perfumes/armaf_precieux.jpg", link: "https://www.fragrantica.es/perfume/Armaf/Club-de-Nuit-Precieux-I-93272.html" },
     { nombre: "Club de Nuit Maleka EDP", marca: "Armaf", botellaNombre: "105ml", price: 85000, decant5: 9000, decant10: 17000, imagen: "img/perfumes/armaf_maleka.jpg", link: "https://www.fragrantica.es/perfume/Armaf/Club-De-Nuit-Maleka-106168.html" },
     { nombre: "Club de Nuit Woman EDP", marca: "Armaf", botellaNombre: "105ml", price: 72000, decant5: 8500, decant10: 16000, imagen: "img/perfumes/armaf_woman.jpg", link: "https://www.fragrantica.es/perfume/Armaf/Club-de-Nuit-Woman-27655.html" },
     { nombre: "Mayar Natural Intense EDP", marca: "Lattafa", botellaNombre: "100ml", price: "SIN STOCK", decant5: 7500, decant10: 15000, imagen: "img/perfumes/mayar.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Mayar-Natural-Intense-89759.html" },
