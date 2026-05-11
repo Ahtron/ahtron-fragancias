@@ -42,8 +42,7 @@ const perfumes = [
     { nombre: "Opera Noir EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: 65000, decant5: 7500, decant10: 15000, imagen: "img/perfumes/operanoir.jpg", link: "https://www.fragrantica.com/perfume/Maison-Alhambra/Opera-Noir-92625.html" },
     { nombre: "Jean Lowe Inmortel EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: 60000, decant5: 7000, decant10: 15000, imagen: "img/perfumes/maison_jean_lowe_inmortel.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Jean-Lowe-Immortal-83666.html" },
     { nombre: "Salvo Intense EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: 60000, decant5: 6500, decant10: 12000, imagen: "img/perfumes/maison_salvo_intense.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Salvo-Intense-96001.html" }
-    { nombre: "Alpine Homme Sport", marca: "Maison Alhambra", botellaNombre: "100ml", price: 60000, decant5: 6500, decant10: 12000, imagen: "img/perfumes/alpino.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Alpine-Homme-Sport-83311.html" }
-];
+    ];
 
 function formatearPrecio(valor) {
     if (typeof valor === "number") return "$" + valor.toLocaleString("es-AR");
