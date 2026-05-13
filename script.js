@@ -43,10 +43,9 @@ const perfumes = [
     { nombre: "Jean Lowe Inmortel EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: 60000, decant5: 7000, decant10: 15000, imagen: "img/perfumes/maison_jean_lowe_inmortel.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Jean-Lowe-Immortal-83666.html" },
     { nombre: "Salvo Intense EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: 60000, decant5: 6500, decant10: 12000, imagen: "img/perfumes/maison_salvo_intense.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Salvo-Intense-96001.html" },
     { nombre: "Alpine Homme Sport EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: 60000, decant5: 6500, decant10: 12000, imagen: "img/perfumes/alpinehomme.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Alpine-Homme-Sport-83311.html" },
-    { nombre: "L'Aventure Ciel EDP", marca: "Al Haramain", botellaNombre: "100ml", price: , decant5: , decant10: , imagen: "img/perfumes/L'aventure-ciel.jpg", link: "https://www.fragrantica.es/perfume/Al-Haramain-Perfumes/L-Aventure-Ciel-94349.html" },
-    { nombre: "Fire On Ice EDP", marca: "Lattafa", botellaNombre: "110ml", price: , decant5: , decant10: , imagen: "img/perfumes/Fire-On-Ice.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Fire-On-Ice-111414.html" },
-    { nombre: "Ta'weel EDP", marca: "Lattafa", botellaNombre: "100ml", price: , decant5: , decant10: , imagen: "img/perfumes/Ta_weel.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Ta-weel-85095.html" },
-
+    { nombre: "L'Aventure Ciel EDP", marca: "Al Haramain", botellaNombre: "100ml", price: "SIN STOCK", decant5: "SIN STOCK", decant10: "SIN STOCK", imagen: "img/perfumes/L'aventure-ciel.jpg", link: "https://www.fragrantica.es/perfume/Al-Haramain-Perfumes/L-Aventure-Ciel-94349.html" },
+    { nombre: "Fire On Ice EDP", marca: "Lattafa", botellaNombre: "110ml", price: "SIN STOCK", decant5: "SIN STOCK", decant10: "SIN STOCK", imagen: "img/perfumes/Fire-On-Ice.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Fire-On-Ice-111414.html" },
+    { nombre: "Ta'weel EDP", marca: "Lattafa", botellaNombre: "100ml", price: "SIN STOCK", decant5: "SIN STOCK", decant10: "SIN STOCK", imagen: "img/perfumes/Ta_weel.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Ta-weel-85095.html" },
 ];
 
 function formatearPrecio(valor) {
