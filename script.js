@@ -32,9 +32,11 @@ const perfumes = [
     { nombre: "Art of Universe EDP", marca: "Lattafa", botellaNombre: "100ml", price: 78000, decant5: 8200, decant10: 16000, imagen: "img/perfumes/lattafa_art_of_universe.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Art-Of-Universe-101314.html" },
     { nombre: "Teriaq Intense EDP", marca: "Lattafa", botellaNombre: "100ml", price: "SIN STOCK", decant5: 7500, decant10: 15000, imagen: "img/perfumes/teriaqintense.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Teriaq-Intense-99586.html" },
     { nombre: "Vintage Radio EDP", marca: "Lattafa", botellaNombre: "100ml", price: 67000, decant5: 7500, decant10: 15000, imagen: "img/perfumes/lattafa_vintage_radio.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Vintage-Radio-89454.html" },
+    { nombre: "Fire On Ice EDP", marca: "Lattafa", botellaNombre: "110ml", price: 68000, decant5: "SIN STOCK", decant10: 16000, imagen: "img/perfumes/Fire-On-Ice.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Fire-On-Ice-111414.html" },
     { nombre: "Khamrah Qahwa EDP", marca: "Lattafa", botellaNombre: "100ml", price: 63000, decant5: 7500, decant10: 15000, imagen: "img/perfumes/lattafa_khamrah_qahwa.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Khamrah-Qahwa-88175.html" },
     { nombre: "Asad EDP", marca: "Lattafa", botellaNombre: "100ml", price: 67000, decant5: 7500, decant10: 15000, imagen: "img/perfumes/lattafa_asad.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Asad-72821.html" },
     { nombre: "Asad Bourbon EDP", marca: "Lattafa", botellaNombre: "100ml", price: 75000, decant5: 7500, decant10: 15000, imagen: "img/perfumes/lattafa_asad_bourbon.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Asad-Bourbon-101124.html" },
+    { nombre: "Ta'weel EDP", marca: "Lattafa", botellaNombre: "100ml", price: 55000, decant5: "SIN STOCK", decant10: 14000, imagen: "img/perfumes/Ta_weel.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Ta-weel-85095.html" },
     { nombre: "Badee Al Oud Honor & Glory EDP", marca: "Lattafa", botellaNombre: "100ml", price: 62000, decant5: 7500, decant10: 15000, imagen: "img/perfumes/lattafa_honor_glory.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Bade-e-Al-Oud-Honor-Glory-84302.html" },
     { nombre: "Badee Al Oud For Glory EDP", marca: "Lattafa", botellaNombre: "100ml", price: 55000, decant5: 5500, decant10: 10000, imagen: "img/perfumes/lattafa_for_glory.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Bade-e-Al-Oud-Oud-for-Glory-64948.html" },
     { nombre: "L'Intrude EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: "SIN STOCK", decant5: 6500, decant10: 13000, imagen: "img/perfumes/intrude.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/L-Intrude-93651.html" },
@@ -43,9 +45,9 @@ const perfumes = [
     { nombre: "Jean Lowe Inmortel EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: 60000, decant5: 7000, decant10: 15000, imagen: "img/perfumes/maison_jean_lowe_inmortel.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Jean-Lowe-Immortal-83666.html" },
     { nombre: "Salvo Intense EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: 60000, decant5: 6500, decant10: 12000, imagen: "img/perfumes/maison_salvo_intense.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Salvo-Intense-96001.html" },
     { nombre: "Alpine Homme Sport EDP", marca: "Maison Alhambra", botellaNombre: "100ml", price: 60000, decant5: 6500, decant10: 12000, imagen: "img/perfumes/alpinehomme.jpg", link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Alpine-Homme-Sport-83311.html" },
-    { nombre: "L'Aventure Ciel EDP", marca: "Al Haramain", botellaNombre: "100ml", price: "SIN STOCK", decant5: "SIN STOCK", decant10: "SIN STOCK", imagen: "img/perfumes/L'aventure-ciel.jpg", link: "https://www.fragrantica.es/perfume/Al-Haramain-Perfumes/L-Aventure-Ciel-94349.html" },
-    { nombre: "Fire On Ice EDP", marca: "Lattafa", botellaNombre: "110ml", price: "SIN STOCK", decant5: "SIN STOCK", decant10: "SIN STOCK", imagen: "img/perfumes/Fire-On-Ice.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Fire-On-Ice-111414.html" },
-    { nombre: "Ta'weel EDP", marca: "Lattafa", botellaNombre: "100ml", price: "SIN STOCK", decant5: "SIN STOCK", decant10: "SIN STOCK", imagen: "img/perfumes/Ta_weel.jpg", link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Ta-weel-85095.html" },
+    { nombre: "L'Aventure Ciel EDP", marca: "Al Haramain", botellaNombre: "100ml", price: 78000, decant5: "SIN STOCK", decant10: 16000, imagen: "img/perfumes/L'aventure-ciel.jpg", link: "https://www.fragrantica.es/perfume/Al-Haramain-Perfumes/L-Aventure-Ciel-94349.html" },
+    
+    
 ];
 
 function formatearPrecio(valor) {
