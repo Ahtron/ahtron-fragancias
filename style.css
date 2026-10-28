@@ -9,6 +9,8 @@
     --borde: rgba(255, 255, 255, .1);
 }
 
+/* GENERAL */
+
 * {
     box-sizing: border-box;
 }
@@ -26,15 +28,19 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-button, input {
+button,
+input {
     font: inherit;
 }
 
-button, a, input {
+button,
+a,
+input {
     -webkit-tap-highlight-color: transparent;
 }
 
-button, a {
+button,
+a {
     touch-action: manipulation;
 }
 
@@ -51,23 +57,36 @@ a {
     outline-offset: 5px;
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
     margin: 0;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: "Playfair Display", serif;
 }
 
+/* BANNER */
+
 .banner-promo {
     padding: 10px 16px;
-    background: linear-gradient(100deg, #987537, #e4c77c, #987537);
+    background: linear-gradient(
+        100deg,
+        #987537,
+        #e4c77c,
+        #987537
+    );
     color: #17120a;
     text-align: center;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 2px;
 }
+
+/* PRESENTACIÓN */
 
 .header {
     position: relative;
@@ -76,7 +95,11 @@ h1, h2 {
     padding: 32px 20px 0;
     border-bottom: 1px solid var(--borde);
     background:
-        radial-gradient(ellipse at 50% 35%, #30271880, transparent 65%),
+        radial-gradient(
+            ellipse at 50% 35%,
+            #30271880,
+            transparent 65%
+        ),
         #0b0b0b;
 }
 
@@ -88,7 +111,8 @@ h1, h2 {
     margin: 0 auto 30px;
 }
 
-.hero-etiqueta, .sobretitulo {
+.hero-etiqueta,
+.sobretitulo {
     color: var(--dorado);
     font-size: 10px;
     font-weight: 600;
@@ -181,6 +205,8 @@ h1, h2 {
     margin-right: 9px;
 }
 
+/* COLECCIÓN */
+
 #coleccion {
     max-width: 1320px;
     margin: auto;
@@ -202,6 +228,8 @@ h1, h2 {
     color: var(--suave);
     line-height: 1.8;
 }
+
+/* PESTAÑAS */
 
 .tipo-producto {
     display: grid;
@@ -226,7 +254,11 @@ h1, h2 {
 
 .tipo-btn.activo {
     border-color: var(--dorado);
-    background: linear-gradient(120deg, #302719, #171510);
+    background: linear-gradient(
+        120deg,
+        #302719,
+        #171510
+    );
     box-shadow: 0 8px 30px #0003;
 }
 
@@ -258,6 +290,8 @@ h1, h2 {
     color: var(--dorado);
 }
 
+/* FILTROS Y BUSCADOR */
+
 .catalogo-herramientas {
     display: flex;
     flex-wrap: wrap;
@@ -282,7 +316,10 @@ h1, h2 {
     color: var(--suave);
     background: transparent;
     font-size: 11px;
-    transition: color .2s, border-color .2s, background .2s;
+    transition:
+        color .2s,
+        border-color .2s,
+        background .2s;
 }
 
 .filtros button:hover {
@@ -319,6 +356,8 @@ h1, h2 {
     font-size: 12px;
 }
 
+/* CATÁLOGO */
+
 .catalogo-resumen {
     display: flex;
     align-items: baseline;
@@ -343,6 +382,8 @@ h1, h2 {
     gap: 22px;
 }
 
+/* TARJETAS */
+
 .producto {
     min-width: 0;
     display: flex;
@@ -350,8 +391,15 @@ h1, h2 {
     padding: 15px;
     border: 1px solid var(--borde);
     border-radius: 14px;
-    background: linear-gradient(155deg, #1b1b1b, #111);
-    transition: transform .25s, border-color .25s, box-shadow .25s;
+    background: linear-gradient(
+        155deg,
+        #1b1b1b,
+        #111
+    );
+    transition:
+        transform .25s,
+        border-color .25s,
+        box-shadow .25s;
 }
 
 .producto:hover {
@@ -413,6 +461,8 @@ h1, h2 {
     overflow-wrap: anywhere;
 }
 
+/* TAMAÑOS Y DECANTS */
+
 .decants {
     display: flex;
     flex-wrap: wrap;
@@ -420,7 +470,8 @@ h1, h2 {
     margin: 15px 0 9px;
 }
 
-.decant-btn, .presentacion {
+.decant-btn,
+.presentacion {
     display: inline-block;
     padding: 7px 12px;
     border: 1px solid #ffffff25;
@@ -430,7 +481,8 @@ h1, h2 {
     font-size: 11px;
 }
 
-.decant-btn.activo, .presentacion {
+.decant-btn.activo,
+.presentacion {
     background: #c9a24d15;
     border-color: var(--dorado);
     color: var(--dorado-claro);
@@ -461,6 +513,8 @@ h1, h2 {
     font-size: 23px;
     font-weight: 500;
 }
+
+/* BOTONES DE LAS TARJETAS */
 
 .btn-consultar-ws {
     width: 100%;
@@ -510,12 +564,20 @@ h1, h2 {
     font-size: 13px;
 }
 
+/* INFORMACIÓN SOBRE DECANTS */
+
 .decants-info {
     margin-top: 65px;
     padding: 45px;
     border: 1px solid #c9a24d30;
     border-radius: 16px;
-    background: radial-gradient(ellipse at top right, #c9a24d15, transparent 70%), #121212;
+    background:
+        radial-gradient(
+            ellipse at top right,
+            #c9a24d15,
+            transparent 70%
+        ),
+        #121212;
 }
 
 .decants-info h2 {
@@ -547,11 +609,18 @@ h1, h2 {
     font-size: 17px;
 }
 
+.decants-info .nota-atomizaciones {
+    margin-top: 22px;
+    font-size: 10px;
+}
+
+/* FOOTER */
+
 footer {
     display: grid;
     justify-items: center;
     gap: 16px;
-    padding: 45px 20px;
+    padding: 45px 20px 100px;
     border-top: 1px solid var(--borde);
     background: #080808;
     text-align: center;
@@ -584,11 +653,56 @@ footer small {
     font-size: 10px;
 }
 
+/* BURBUJA DE WHATSAPP */
+
+.whatsapp-flotante {
+    position: fixed;
+    right: calc(20px + env(safe-area-inset-right, 0px));
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 50%;
+
+    background: #25d366;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .4);
+
+    transition: transform .2s, background .2s;
+}
+
+.whatsapp-flotante svg {
+    width: 30px;
+    height: 30px;
+}
+
+.whatsapp-flotante:hover {
+    background: #1ebe5d;
+    transform: translateY(-3px);
+}
+
+.whatsapp-flotante:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+}
+
+/* TABLETS */
+
 @media (max-width: 1050px) {
     .catalogo {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
+
+/* CELULARES */
 
 @media (max-width: 760px) {
     #coleccion {
@@ -604,7 +718,8 @@ footer small {
         gap: 9px;
     }
 
-    .tipo-numero, .tipo-flecha {
+    .tipo-numero,
+    .tipo-flecha {
         display: none;
     }
 
@@ -646,7 +761,21 @@ footer small {
     .buscador {
         max-width: none;
     }
+
+    .whatsapp-flotante {
+        right: calc(16px + env(safe-area-inset-right, 0px));
+        bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+        width: 54px;
+        height: 54px;
+    }
+
+    .whatsapp-flotante svg {
+        width: 28px;
+        height: 28px;
+    }
 }
+
+/* PANTALLAS PEQUEÑAS */
 
 @media (max-width: 380px) {
     .catalogo {
@@ -667,13 +796,23 @@ footer small {
     }
 }
 
+/* ACCESIBILIDAD */
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
 
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         transition: none !important;
         animation: none !important;
+    }
+
+    .producto:hover,
+    .producto:hover .img-perfume,
+    .whatsapp-flotante:hover {
+        transform: none;
     }
 }
