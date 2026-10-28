@@ -38,8 +38,8 @@ function consultar(nombrePerfume, tipo = "botella") {
 // PRODUCTOS
 // ===============================
 
-// En los nuevos perfumes, pegá el enlace dentro de link: "".
-// Los productos con price: "SIN STOCK" no aparecen en botellas.
+// Cuando un perfume tiene link, muestra "Conocer la fragancia".
+// Cuando no tiene link, muestra su ficha de notas interna.
 
 const perfumes = [
     {
@@ -344,8 +344,7 @@ const perfumes = [
     },
 
     // ===============================
-    // NUEVOS — SOLO DECANTS
-    // Completá cada link entre las comillas.
+    // SOLO DECANTS
     // ===============================
 
     {
@@ -541,6 +540,134 @@ const perfumes = [
 ];
 
 // ===============================
+// FICHAS DE PERFUMES SIN ENLACE
+// ===============================
+
+const fichasPerfumes = {
+    "Triumph Noir": {
+        perfil: "Especiado, amaderado y cálido.",
+
+        descripcion:
+            "El cardamomo abre una composición con cuero y un fondo de tabaco, ámbar y pachulí.",
+
+        salida: [
+            "Cardamomo",
+            "Notas amaderadas"
+        ],
+
+        corazon: [
+            "Cuero",
+            "Jazmín sambac"
+        ],
+
+        fondo: [
+            "Tabaco",
+            "Ámbar",
+            "Pachulí"
+        ],
+
+        aviso:
+            "Notas publicadas por un distribuidor; no se encontró una ficha del fabricante.",
+
+        fuentes: [
+            {
+                nombre: "VeneCuba Fashion",
+                url: "https://www.venecuba.com/products/triumph-noir-eau-de-parfum-by-vurv-100ml"
+            }
+        ]
+    },
+
+    "Milano Platina": {
+        perfil: "Frutal, dulce y amaderado.",
+
+        descripcion:
+            "Combina ciruela y cítricos con un corazón de avellana y miel, sobre una base de maderas y vetiver.",
+
+        salida: [
+            "Bergamota",
+            "Pomelo",
+            "Notas ozónicas",
+            "Ciruela"
+        ],
+
+        corazon: [
+            "Cashmeran",
+            "Cedro",
+            "Avellana",
+            "Miel",
+            "Jazmín",
+            "Flor de azahar"
+        ],
+
+        fondo: [
+            "Madera ambarada",
+            "Pachulí",
+            "Musgo de roble",
+            "Vetiver"
+        ],
+
+        aviso: "",
+
+        fuentes: [
+            {
+                nombre: "Parfumo",
+                url: "https://www.parfumo.com/Perfumes/pendora-scents/milano-platina"
+            },
+            {
+                nombre: "Sixth Scent",
+                url: "https://sixthscent.co.uk/products/milano-platina-eau-de-parfum-100ml-edp-perfume-by-pendora-paris-corner"
+            }
+        ]
+    },
+
+    "Timeline": {
+        perfil: "Amaderado y aromático.",
+
+        descripcion:
+            "Las fichas consultadas coinciden en un carácter amaderado, pero difieren en su pirámide. Por eso no mostramos notas de salida, corazón y fondo como confirmadas.",
+
+        salida: [],
+        corazon: [],
+        fondo: [],
+
+        aviso:
+            "Pirámide olfativa pendiente de confirmar con el fabricante. Consultanos por WhatsApp para orientarte.",
+
+        fuentes: [
+            {
+                nombre: "Nissei",
+                url: "https://nissei.com/py/perfume-vurv-timeline-edp-masculino-100ml"
+            },
+            {
+                nombre: "Shopping China",
+                url: "https://www.shoppingchina.com.py/producto/perfume-vurv-timeline-men-edp-100ml-1056877"
+            }
+        ]
+    },
+
+    "Aif Al Batal": {
+        perfil: "Versión pendiente de confirmar.",
+
+        descripcion:
+            "Encontramos una ficha para Al Batal / Saif Al Batal de Ard Al Zaafaran, pero el nombre cargado es Aif Al Batal. Hasta confirmar que se trata de esa presentación, no mostramos sus notas como si fueran las de este producto.",
+
+        salida: [],
+        corazon: [],
+        fondo: [],
+
+        aviso:
+            "Consultanos por WhatsApp por las notas y la presentación disponible.",
+
+        fuentes: [
+            {
+                nombre: "Referencia encontrada: Al Batal",
+                url: "https://ardalzaafaranshop.com/products/al-batal-100-ml"
+            }
+        ]
+    }
+};
+
+// ===============================
 // PRECIOS Y DISPONIBILIDAD
 // ===============================
 
@@ -607,8 +734,12 @@ function mostrarPerfumes(filtro = marcaActual) {
     catalogo.replaceChildren();
 
     const esDecant = tipoCatalogoActual === "decants";
-    const buscador = document.getElementById("buscar-perfume");
-    const busqueda = normalizar(buscador ? buscador.value : "");
+
+    const buscador =
+        document.getElementById("buscar-perfume");
+
+    const busqueda =
+        normalizar(buscador ? buscador.value : "");
 
     const productosFiltrados = perfumes.filter(function(p) {
         const coincideMarca =
@@ -649,6 +780,7 @@ function mostrarPerfumes(filtro = marcaActual) {
         const mensaje = document.createElement("p");
 
         mensaje.className = "sin-resultados";
+
         mensaje.textContent =
             "No encontramos fragancias con esos filtros. Probá otra marca o búsqueda.";
 
@@ -660,6 +792,7 @@ function mostrarPerfumes(filtro = marcaActual) {
 
     productosFiltrados.forEach(function(p) {
         const card = document.createElement("article");
+
         card.className = "producto";
 
         let controles;
@@ -753,8 +886,24 @@ function mostrarPerfumes(filtro = marcaActual) {
                 >
                     Conocer la fragancia ↗
                 </a>
-            ` : ""}
+            ` : `
+                <button
+                    type="button"
+                    class="btn-ver-mas btn-notas"
+                >
+                    Notas del perfume
+                </button>
+            `}
         `;
+
+        const botonNotas =
+            card.querySelector(".btn-notas");
+
+        if (botonNotas) {
+            botonNotas.addEventListener("click", function() {
+                abrirFichaPerfume(p);
+            });
+        }
 
         const precioLabel =
             card.querySelector(".precio");
@@ -826,8 +975,6 @@ function mostrarPerfumes(filtro = marcaActual) {
                     seleccionarDecant(boton.dataset.tipo);
                 });
             });
-
-            // Seleccionar el primer tamaño disponible.
 
             if (disponible(p.decant5)) {
                 seleccionarDecant("5");
@@ -919,6 +1066,413 @@ if (campoBusqueda) {
     campoBusqueda.addEventListener("input", function() {
         mostrarPerfumes(marcaActual);
     });
+}
+
+// ===============================
+// ESTILO DE LAS FICHAS INTERNAS
+// ===============================
+
+// Se agrega desde JavaScript para no modificar el CSS.
+
+const estilosNotas = document.createElement("style");
+
+estilosNotas.textContent = `
+    .producto .btn-notas {
+        width: 100%;
+        border: 1px solid rgba(201, 162, 77, .35);
+        border-radius: 6px;
+        background: transparent;
+        color: var(--dorado-claro, #f0d37a);
+        font: inherit;
+        font-size: 11px;
+        cursor: pointer;
+    }
+
+    .producto .btn-notas:hover {
+        background: rgba(201, 162, 77, .12);
+    }
+
+    html.ahtron-ficha-abierta {
+        overflow: hidden;
+    }
+
+    .ahtron-ficha {
+        box-sizing: border-box;
+        width: min(620px, calc(100vw - 28px));
+        max-height: calc(100dvh - 32px);
+        margin: auto;
+        padding: 0;
+        overflow: auto;
+
+        border: 1px solid #c9a24d80;
+        border-radius: 18px;
+
+        background: #141414;
+        color: #f2f0eb;
+        font-family: "Poppins", sans-serif;
+        color-scheme: dark;
+
+        box-shadow: 0 25px 90px #0009;
+    }
+
+    .ahtron-ficha::backdrop {
+        background: rgba(0, 0, 0, .78);
+    }
+
+    .ahtron-ficha-contenido {
+        padding: 28px;
+    }
+
+    .ahtron-ficha-barra {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        margin-bottom: 18px;
+    }
+
+    .ahtron-ficha-marca {
+        margin: 0;
+        color: #c9a24d;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .ahtron-ficha-cerrar {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+
+        border: 1px solid #ffffff30;
+        border-radius: 50%;
+
+        background: #222;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .ahtron-ficha h2 {
+        margin: 0 0 10px;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(25px, 5vw, 36px);
+        line-height: 1.25;
+    }
+
+    .ahtron-ficha-perfil {
+        margin: 0 0 15px;
+        color: #f0d37a;
+        font-size: 13px;
+    }
+
+    .ahtron-ficha-descripcion,
+    .ahtron-ficha-aviso {
+        margin: 0 0 18px;
+        color: #bbb7af;
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .ahtron-ficha-grupo {
+        margin: 12px 0;
+        padding: 16px;
+
+        border: 1px solid #ffffff15;
+        border-radius: 10px;
+
+        background: #1c1c1c;
+    }
+
+    .ahtron-ficha h3 {
+        margin: 0 0 12px;
+        color: #c9a24d;
+        font-size: 11px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .ahtron-ficha-notas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .ahtron-ficha-notas li {
+        padding: 6px 10px;
+        border: 1px solid #c9a24d35;
+        border-radius: 20px;
+
+        color: #eee;
+        font-size: 12px;
+    }
+
+    .ahtron-ficha-aviso {
+        margin-top: 20px;
+        padding-left: 12px;
+        border-left: 2px solid #c9a24d;
+    }
+
+    .ahtron-ficha details {
+        margin: 20px 0;
+        color: #aaa69d;
+        font-size: 11px;
+        line-height: 1.8;
+    }
+
+    .ahtron-ficha summary {
+        cursor: pointer;
+    }
+
+    .ahtron-ficha-fuentes {
+        display: grid;
+        gap: 6px;
+        margin-top: 10px;
+    }
+
+    .ahtron-ficha-fuentes a {
+        color: #f0d37a;
+    }
+
+    .ahtron-ficha-consulta {
+        display: block;
+        margin-top: 22px;
+        padding: 13px 16px;
+
+        border-radius: 7px;
+        background: #c9a24d;
+        color: #17120a;
+
+        text-align: center;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .ahtron-ficha :focus-visible {
+        outline: 2px solid #f0d37a;
+        outline-offset: 4px;
+    }
+
+    @media (max-width: 480px) {
+        .ahtron-ficha-contenido {
+            padding: 20px;
+        }
+    }
+`;
+
+document.head.appendChild(estilosNotas);
+
+// ===============================
+// VENTANA DE NOTAS
+// ===============================
+
+const dialogoNotas = document.createElement("dialog");
+
+dialogoNotas.className = "ahtron-ficha";
+
+dialogoNotas.setAttribute(
+    "aria-labelledby",
+    "ahtron-ficha-titulo"
+);
+
+document.body.appendChild(dialogoNotas);
+
+let focoAnteriorFicha = null;
+
+// Restaurar el foco al cerrar.
+
+dialogoNotas.addEventListener("close", function() {
+    document.documentElement.classList.remove(
+        "ahtron-ficha-abierta"
+    );
+
+    if (focoAnteriorFicha && focoAnteriorFicha.isConnected) {
+        focoAnteriorFicha.focus();
+    }
+});
+
+// Cerrar al tocar el fondo exterior.
+
+dialogoNotas.addEventListener("click", function(evento) {
+    if (evento.target !== dialogoNotas) {
+        return;
+    }
+
+    const rect = dialogoNotas.getBoundingClientRect();
+
+    const fuera =
+        evento.clientX < rect.left ||
+        evento.clientX > rect.right ||
+        evento.clientY < rect.top ||
+        evento.clientY > rect.bottom;
+
+    if (fuera) {
+        dialogoNotas.close();
+    }
+});
+
+// ===============================
+// ABRIR FICHA DEL PERFUME
+// ===============================
+
+function abrirFichaPerfume(perfume) {
+    const ficha = fichasPerfumes[perfume.nombre] || {
+        perfil: "Notas pendientes de confirmar.",
+
+        descripcion:
+            "Consultanos para conocer el perfil de esta fragancia.",
+
+        salida: [],
+        corazon: [],
+        fondo: [],
+        aviso: "",
+        fuentes: []
+    };
+
+    function grupoNotas(titulo, notas) {
+        if (!notas || notas.length === 0) {
+            return "";
+        }
+
+        return `
+            <section class="ahtron-ficha-grupo">
+                <h3>
+                    ${escaparHTML(titulo)}
+                </h3>
+
+                <ul class="ahtron-ficha-notas">
+                    ${notas.map(function(nota) {
+                        return (
+                            "<li>" +
+                            escaparHTML(nota) +
+                            "</li>"
+                        );
+                    }).join("")}
+                </ul>
+            </section>
+        `;
+    }
+
+    const fuentes = (ficha.fuentes || [])
+        .map(function(fuente) {
+            const url = obtenerLinkSeguro(fuente.url);
+
+            if (!url) {
+                return "";
+            }
+
+            return `
+                <a
+                    href="${escaparHTML(url)}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    ${escaparHTML(fuente.nombre)} ↗
+                </a>
+            `;
+        })
+        .join("");
+
+    const urlWhatsApp =
+        "https://wa.me/5492613392404?text=" +
+        encodeURIComponent(
+            "Hola! Quisiera saber más sobre el aroma y las notas de " +
+            perfume.nombre +
+            "."
+        );
+
+    dialogoNotas.innerHTML = `
+        <div class="ahtron-ficha-contenido">
+            <div class="ahtron-ficha-barra">
+                <p class="ahtron-ficha-marca">
+                    ${escaparHTML(perfume.marca)}
+                </p>
+
+                <button
+                    type="button"
+                    class="ahtron-ficha-cerrar"
+                    aria-label="Cerrar ficha"
+                    autofocus
+                >
+                    ×
+                </button>
+            </div>
+
+            <h2 id="ahtron-ficha-titulo">
+                ${escaparHTML(perfume.nombre)}
+            </h2>
+
+            <p class="ahtron-ficha-perfil">
+                ${escaparHTML(ficha.perfil)}
+            </p>
+
+            <p class="ahtron-ficha-descripcion">
+                ${escaparHTML(ficha.descripcion)}
+            </p>
+
+            ${grupoNotas(
+                "Salida · Primera impresión",
+                ficha.salida
+            )}
+
+            ${grupoNotas(
+                "Corazón · Al desarrollarse",
+                ficha.corazon
+            )}
+
+            ${grupoNotas(
+                "Fondo · La estela",
+                ficha.fondo
+            )}
+
+            ${ficha.aviso ? `
+                <p class="ahtron-ficha-aviso">
+                    ${escaparHTML(ficha.aviso)}
+                </p>
+            ` : ""}
+
+            ${fuentes ? `
+                <details>
+                    <summary>
+                        Fuentes de la información
+                    </summary>
+
+                    <div class="ahtron-ficha-fuentes">
+                        ${fuentes}
+                    </div>
+                </details>
+            ` : ""}
+
+            <a
+                class="ahtron-ficha-consulta"
+                href="${escaparHTML(urlWhatsApp)}"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Consultar esta fragancia por WhatsApp ↗
+            </a>
+        </div>
+    `;
+
+    dialogoNotas
+        .querySelector(".ahtron-ficha-cerrar")
+        .addEventListener("click", function() {
+            dialogoNotas.close();
+        });
+
+    focoAnteriorFicha = document.activeElement;
+
+    dialogoNotas.showModal();
+
+    document.documentElement.classList.add(
+        "ahtron-ficha-abierta"
+    );
 }
 
 // ===============================
