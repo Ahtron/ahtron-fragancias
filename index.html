@@ -10,7 +10,6 @@
         name="description"
         content="Explorá el catálogo de Ahtron Fragancias. Perfumes completos y decants de 5 y 10 ml. Consultanos por WhatsApp."
     >
-
     <meta name="theme-color" content="#0b0b0b">
 
     <!-- FAVICONS -->
@@ -29,7 +28,6 @@
         rel="stylesheet"
     >
 
-    <!-- ESTILOS Y SCRIPT -->
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
@@ -92,9 +90,7 @@
         >
             <p class="sobretitulo">EL UNIVERSO AHTRON</p>
 
-            <h2 id="titulo-coleccion">
-                Encontrá tu esencia
-            </h2>
+            <h1 id="titulo-coleccion">Encontrá tu esencia</h1>
 
             <p>
                 Una fragancia para cada momento.
@@ -114,27 +110,16 @@
                 data-tipo="botellas"
                 aria-pressed="true"
             >
-                <span
-                    class="tipo-numero"
-                    aria-hidden="true"
-                >
-                    01
-                </span>
+                <span class="tipo-numero" aria-hidden="true">01</span>
 
                 <span>
                     <strong>Perfumes completos</strong>
-
                     <small>
                         Tu fragancia, en su presentación original
                     </small>
                 </span>
 
-                <span
-                    class="tipo-flecha"
-                    aria-hidden="true"
-                >
-                    ↗
-                </span>
+                <span class="tipo-flecha" aria-hidden="true">↗</span>
             </button>
 
             <button
@@ -143,139 +128,82 @@
                 data-tipo="decants"
                 aria-pressed="false"
             >
-                <span
-                    class="tipo-numero"
-                    aria-hidden="true"
-                >
-                    02
-                </span>
+                <span class="tipo-numero" aria-hidden="true">02</span>
 
                 <span>
                     <strong>Decants</strong>
-
                     <small>
                         Probá y llevá tus favoritos en 5 o 10 ml
                     </small>
                 </span>
 
-                <span
-                    class="tipo-flecha"
-                    aria-hidden="true"
-                >
-                    ↗
-                </span>
+                <span class="tipo-flecha" aria-hidden="true">↗</span>
             </button>
         </div>
 
-        <!-- FILTROS Y BUSCADOR -->
-        <div class="catalogo-herramientas">
+        <!-- MARCAS Y BUSCADOR -->
+        <aside
+            class="catalogo-herramientas"
+            aria-label="Filtros del catálogo"
+        >
             <div
                 class="filtros"
                 role="group"
-                aria-label="Filtrar por marca"
+                aria-labelledby="titulo-marcas"
             >
-                <button
-                    type="button"
-                    class="activo"
-                    data-marca="todas"
-                    aria-pressed="true"
-                >
+                <p class="titulo-filtros" id="titulo-marcas">
+                    EXPLORÁ POR MARCA
+                </p>
+
+                <button type="button" class="activo" data-marca="todas" aria-pressed="true">
                     Todas
                 </button>
 
-                <button
-                    type="button"
-                    data-marca="Afnan"
-                    aria-pressed="false"
-                >
+                <button type="button" data-marca="Afnan" aria-pressed="false">
                     Afnan
                 </button>
 
-                <button
-                    type="button"
-                    data-marca="Armaf"
-                    aria-pressed="false"
-                >
+                <button type="button" data-marca="Armaf" aria-pressed="false">
                     Armaf
                 </button>
 
-                <button
-                    type="button"
-                    data-marca="Lattafa"
-                    aria-pressed="false"
-                >
+                <button type="button" data-marca="Lattafa" aria-pressed="false">
                     Lattafa
                 </button>
 
-                <button
-                    type="button"
-                    data-marca="Maison Alhambra"
-                    aria-pressed="false"
-                >
+                <button type="button" data-marca="Maison Alhambra" aria-pressed="false">
                     Maison Alhambra
                 </button>
 
-                <button
-                    type="button"
-                    data-marca="Al Haramain"
-                    aria-pressed="false"
-                >
+                <button type="button" data-marca="Al Haramain" aria-pressed="false">
                     Al Haramain
                 </button>
 
-                <button
-                    type="button"
-                    data-marca="Vurv"
-                    aria-pressed="false"
-                >
+                <button type="button" data-marca="Vurv" aria-pressed="false">
                     Vurv
                 </button>
 
-                <button
-                    type="button"
-                    data-marca="French Avenue"
-                    aria-pressed="false"
-                >
+                <button type="button" data-marca="French Avenue" aria-pressed="false">
                     French Avenue
                 </button>
 
-                <button
-                    type="button"
-                    data-marca="Fragrance World"
-                    aria-pressed="false"
-                >
+                <button type="button" data-marca="Fragrance World" aria-pressed="false">
                     Fragrance World
                 </button>
 
-                <button
-                    type="button"
-                    data-marca="Pendora Scents"
-                    aria-pressed="false"
-                >
+                <button type="button" data-marca="Pendora Scents" aria-pressed="false">
                     Pendora Scents
                 </button>
 
-                <button
-                    type="button"
-                    data-marca="Ahmed Al Maghribi"
-                    aria-pressed="false"
-                >
+                <button type="button" data-marca="Ahmed Al Maghribi" aria-pressed="false">
                     Ahmed Al Maghribi
                 </button>
 
-                <button
-                    type="button"
-                    data-marca="Ard Al Zaafaran"
-                    aria-pressed="false"
-                >
+                <button type="button" data-marca="Ard Al Zaafaran" aria-pressed="false">
                     Ard Al Zaafaran
                 </button>
 
-                <button
-                    type="button"
-                    data-marca="Al Wataniah"
-                    aria-pressed="false"
-                >
+                <button type="button" data-marca="Al Wataniah" aria-pressed="false">
                     Al Wataniah
                 </button>
             </div>
@@ -290,13 +218,11 @@
                     autocomplete="off"
                 >
             </label>
-        </div>
+        </aside>
 
-        <!-- CATÁLOGO -->
+        <!-- RESUMEN -->
         <div class="catalogo-resumen">
-            <h3 id="titulo-catalogo">
-                Perfumes completos
-            </h3>
+            <h3 id="titulo-catalogo">Perfumes completos</h3>
 
             <p
                 id="cantidad-productos"
@@ -305,20 +231,21 @@
             ></p>
         </div>
 
-        <div class="catalogo" id="catalogo"></div>
-
-        <noscript>
-            <p>
-                Activá JavaScript para ver el catálogo.
-                También podés consultarnos por WhatsApp.
-            </p>
-        </noscript>
+        <!-- PRODUCTOS -->
+        <div class="catalogo" id="catalogo">
+            <noscript>
+                <p class="sin-resultados">
+                    Activá JavaScript para ver el catálogo.
+                    También podés consultarnos por WhatsApp.
+                </p>
+            </noscript>
+        </div>
 
         <!-- INFORMACIÓN SOBRE DECANTS -->
         <section class="decants-info">
-            <span class="sobretitulo">
+            <p class="sobretitulo">
                 DESCUBRÍ ANTES DE ELEGIR
-            </span>
+            </p>
 
             <h2>
                 Pequeño formato.<br>
@@ -370,15 +297,23 @@
         <small>© 2026 Ahtron Fragancias</small>
     </footer>
 
-    <!-- BURBUJA DE WHATSAPP -->
+    <!-- WHATSAPP FLOTANTE CON MENSAJE -->
     <a
         class="whatsapp-flotante"
-        href="https://wa.me/5492613392404?text=Hola%21%20Quisiera%20consultar%20por%20una%20fragancia."
+        href="https://wa.me/5492613392404?text=Hola%21%20Estoy%20buscando%20un%20perfume%20completo%20que%20no%20encuentro%20en%20el%20cat%C3%A1logo.%20%C2%BFMe%20pueden%20consultar%20disponibilidad%3F"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Consultar por WhatsApp"
-        title="Consultar por WhatsApp"
+        aria-label="¿No encontrás tu perfume completo? Pedínoslo por WhatsApp y consultamos disponibilidad"
+        title="Consultá por tu perfume completo"
     >
+        <span class="whatsapp-mensaje" aria-hidden="true">
+            ¿No encontrás tu perfume completo?
+
+            <strong>
+                Pedínoslo y consultamos disponibilidad ↗
+            </strong>
+        </span>
+
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
