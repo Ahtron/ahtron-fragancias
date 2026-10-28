@@ -10,6 +10,7 @@
         name="description"
         content="Descubrí perfumes completos y decants de 5 y 10 ml en Ahtron Fragancias. Explorá el catálogo y consultanos por WhatsApp."
     >
+
     <meta name="theme-color" content="#0b0b0b">
 
     <!-- FAVICONS -->
@@ -28,6 +29,7 @@
         rel="stylesheet"
     >
 
+    <!-- ESTILOS Y CATÁLOGO -->
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
@@ -44,18 +46,43 @@
 
     <!-- CABECERA -->
     <header class="header">
+
+        <!-- LOGO, FRASE Y SELLO -->
         <div class="barra-superior">
-            <a class="marca-inicio" href="#" aria-label="Ahtron Fragancias, inicio">
-                <img
-                    class="logo"
-                    src="img/logo.jpg"
-                    alt="Ahtron Fragancias"
+            <div class="identidad-ahtron">
+                <a
+                    class="marca-inicio"
+                    href="#"
+                    aria-label="Ahtron Fragancias, inicio"
                 >
-            </a>
+                    <img
+                        class="logo"
+                        src="img/logo.jpg"
+                        alt="Ahtron Fragancias"
+                    >
+                </a>
+
+                <img
+                    class="frase-marca"
+                    src="img/NO ES PERFUME.jpg"
+                    alt="No es perfume, es presencia"
+                >
+
+                <img
+                    class="sello-original"
+                    src="img/no 5g.jpg"
+                    alt="100% original"
+                >
+            </div>
 
             <nav class="navegacion" aria-label="Navegación principal">
-                <a href="#coleccion">Catálogo</a>
-                <a href="#sobre-decants">¿Qué es un decant?</a>
+                <a href="#coleccion">
+                    Catálogo
+                </a>
+
+                <a href="#sobre-decants">
+                    ¿Qué es un decant?
+                </a>
 
                 <a
                     class="nav-contacto"
@@ -71,7 +98,9 @@
         <!-- PRESENTACIÓN PRINCIPAL -->
         <div class="hero">
             <div class="hero-texto">
-                <p class="sobretitulo">AHTRON FRAGANCIAS</p>
+                <p class="sobretitulo">
+                    AHTRON FRAGANCIAS
+                </p>
 
                 <h1>
                     Perfumes completos<br>
@@ -101,29 +130,67 @@
                 </div>
             </div>
 
-                       <div class="hero-visual">
-                <img
-                    class="imagen-presencia"
-                    src="img/NO ES PERFUME.jpg"
-                    alt="No es perfume, es presencia"
-                >
+            <!-- IMÁGENES DE PERFUMES -->
+            <div class="hero-visual">
+                <div class="hero-foto">
+                    <span class="hero-foto-etiqueta">
+                        EXPLORÁ LA COLECCIÓN
+                    </span>
 
-                <img
-                    class="imagen-original"
-                    src="img/no 5g.jpg"
-                    alt="100% original"
-                >
+                    <div class="hero-frascos">
+                        <img
+                            class="hero-frasco hero-frasco-lateral"
+                            src="img/perfumes/lattafa_art_of_universe.jpg"
+                            alt="Art of Universe de Lattafa"
+                            width="220"
+                            height="280"
+                        >
+
+                        <img
+                            class="hero-frasco hero-frasco-central"
+                            src="img/perfumes/afnan_9pm_elixir.jpg"
+                            alt="9PM Elixir de Afnan"
+                            width="250"
+                            height="320"
+                            fetchpriority="high"
+                        >
+
+                        <img
+                            class="hero-frasco hero-frasco-lateral"
+                            src="img/perfumes/yarapink.jpg"
+                            alt="Yara de Lattafa"
+                            width="220"
+                            height="280"
+                        >
+                    </div>
+
+                    <div class="hero-foto-pie">
+                        <span>AFNAN · LATTAFA · ARMAF</span>
+                        <span aria-hidden="true">✦</span>
+                    </div>
+                </div>
+
+                <p class="hero-visual-nota">
+                    Distintas fragancias. Tu próxima elección.
+                </p>
             </div>
         </div>
     </header>
 
-    
     <!-- SELECCIÓN DE PERFUMES -->
-    <section class="destacados" aria-labelledby="titulo-destacados">
+    <section
+        class="destacados"
+        aria-labelledby="titulo-destacados"
+    >
         <div class="seccion-encabezado">
             <div>
-                <p class="sobretitulo">SELECCIÓN AHTRON</p>
-                <h2 id="titulo-destacados">Para empezar a explorar</h2>
+                <p class="sobretitulo">
+                    SELECCIÓN AHTRON
+                </p>
+
+                <h2 id="titulo-destacados">
+                    Para empezar a explorar
+                </h2>
             </div>
 
             <a class="enlace-dorado" href="#coleccion">
@@ -148,9 +215,15 @@
                 </div>
 
                 <div class="destacado-texto">
-                    <span class="destacado-marca">AFNAN · 100 ML</span>
+                    <span class="destacado-marca">
+                        AFNAN · 100 ML
+                    </span>
+
                     <h3>9PM Elixir</h3>
-                    <span class="destacado-enlace">Ver en catálogo ↗</span>
+
+                    <span class="destacado-enlace">
+                        Ver en catálogo ↗
+                    </span>
                 </div>
             </a>
 
@@ -170,9 +243,15 @@
                 </div>
 
                 <div class="destacado-texto">
-                    <span class="destacado-marca">LATTAFA · 100 ML</span>
+                    <span class="destacado-marca">
+                        LATTAFA · 100 ML
+                    </span>
+
                     <h3>Art of Universe</h3>
-                    <span class="destacado-enlace">Ver en catálogo ↗</span>
+
+                    <span class="destacado-enlace">
+                        Ver en catálogo ↗
+                    </span>
                 </div>
             </a>
 
@@ -192,9 +271,15 @@
                 </div>
 
                 <div class="destacado-texto">
-                    <span class="destacado-marca">LATTAFA · 100 ML</span>
+                    <span class="destacado-marca">
+                        LATTAFA · 100 ML
+                    </span>
+
                     <h3>Yara</h3>
-                    <span class="destacado-enlace">Ver en catálogo ↗</span>
+
+                    <span class="destacado-enlace">
+                        Ver en catálogo ↗
+                    </span>
                 </div>
             </a>
         </div>
@@ -206,9 +291,17 @@
             class="coleccion-cabecera"
             aria-labelledby="titulo-coleccion"
         >
-            <p class="sobretitulo">BUSCÁ. DESCUBRÍ. ELEGÍ.</p>
-            <h2 id="titulo-coleccion">Nuestro catálogo</h2>
-            <p>Elegí un formato y explorá por marca o nombre.</p>
+            <p class="sobretitulo">
+                BUSCÁ. DESCUBRÍ. ELEGÍ.
+            </p>
+
+            <h2 id="titulo-coleccion">
+                Nuestro catálogo
+            </h2>
+
+            <p>
+                Elegí un formato y explorá por marca o nombre.
+            </p>
         </section>
 
         <!-- FORMATOS -->
@@ -223,14 +316,18 @@
                 data-tipo="botellas"
                 aria-pressed="true"
             >
-                <span class="tipo-numero" aria-hidden="true">01</span>
+                <span class="tipo-numero" aria-hidden="true">
+                    01
+                </span>
 
                 <span>
                     <strong>Perfumes completos</strong>
                     <small>En su presentación original</small>
                 </span>
 
-                <span class="tipo-flecha" aria-hidden="true">↗</span>
+                <span class="tipo-flecha" aria-hidden="true">
+                    ↗
+                </span>
             </button>
 
             <button
@@ -239,23 +336,26 @@
                 data-tipo="decants"
                 aria-pressed="false"
             >
-                <span class="tipo-numero" aria-hidden="true">02</span>
+                <span class="tipo-numero" aria-hidden="true">
+                    02
+                </span>
 
                 <span>
                     <strong>Decants</strong>
                     <small>Descubrilos en 5 y 10 ml</small>
                 </span>
 
-                <span class="tipo-flecha" aria-hidden="true">↗</span>
+                <span class="tipo-flecha" aria-hidden="true">
+                    ↗
+                </span>
             </button>
         </div>
 
-        <!-- BARRA LATERAL -->
+        <!-- BUSCADOR Y MARCAS -->
         <aside
             class="catalogo-herramientas"
             aria-label="Filtros del catálogo"
         >
-            <!-- BUSCADOR ARRIBA DE LAS MARCAS -->
             <label class="buscador">
                 <span>Buscar perfume</span>
 
@@ -276,7 +376,12 @@
                     EXPLORÁ POR MARCA
                 </p>
 
-                <button type="button" class="activo" data-marca="todas" aria-pressed="true">
+                <button
+                    type="button"
+                    class="activo"
+                    data-marca="todas"
+                    aria-pressed="true"
+                >
                     Todas
                 </button>
 
@@ -330,8 +435,11 @@
             </div>
         </aside>
 
+        <!-- RESUMEN -->
         <div class="catalogo-resumen">
-            <h3 id="titulo-catalogo">Perfumes completos</h3>
+            <h3 id="titulo-catalogo">
+                Perfumes completos
+            </h3>
 
             <p
                 id="cantidad-productos"
@@ -340,6 +448,7 @@
             ></p>
         </div>
 
+        <!-- PRODUCTOS CARGADOS DESDE SCRIPT.JS -->
         <div class="catalogo" id="catalogo">
             <noscript>
                 <p>
@@ -349,10 +458,12 @@
             </noscript>
         </div>
 
-        <!-- SOBRE DECANTS -->
+        <!-- INFORMACIÓN SOBRE DECANTS -->
         <section class="decants-info" id="sobre-decants">
             <div class="decants-info-texto">
-                <p class="sobretitulo">PRIMERO PROBALO</p>
+                <p class="sobretitulo">
+                    PRIMERO PROBALO
+                </p>
 
                 <h2>
                     Conocé el perfume.<br>
@@ -368,15 +479,27 @@
 
             <div class="decants-opciones">
                 <div class="decant-formato">
-                    <span class="formato-numero">5 <small>ml</small></span>
+                    <span class="formato-numero">
+                        5 <small>ml</small>
+                    </span>
+
                     <strong>Para descubrir</strong>
-                    <p>Una primera prueba de tu próxima fragancia.</p>
+
+                    <p>
+                        Una primera prueba de tu próxima fragancia.
+                    </p>
                 </div>
 
                 <div class="decant-formato">
-                    <span class="formato-numero">10 <small>ml</small></span>
+                    <span class="formato-numero">
+                        10 <small>ml</small>
+                    </span>
+
                     <strong>Para llevar</strong>
-                    <p>Más de tu favorito, en un formato práctico.</p>
+
+                    <p>
+                        Más de tu favorito, en un formato práctico.
+                    </p>
                 </div>
             </div>
 
@@ -388,9 +511,14 @@
     </main>
 
     <!-- CONSULTAS POR BOTELLAS -->
-    <section class="pedido-banner" aria-labelledby="titulo-pedido">
+    <section
+        class="pedido-banner"
+        aria-labelledby="titulo-pedido"
+    >
         <div>
-            <p class="sobretitulo">¿BUSCÁS UNO EN PARTICULAR?</p>
+            <p class="sobretitulo">
+                ¿BUSCÁS UNO EN PARTICULAR?
+            </p>
 
             <h2 id="titulo-pedido">
                 Consultanos por tu perfume completo.
@@ -432,9 +560,13 @@
         <small>© 2026 Ahtron Fragancias</small>
     </footer>
 
-    <!-- WHATSAPP -->
+    <!-- WHATSAPP FLOTANTE -->
     <div class="whatsapp-widget">
-        <div class="whatsapp-aviso" id="whatsapp-aviso" hidden>
+        <div
+            class="whatsapp-aviso"
+            id="whatsapp-aviso"
+            hidden
+        >
             <button
                 type="button"
                 class="whatsapp-cerrar"
@@ -450,7 +582,10 @@
                 rel="noopener noreferrer"
             >
                 ¿No encontrás tu perfume completo?
-                <strong>Pedínoslo y consultamos disponibilidad ↗</strong>
+
+                <strong>
+                    Pedínoslo y consultamos disponibilidad ↗
+                </strong>
             </a>
         </div>
 
@@ -474,10 +609,10 @@
         </a>
     </div>
 
-    <!-- DETALLES DE ESTA PRESENTACIÓN -->
+    <!-- DESTACADOS Y MENSAJE DE WHATSAPP -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Los destacados llevan al perfume dentro del catálogo.
+            // Buscar el perfume al tocar un destacado.
 
             document.querySelectorAll("[data-buscar]").forEach(function(enlace) {
                 enlace.addEventListener("click", function() {
@@ -494,12 +629,19 @@
                             '.filtros button[data-marca="todas"]'
                         );
 
-                    if (!buscador) return;
+                    if (!buscador) {
+                        return;
+                    }
 
                     buscador.value = enlace.dataset.buscar;
 
-                    if (botonTodas) botonTodas.click();
-                    if (botonBotellas) botonBotellas.click();
+                    if (botonTodas) {
+                        botonTodas.click();
+                    }
+
+                    if (botonBotellas) {
+                        botonBotellas.click();
+                    }
 
                     buscador.dispatchEvent(
                         new Event("input", { bubbles: true })
@@ -507,16 +649,21 @@
                 });
             });
 
-            // El mensaje aparece y después queda solo el ícono.
+            // Mostrar el mensaje de WhatsApp temporalmente.
 
-            const aviso = document.getElementById("whatsapp-aviso");
-            const cerrar = document.getElementById("whatsapp-cerrar");
+            const aviso =
+                document.getElementById("whatsapp-aviso");
+
+            const cerrar =
+                document.getElementById("whatsapp-cerrar");
+
+            const burbuja =
+                document.querySelector(".whatsapp-flotante");
 
             let avisoCerrado = false;
             let temporizadorOcultar;
 
             function ocultarAviso() {
-                // No ocultar un enlace mientras se usa con teclado.
                 if (aviso.contains(document.activeElement)) {
                     return;
                 }
@@ -525,7 +672,9 @@
             }
 
             window.setTimeout(function() {
-                if (avisoCerrado) return;
+                if (avisoCerrado) {
+                    return;
+                }
 
                 aviso.hidden = false;
 
@@ -537,10 +686,11 @@
 
             cerrar.addEventListener("click", function() {
                 avisoCerrado = true;
+
                 window.clearTimeout(temporizadorOcultar);
 
                 if (aviso.contains(document.activeElement)) {
-                    document.querySelector(".whatsapp-flotante").focus();
+                    burbuja.focus();
                 }
 
                 aviso.hidden = true;
@@ -551,6 +701,8 @@
             });
 
             aviso.addEventListener("focusout", function() {
+                window.clearTimeout(temporizadorOcultar);
+
                 temporizadorOcultar = window.setTimeout(
                     ocultarAviso,
                     3000
@@ -562,6 +714,8 @@
             });
 
             aviso.addEventListener("mouseleave", function() {
+                window.clearTimeout(temporizadorOcultar);
+
                 temporizadorOcultar = window.setTimeout(
                     ocultarAviso,
                     3000
