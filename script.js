@@ -366,7 +366,7 @@ const perfumes = [
         decant5: 8500,
         decant10: 17000,
         imagen: "img/perfumes/Tobacco D'Feu.jpg",
-        link: ""
+        link: "https://www.fragrantica.es/perfume/French-Avenue/Tobacco-D-Feu-99737.html"
     },
     {
         nombre: "Sheikh Shuyukh Supreme",
@@ -376,7 +376,7 @@ const perfumes = [
         decant5: 7500,
         decant10: 15000,
         imagen: "img/perfumes/Sheikh Shuyukh Supreme.jpg",
-        link: ""
+        link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Sheikh-Al-Shuyukh-Supreme-110556.html"
     },
     {
         nombre: "Musamam Black Intense",
@@ -386,7 +386,7 @@ const perfumes = [
         decant5: 8500,
         decant10: 17000,
         imagen: "img/perfumes/Musamam Black Intense.jpg",
-        link: ""
+        link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Musamam-Black-Intense-119987.html"
     },
     {
         nombre: "MochaWood",
@@ -396,7 +396,7 @@ const perfumes = [
         decant5: 8000,
         decant10: 16000,
         imagen: "img/perfumes/MochaWood.jpg",
-        link: ""
+        link: "https://www.fragrantica.es/perfume/Fragrance-World/Mocha-Wood-96819.html"
     },
     {
         nombre: "Oud Najdia",
@@ -406,7 +406,7 @@ const perfumes = [
         decant5: 7500,
         decant10: 15000,
         imagen: "img/perfumes/Oud Najdia.jpg",
-        link: ""
+        link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Oud-Najdia-89896.html"
     },
     {
         nombre: "Galactic Men Elixir",
@@ -416,7 +416,7 @@ const perfumes = [
         decant5: 8000,
         decant10: 16000,
         imagen: "img/perfumes/Galactic Men Elixir.jpg",
-        link: ""
+        link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Galactic-Men-Elixir-134154.html"
     },
     {
         nombre: "Milano Platina",
@@ -436,7 +436,7 @@ const perfumes = [
         decant5: 8500,
         decant10: 17000,
         imagen: "img/perfumes/Royal Blend.jpg",
-        link: ""
+        link: "https://www.fragrantica.es/perfume/French-Avenue/Royal-Blend-94022.html"
     },
     {
         nombre: "Kaaf Noir",
@@ -446,7 +446,7 @@ const perfumes = [
         decant5: 8500,
         decant10: 17000,
         imagen: "img/perfumes/Kaaf Noir.jpg",
-        link: ""
+        link: "https://www.fragrantica.es/perfume/Ahmed-Al-Maghribi/Kaaf-Noir-130637.html"
     },
     {
         nombre: "Exquisite Prive",
@@ -456,7 +456,7 @@ const perfumes = [
         decant5: 8000,
         decant10: 16000,
         imagen: "img/perfumes/Exquisite Prive.jpg",
-        link: ""
+        link: "https://www.fragrantica.es/perfume/Maison-Alhambra/Exquisite-Prive-122030.html"
     },
     {
         nombre: "Timeline",
@@ -476,7 +476,7 @@ const perfumes = [
         decant5: 8000,
         decant10: 16000,
         imagen: "img/perfumes/Aqua de Classic Profumo.jpg",
-        link: ""
+        link: "https://www.fragrantica.es/perfume/Fragrance-World/Aqua-de-Classic-Profumo-107463.html"
     },
     {
         nombre: "Aif Al Batal",
@@ -496,7 +496,7 @@ const perfumes = [
         decant5: 8000,
         decant10: 16000,
         imagen: "img/perfumes/Aurum Luxura.jpg",
-        link: ""
+        link: "https://www.fragrantica.es/perfume/Maison-Alhambra/The-Aurum-Luxura-123469.html"
     },
     {
         nombre: "Checkmate Knight",
@@ -506,7 +506,7 @@ const perfumes = [
         decant5: 8500,
         decant10: 17000,
         imagen: "img/perfumes/Checkmate Knight.jpg",
-        link: ""
+        link: "https://www.fragrantica.es/perfume/Armaf/Black-Knight-123192.html"
     },
     {
         nombre: "Ameer Al Oud Intense Oud",
@@ -516,7 +516,7 @@ const perfumes = [
         decant5: 7500,
         decant10: 15000,
         imagen: "img/perfumes/Ameer Al Oud Intense Oud.jpg",
-        link: ""
+        link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Ameer-Al-Oudh-Intense-Oud-64947.html"
     },
     {
         nombre: "Mashrabya",
@@ -526,7 +526,7 @@ const perfumes = [
         decant5: 8500,
         decant10: 17000,
         imagen: "img/perfumes/Mashrabya.jpg",
-        link: ""
+        link: "https://www.fragrantica.es/perfume/Lattafa-Perfumes/Mashrabya-100127.html"
     },
     {
         nombre: "Tibyan",
@@ -536,7 +536,7 @@ const perfumes = [
         decant5: 8000,
         decant10: 16000,
         imagen: "img/perfumes/Tibyan.jpg",
-        link: ""
+        link: "https://www.fragrantica.es/perfume/Al-Wataniah/Tibyan-118493.html"
     }
 ];
 
