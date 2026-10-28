@@ -922,3 +922,8 @@ footer small {
         transform: none;
     }
 }
+/* BUSCADOR ARRIBA DE LAS MARCAS */
+
+.catalogo-herramientas .buscador {
+    order: -1;
+}
