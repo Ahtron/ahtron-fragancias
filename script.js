@@ -38,6 +38,9 @@ function consultar(nombrePerfume, tipo = "botella") {
 // PRODUCTOS
 // ===============================
 
+// En los nuevos perfumes, pegá el enlace dentro de link: "".
+// Los productos con price: "SIN STOCK" no aparecen en botellas.
+
 const perfumes = [
     {
         nombre: "9PM Elixir EDP",
@@ -338,6 +341,202 @@ const perfumes = [
         decant10: 18000,
         imagen: "img/perfumes/L'aventure-ciel.jpg",
         link: "https://www.fragrantica.es/perfume/Al-Haramain-Perfumes/L-Aventure-Ciel-94349.html"
+    },
+
+    // ===============================
+    // NUEVOS — SOLO DECANTS
+    // Completá cada link entre las comillas.
+    // ===============================
+
+    {
+        nombre: "Triumph Noir",
+        marca: "Vurv",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 7500,
+        decant10: 15000,
+        imagen: "img/perfumes/Triumph Noir.jpg",
+        link: ""
+    },
+    {
+        nombre: "Tobacco D'Feu",
+        marca: "French Avenue",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 8500,
+        decant10: 17000,
+        imagen: "img/perfumes/Tobacco D'Feu.jpg",
+        link: ""
+    },
+    {
+        nombre: "Sheikh Shuyukh Supreme",
+        marca: "Lattafa",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 7500,
+        decant10: 15000,
+        imagen: "img/perfumes/Sheikh Shuyukh Supreme.jpg",
+        link: ""
+    },
+    {
+        nombre: "Musamam Black Intense",
+        marca: "Lattafa",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 8500,
+        decant10: 17000,
+        imagen: "img/perfumes/Musamam Black Intense.jpg",
+        link: ""
+    },
+    {
+        nombre: "MochaWood",
+        marca: "Fragrance World",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 8000,
+        decant10: 16000,
+        imagen: "img/perfumes/MochaWood.jpg",
+        link: ""
+    },
+    {
+        nombre: "Oud Najdia",
+        marca: "Lattafa",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 7500,
+        decant10: 15000,
+        imagen: "img/perfumes/Oud Najdia.jpg",
+        link: ""
+    },
+    {
+        nombre: "Galactic Men Elixir",
+        marca: "Maison Alhambra",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 8000,
+        decant10: 16000,
+        imagen: "img/perfumes/Galactic Men Elixir.jpg",
+        link: ""
+    },
+    {
+        nombre: "Milano Platina",
+        marca: "Pendora Scents",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 7500,
+        decant10: 15000,
+        imagen: "img/perfumes/Milano Platina.jpg",
+        link: ""
+    },
+    {
+        nombre: "Royal Blend",
+        marca: "French Avenue",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 8500,
+        decant10: 17000,
+        imagen: "img/perfumes/Royal Blend.jpg",
+        link: ""
+    },
+    {
+        nombre: "Kaaf Noir",
+        marca: "Ahmed Al Maghribi",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 8500,
+        decant10: 17000,
+        imagen: "img/perfumes/Kaaf Noir.jpg",
+        link: ""
+    },
+    {
+        nombre: "Exquisite Prive",
+        marca: "Maison Alhambra",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 8000,
+        decant10: 16000,
+        imagen: "img/perfumes/Exquisite Prive.jpg",
+        link: ""
+    },
+    {
+        nombre: "Timeline",
+        marca: "Vurv",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 7500,
+        decant10: 15000,
+        imagen: "img/perfumes/Timeline.jpg",
+        link: ""
+    },
+    {
+        nombre: "Aqua de Classic Profumo",
+        marca: "Fragrance World",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 8000,
+        decant10: 16000,
+        imagen: "img/perfumes/Aqua de Classic Profumo.jpg",
+        link: ""
+    },
+    {
+        nombre: "Aif Al Batal",
+        marca: "Ard Al Zaafaran",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 7500,
+        decant10: 15000,
+        imagen: "img/perfumes/Aif Al Batal.jpg",
+        link: ""
+    },
+    {
+        nombre: "Aurum Luxura",
+        marca: "Maison Alhambra",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 8000,
+        decant10: 16000,
+        imagen: "img/perfumes/Aurum Luxura.jpg",
+        link: ""
+    },
+    {
+        nombre: "Checkmate Knight",
+        marca: "Armaf",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 8500,
+        decant10: 17000,
+        imagen: "img/perfumes/Checkmate Knight.jpg",
+        link: ""
+    },
+    {
+        nombre: "Ameer Al Oud Intense Oud",
+        marca: "Lattafa",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 7500,
+        decant10: 15000,
+        imagen: "img/perfumes/Ameer Al Oud Intense Oud.jpg",
+        link: ""
+    },
+    {
+        nombre: "Mashrabya",
+        marca: "Lattafa",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 8500,
+        decant10: 17000,
+        imagen: "img/perfumes/Mashrabya.jpg",
+        link: ""
+    },
+    {
+        nombre: "Tibyan",
+        marca: "Al Wataniah",
+        soloDecants: true,
+        price: "SIN STOCK",
+        decant5: 8000,
+        decant10: 16000,
+        imagen: "img/perfumes/Tibyan.jpg",
+        link: ""
     }
 ];
 
@@ -357,8 +556,12 @@ function disponible(valor) {
         valor > 0;
 }
 
+// ===============================
+// TEXTO Y ENLACES
+// ===============================
+
 function normalizar(texto) {
-    return texto
+    return String(texto)
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
         .toLowerCase()
@@ -375,6 +578,24 @@ function escaparHTML(texto) {
             "'": "&#39;"
         }[caracter];
     });
+}
+
+function obtenerLinkSeguro(link) {
+    if (typeof link !== "string" || !link.trim()) {
+        return "";
+    }
+
+    try {
+        const url = new URL(link.trim());
+
+        if (url.protocol === "https:" || url.protocol === "http:") {
+            return url.href;
+        }
+    } catch {
+        return "";
+    }
+
+    return "";
 }
 
 // ===============================
@@ -398,15 +619,18 @@ function mostrarPerfumes(filtro = marcaActual) {
 
         const perteneceSeccion = esDecant
             ? p.decant5 !== undefined || p.decant10 !== undefined
-            : disponible(p.price);
+            : !p.soloDecants && disponible(p.price);
 
         return coincideMarca &&
             coincideBusqueda &&
             perteneceSeccion;
     });
 
-    const tituloCatalogo = document.getElementById("titulo-catalogo");
-    const cantidadProductos = document.getElementById("cantidad-productos");
+    const tituloCatalogo =
+        document.getElementById("titulo-catalogo");
+
+    const cantidadProductos =
+        document.getElementById("cantidad-productos");
 
     if (tituloCatalogo) {
         tituloCatalogo.textContent = esDecant
@@ -436,7 +660,6 @@ function mostrarPerfumes(filtro = marcaActual) {
 
     productosFiltrados.forEach(function(p) {
         const card = document.createElement("article");
-
         card.className = "producto";
 
         let controles;
@@ -447,7 +670,8 @@ function mostrarPerfumes(filtro = marcaActual) {
                     return p["decant" + tipo] !== undefined;
                 })
                 .map(function(tipo) {
-                    const hayStock = disponible(p["decant" + tipo]);
+                    const hayStock =
+                        disponible(p["decant" + tipo]);
 
                     return `
                         <button
@@ -465,14 +689,20 @@ function mostrarPerfumes(filtro = marcaActual) {
         } else {
             controles = `
                 <span class="presentacion">
-                    ${escaparHTML(p.botellaNombre)}
+                    ${escaparHTML(p.botellaNombre || "")}
                 </span>
             `;
         }
 
         const etiqueta = esDecant
-            ? (disponible(p.price) ? "DECANT" : "SOLO DECANTS")
+            ? (
+                p.soloDecants || !disponible(p.price)
+                    ? "SOLO DECANTS"
+                    : "DECANT"
+            )
             : "PERFUME COMPLETO";
+
+        const linkPerfume = obtenerLinkSeguro(p.link);
 
         card.innerHTML = `
             <div class="contenedor-img">
@@ -491,9 +721,13 @@ function mostrarPerfumes(filtro = marcaActual) {
                 >
             </div>
 
-            <p class="marca">${escaparHTML(p.marca)}</p>
+            <p class="marca">
+                ${escaparHTML(p.marca)}
+            </p>
 
-            <h2>${escaparHTML(p.nombre)}</h2>
+            <h2>
+                ${escaparHTML(p.nombre)}
+            </h2>
 
             <div class="decants">
                 ${controles}
@@ -503,27 +737,40 @@ function mostrarPerfumes(filtro = marcaActual) {
 
             <p class="precio"></p>
 
-            <button type="button" class="btn-consultar-ws">
+            <button
+                type="button"
+                class="btn-consultar-ws"
+            >
                 Consultar por WhatsApp ↗
             </button>
 
-            <a
-                href="${escaparHTML(p.link)}"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-ver-mas"
-            >
-                Conocer la fragancia ↗
-            </a>
+            ${linkPerfume ? `
+                <a
+                    href="${escaparHTML(linkPerfume)}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-ver-mas"
+                >
+                    Conocer la fragancia ↗
+                </a>
+            ` : ""}
         `;
 
-        const precioLabel = card.querySelector(".precio");
-        const infoPuffs = card.querySelector(".info-puffs");
-        const btnWS = card.querySelector(".btn-consultar-ws");
+        const precioLabel =
+            card.querySelector(".precio");
+
+        const infoPuffs =
+            card.querySelector(".info-puffs");
+
+        const btnWS =
+            card.querySelector(".btn-consultar-ws");
 
         // PERFUMES COMPLETOS
+
         if (!esDecant) {
-            precioLabel.textContent = formatearPrecio(p.price);
+            precioLabel.textContent =
+                formatearPrecio(p.price);
+
             infoPuffs.textContent = "Botella original";
 
             btnWS.addEventListener("click", function() {
@@ -532,10 +779,12 @@ function mostrarPerfumes(filtro = marcaActual) {
         }
 
         // DECANTS
+
         else {
             let tipoSeleccionado = null;
 
-            const botones = card.querySelectorAll(".decant-btn");
+            const botones =
+                card.querySelectorAll(".decant-btn");
 
             function seleccionarDecant(tipo) {
                 if (!disponible(p["decant" + tipo])) {
@@ -545,9 +794,13 @@ function mostrarPerfumes(filtro = marcaActual) {
                 tipoSeleccionado = tipo;
 
                 botones.forEach(function(boton) {
-                    const seleccionado = boton.dataset.tipo === tipo;
+                    const seleccionado =
+                        boton.dataset.tipo === tipo;
 
-                    boton.classList.toggle("activo", seleccionado);
+                    boton.classList.toggle(
+                        "activo",
+                        seleccionado
+                    );
 
                     boton.setAttribute(
                         "aria-pressed",
@@ -575,12 +828,14 @@ function mostrarPerfumes(filtro = marcaActual) {
             });
 
             // Seleccionar el primer tamaño disponible.
+
             if (disponible(p.decant5)) {
                 seleccionarDecant("5");
             } else if (disponible(p.decant10)) {
                 seleccionarDecant("10");
             } else {
                 precioLabel.textContent = "SIN STOCK";
+
                 infoPuffs.textContent =
                     "Decants temporalmente agotados";
 
@@ -612,7 +867,10 @@ document.querySelectorAll(".tipo-btn").forEach(function(btn) {
         document.querySelectorAll(".tipo-btn").forEach(function(boton) {
             const seleccionado = boton === btn;
 
-            boton.classList.toggle("activo", seleccionado);
+            boton.classList.toggle(
+                "activo",
+                seleccionado
+            );
 
             boton.setAttribute(
                 "aria-pressed",
@@ -635,7 +893,10 @@ document.querySelectorAll(".filtros button").forEach(function(btn) {
         document.querySelectorAll(".filtros button").forEach(function(boton) {
             const seleccionado = boton === btn;
 
-            boton.classList.toggle("activo", seleccionado);
+            boton.classList.toggle(
+                "activo",
+                seleccionado
+            );
 
             boton.setAttribute(
                 "aria-pressed",
@@ -651,7 +912,8 @@ document.querySelectorAll(".filtros button").forEach(function(btn) {
 // BUSCADOR
 // ===============================
 
-const campoBusqueda = document.getElementById("buscar-perfume");
+const campoBusqueda =
+    document.getElementById("buscar-perfume");
 
 if (campoBusqueda) {
     campoBusqueda.addEventListener("input", function() {
