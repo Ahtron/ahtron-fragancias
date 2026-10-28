@@ -1451,3 +1451,103 @@ footer small {
         width: 120px;
     }
 }
+/* LOGO, FRASE Y SELLO JUNTOS */
+
+.barra-superior {
+    flex-wrap: wrap;
+    gap: 18px 25px;
+}
+
+.identidad-ahtron {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.identidad-ahtron .logo {
+    width: 155px;
+    height: auto;
+}
+
+.frase-marca {
+    display: block;
+    width: 145px;
+    height: auto;
+}
+
+.sello-original {
+    display: block;
+    width: 65px;
+    height: auto;
+}
+
+/* RESTAURAR LA COMPOSICIÓN DE PERFUMES */
+
+.hero-visual {
+    display: block;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+}
+
+@media (max-width: 760px) {
+    .barra-superior {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .identidad-ahtron {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .identidad-ahtron .logo {
+        width: 105px;
+    }
+
+    .frase-marca {
+        width: 110px;
+    }
+
+    .sello-original {
+        width: 45px;
+    }
+
+    .navegacion {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-visual {
+        max-width: 480px;
+        justify-self: center;
+    }
+}
+
+@media (max-width: 340px) {
+    .identidad-ahtron {
+        gap: 8px;
+    }
+
+    .identidad-ahtron .logo {
+        width: 90px;
+    }
+
+    .frase-marca {
+        width: 95px;
+    }
+
+    .sello-original {
+        width: 40px;
+    }
+}
+
+/* CORRECCIÓN DE LA COLUMNA EN TABLETS */
+
+@media (min-width: 761px) and (max-width: 1050px) {
+    #coleccion {
+        grid-template-columns: 175px minmax(0, 1fr);
+    }
+}
