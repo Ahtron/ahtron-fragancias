@@ -1,71 +1,134 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ahtron Fragancias</title>
+    <title>Ahtron Fragancias | Perfumes y decants</title>
+    <meta name="description" content="Explorá el catálogo de Ahtron Fragancias. Perfumes completos y decants de 5 y 10 ml. Consultanos por WhatsApp.">
+    <meta name="theme-color" content="#0b0b0b">
 
-<!-- FAVICONS -->
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" href="/favicon.ico">
-<link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
 
-<link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
+    <div class="banner-promo">
+        <p>PRÓXIMAMENTE · PROMOS IMPERDIBLES</p>
+    </div>
 
-<!-- BANNER DE PROMOS -->
-<div class="banner-promo">
-<p>✨ PROXIMAMENTE PROMOS IMPERDIBLES ✨</p>
-</div>
+    <header class="header">
+        <img class="logo" src="img/logo.jpg" alt="Ahtron Fragancias">
 
-<!-- HEADER -->
-<div class="header">
-<img class="logo" src="img/logo.jpg" alt="Logo Ahtron">
-<img class="imagen-principal" src="img/NO ES PERFUME.jpg" alt="Imagen principal">
-<img class="imagen-esquina" src="img/no 5g.jpg" alt="Imagen 5G">
-</div>
+        <div class="hero-etiqueta">
+            <span></span> TU PRÓXIMA FRAGANCIA
+        </div>
 
-```html
-<!-- NAVEGACIÓN PRINCIPAL -->
-<div class="tipo-producto">
-    <button class="tipo-btn activo" data-tipo="botellas">
-        PERFUMES COMPLETOS
-    </button>
+        <h1>Dejá tu huella.</h1>
 
-    <button class="tipo-btn" data-tipo="decants">
-        DECANTS
-    </button>
-</div>
+        <p class="hero-descripcion">
+            Elegí tu perfume completo o descubrí nuevas fragancias
+            con nuestros decants.
+        </p>
 
-<!-- FILTROS POR MARCA -->
-<div class="filtros">
-    <button data-marca="todas">Todas</button>
-    <button data-marca="Afnan">Afnan</button>
-    <button data-marca="Armaf">Armaf</button>
-    <button data-marca="Lattafa">Lattafa</button>
-    <button data-marca="Maison Alhambra">Maison Alhambra</button>
-    <button data-marca="Al Haramain">Al Haramain</button>
-</div>
-```
+        <a class="hero-boton" href="#coleccion">
+            Explorar catálogo <span aria-hidden="true">↓</span>
+        </a>
 
-<!-- CATÁLOGO -->
-<main class="catalogo" id="catalogo">
-</main>
+        <div class="hero-imagenes">
+            <img class="imagen-principal" src="img/NO ES PERFUME.jpg" alt="No es perfume, es presencia">
+            <img class="imagen-esquina" src="img/no 5g.jpg" alt="Ahtron Fragancias">
+        </div>
 
-<!-- FOOTER -->
-<footer>
-<p>© 2026 Ahtron Fragancias</p>
-</footer>
+        <div class="hero-detalles">
+            <span>Perfumes completos</span>
+            <span>Decants de 5 y 10 ml</span>
+            <span>Consultas por WhatsApp</span>
+        </div>
+    </header>
 
-<script src="script.js"></script>
+    <main id="coleccion">
+        <section class="coleccion-cabecera" aria-labelledby="titulo-coleccion">
+            <p class="sobretitulo">EL UNIVERSO AHTRON</p>
+            <h2 id="titulo-coleccion">Encontrá tu esencia</h2>
+            <p>Una fragancia para cada momento. Elegí cómo descubrirla.</p>
+        </section>
 
+        <div class="tipo-producto" role="group" aria-label="Tipo de producto">
+            <button class="tipo-btn activo" data-tipo="botellas" aria-pressed="true">
+                <span class="tipo-numero" aria-hidden="true">01</span>
+                <span>
+                    <strong>Perfumes completos</strong>
+                    <small>Tu fragancia, en su presentación original</small>
+                </span>
+                <span class="tipo-flecha" aria-hidden="true">↗</span>
+            </button>
+
+            <button class="tipo-btn" data-tipo="decants" aria-pressed="false">
+                <span class="tipo-numero" aria-hidden="true">02</span>
+                <span>
+                    <strong>Decants</strong>
+                    <small>Probá y llevá tus favoritos en 5 o 10 ml</small>
+                </span>
+                <span class="tipo-flecha" aria-hidden="true">↗</span>
+            </button>
+        </div>
+
+        <div class="catalogo-herramientas">
+            <div class="filtros" role="group" aria-label="Filtrar por marca">
+                <button class="activo" data-marca="todas" aria-pressed="true">Todas</button>
+                <button data-marca="Afnan" aria-pressed="false">Afnan</button>
+                <button data-marca="Armaf" aria-pressed="false">Armaf</button>
+                <button data-marca="Lattafa" aria-pressed="false">Lattafa</button>
+                <button data-marca="Maison Alhambra" aria-pressed="false">Maison Alhambra</button>
+                <button data-marca="Al Haramain" aria-pressed="false">Al Haramain</button>
+            </div>
+
+            <label class="buscador">
+                <span>Buscar perfume</span>
+                <input id="buscar-perfume" type="search" placeholder="Nombre o marca…" autocomplete="off">
+            </label>
+        </div>
+
+        <div class="catalogo-resumen">
+            <h3 id="titulo-catalogo">Perfumes completos</h3>
+            <p id="cantidad-productos" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="catalogo" id="catalogo"></div>
+
+        <section class="decants-info">
+            <span class="sobretitulo">DESCUBRÍ ANTES DE ELEGIR</span>
+            <h2>Pequeño formato.<br>La misma personalidad.</h2>
+            <p>
+                Un decant es una pequeña cantidad de perfume trasvasada
+                a un atomizador. Ideal para probar una fragancia o
+                llevarla con vos.
+            </p>
+            <div class="decants-medidas">
+                <span><strong>5 ml</strong> Para descubrir</span>
+                <span><strong>10 ml</strong> Para llevar</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-marca">AHTRON <span>FRAGANCIAS</span></p>
+        <p>Tu perfume. Tu presencia. Tu huella.</p>
+        <a href="https://wa.me/5492613392404" target="_blank" rel="noopener noreferrer">
+            Hablemos por WhatsApp ↗
+        </a>
+        <small>© 2026 Ahtron Fragancias</small>
+    </footer>
 </body>
 </html>
